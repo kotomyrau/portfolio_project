@@ -4,4 +4,4 @@
 <%= link_to "Log out", destroy_user_session_path, method: :delete %>
 
 
-<%= link_to "Add a new Project", destroy_user_session_path, method: :delete %>
+<%= link_to "Add a new Project", new_user_project_path(@user)%>
