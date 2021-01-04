@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :projects, only: [:index, :show]
   resources :programmes, only: [:index, :show]
 
-  resources :users, only: :show do
+  resources :users, only: :index do
     resources :projects, except: [:index, :show]
     resources :programmes, except: [:index, :show]
   end
