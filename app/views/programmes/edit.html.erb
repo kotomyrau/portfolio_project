@@ -1,0 +1,5 @@
+
+<h1>edit this <%= @programme.name %></h1>
+<%= render partial: 'programmes/form', locals: {model: @programme, url: user_programme_path(@user, @programme), verb: :patch} %>
+
+<%= link_to "Delete this project", user_programme_path(@programme), method: :delete, data: { confirm: "Are you sure you wish to delete this programme?" }  %>

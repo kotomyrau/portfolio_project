@@ -10,7 +10,6 @@ class ProjectsController < ApplicationController
     # @project_programme = @project.project_programmes
     # @programme = @project.programmes
     # @project_programme = ProjectProgramme.new
-
   end
 
   def create

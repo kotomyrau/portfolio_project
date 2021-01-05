@@ -18,6 +18,20 @@ class ProgrammesController < ApplicationController
       @programme = Programme.find(params[:id])
     end
 
+    def edit
+      @user = current_user
+      @programme = Programme.find(params[:id])
+    end
+
+    def update
+      @user = current_user
+      @programme = Programme.find(params[:id])
+      if @programme.update(programme_params)
+        redirect_to programme_path(@programme), notice: 'Your programme was successfully modified'
+      else
+        render :edit
+      end
+    end
 
   private
 

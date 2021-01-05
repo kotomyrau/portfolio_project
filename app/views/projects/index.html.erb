@@ -1,7 +1,10 @@
 <h1>ALL PROJECTS</h1>
-
-<% @projects.each do |project| %>
-  <%= link_to project.title, project_path(project) %><br>
+<% if @projects.empty? %>
+  <p>Projects have not been added yet!</p>
+<% else %>
+  <% @projects.each do |project| %>
+    <%= link_to project.title, project_path(project) %><br>
+  <% end %>
 <% end %>
 <% if user_signed_in? %>
   <%= link_to 'Account', users_path  %>
