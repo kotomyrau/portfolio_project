@@ -1,1 +1,9 @@
-<h1>this is the projects individual page</h1>
+<h1><%= @project.title %></h1>
+<p><%= @project.description %></p>
+<p><%= @project.project_date %></p>
+<p>Worked with: <%= @project.contributors %></p>
+<p>Link to Project: <%= @project.link %></p>
+
+
+<%= link_to "View all Projects", projects_path  %>
+<%= link_to "Edit this project", edit_user_project_path(@user, @project)  %>

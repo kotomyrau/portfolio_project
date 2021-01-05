@@ -1,0 +1,10 @@
+<h1>this is the programmes show page</h1>
+
+<p>Programme: <%= @programme.name %></p>
+<p>Skill Level: <%= @programme.skill %></p>
+
+<p>goal: to filter projects that use this programme</p>
+
+<%= link_to 'View all Projects', projects_path %>
+
+<%= link_to 'Edit this programme', edit_user_programme_path(@user, @programme) %>
