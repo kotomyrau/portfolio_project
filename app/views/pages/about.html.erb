@@ -3,8 +3,32 @@
 <p>description for about me Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias doloribus sit iure consequuntur expedita provident. Facilis reprehenderit quaerat saepe molestiae, ipsam, esse a porro dolorum quos, veritatis adipisci voluptatem magnam. Eos reprehenderit nisi, optio debitis architecto, facilis laboriosam mollitia delectus odio soluta ipsum adipisci eum autem quasi natus atque doloremque.</p>
 
 <p>downloadable resume</p>
+
+<h5>Skills</h5>
 <% @programmes.each do |programme| %>
   <%= link_to programme.name, programme_path(programme) %> <br>
 <% end %>
-<%= link_to 'Back to Home', root_path  %>
-<%= link_to 'View All Projects', projects_path  %>
+
+<h5>Education</h5>
+<p>Le Wagon: Web Development Bootcamp</p>
+<p>September, 2020 (London, UK) </p>
+  <ul>
+    <li>9 Week Coding Bootcamp</li>
+    <li>Coding concepts, web development projects and business integration</li>
+  </ul>
+
+<p>University of Westminster</p>
+<p>2016 - 2019 (London, UK) </p>
+  <ul>
+    <li>Bachelor of Arts, Interior Architecture (Honours)</li>
+    <li>Winner of University Women’s Club group design
+competition</li>
+    <li>2nd Year Runner-up for Best Portfolio</li>
+  </ul>
+
+<p>Nagoya International School</p>
+<p>2011 - 2016 (Nagoya, JPN) </p>
+  <ul>
+    <li>International Baccalaureate</li>
+    <li>High School Diploma</li>
+  </ul>

@@ -1,7 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h5>Aspiring software engineer looking for a job in Tokyo, Japan</h5>
+<p><%= link_to "Read more...", about_path %></p>
+<h5>Currently working on a Portfolio Project</h5>
+<p><%= link_to "View Projects", projects_path %></p>
+<h5>My favorite project has been <%= link_to "Project-name", "#" %></h5>
 
-<%= link_to 'about', about_path  %>
-
+<% @projects.each do |project| %>
+  <div class="preview_card">
+    <!-- add project image-->
+    <%= project.title %>
+  </div>
+<% end %>
 
 <%= link_to 'View All Projects', projects_path  %>
