@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   end
 
   def about
+    @programmes = Programme.all
   end
 end
