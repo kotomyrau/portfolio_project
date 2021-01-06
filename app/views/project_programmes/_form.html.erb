@@ -1,7 +1,11 @@
 <%= simple_form_for model, method: verb, url: url do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-    <%= f.association :project, label_method: :title, value_method: :id, default: :params[@project] %> <hr>
-    <%= f.association :programme, as: :check_boxes %>
+    <%= f.collection_select :project_id, @projects, :id, :title %>
+    <%= f.collection_select :programme_id, @programmes, :id, :name %>
+
   <%= f.button :submit %>
 <% end %>
+
+<!-- #restaurant = projectprogramme
+#loation = project
+category = programme
+ -->
