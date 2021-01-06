@@ -4,6 +4,7 @@
 <p>Worked with: <%= @project.contributors %></p>
 <p>Link to Project: <%= @project.link %></p>
 
+<%= link_to "Add programmes used to this project", new_user_project_project_programme_path(@user, @project)  %>
 
 <%= link_to "View all Projects", projects_path  %>
 <%= link_to "Edit this project", edit_user_project_path(@user, @project)  %>
