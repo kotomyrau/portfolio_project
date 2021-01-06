@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController
   def show
     @user = current_user
     @project = Project.find(params[:id])
-    @project_programme = ProjectProgramme.where(:id == @project.id)
+    @project_programme = ProjectProgramme.where(project_id: @project.id)
 
   end
 

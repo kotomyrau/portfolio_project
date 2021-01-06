@@ -3,7 +3,9 @@
 <p>Programme: <%= @programme.name %></p>
 <p>Skill Level: <%= @programme.skill %></p>
 
-<p>goal: to filter projects that use this programme</p>
+<% @project_programme.each do |pro|%>
+  <%= pro.project.title %><br>
+<% end %>
 
 <%= link_to 'View all Projects', projects_path %>
 
