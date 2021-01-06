@@ -4,5 +4,6 @@ class PagesController < ApplicationController
 
   def about
     @programmes = Programme.all
+
   end
 end

@@ -7,9 +7,8 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
     @user = current_user
-    # @project_programme = @project.project_programmes
-    # @programme = @project.programmes
-    # @project_programme = ProjectProgramme.new
+    @programmes = Programme.all
+
   end
 
   def create
@@ -25,6 +24,8 @@ class ProjectsController < ApplicationController
   def show
     @user = current_user
     @project = Project.find(params[:id])
+    @project_programme = ProjectProgramme.where(project_id: @project.id)
+
   end
 
   def edit
