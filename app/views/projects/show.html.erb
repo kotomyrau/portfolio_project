@@ -1,9 +1,17 @@
+<% if @project.project_image.attached? %><br>
+  <%= cl_image_tag @project_image.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 <h1><%= @project.title %></h1>
 <p><%= @project.description %></p>
 <p><%= @project_date %></p>
 <p>Worked with: <%= @project.contributors %></p>
 <a href=<%= @project.link %>>Github</a>
 
+
+<% (0...@project.project_images.count).each do |image| %>
+  <%= cl_image_tag (@project.project_images[image]).key, height: 300, width: 400, crop: :fill %>
+<% end %>
 
 <h5>Programmes</h5>
 <% @project_programme.each do |pro|%>

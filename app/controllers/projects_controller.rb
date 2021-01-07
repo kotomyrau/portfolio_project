@@ -26,7 +26,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project_programme = ProjectProgramme.where(project_id: @project.id)
     @project_date = @project.project_date.strftime("%b %Y")
-
+    @project_image = @project.project_image
   end
 
   def edit
@@ -65,6 +65,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :description, :project_date, :contributors, :link, :project_image)
+    params.require(:project).permit(:title, :description, :project_date, :contributors, :link, :project_image, project_images: [])
   end
 end
