@@ -25,6 +25,7 @@ class ProjectsController < ApplicationController
     @user = current_user
     @project = Project.find(params[:id])
     @project_programme = ProjectProgramme.where(project_id: @project.id)
+    @project_date = @project.project_date.strftime("%b %Y")
 
   end
 
@@ -53,10 +54,11 @@ class ProjectsController < ApplicationController
       redirect_to project_path(@project), notice: 'There was a problem, this project was not deleted!'
     end
   end
+
   private
 
   def require_login
-    unless logged_in?
+    unless user_signed_in?
       flash[:error] = "This section requires a login"
       redirect_to root_path
     end
