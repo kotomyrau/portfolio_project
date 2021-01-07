@@ -1,11 +1,10 @@
-
-  <h1>Your Account</h1>
-
-<%= link_to "Log out", destroy_user_session_path, method: :delete %>
+<h1>Your Account</h1>
 
 <%= link_to "View all Projects", projects_path  %>
 
 
+<h5>Edit Profile</h5>
+  <p><%= link_to "Add a new Project", new_user_project_path(@user)%></p>
+  <p><%= link_to "Add a new Programme", new_user_programme_path(@user)%></p>
 
-<%= link_to "Add a new Project", new_user_project_path(@user)%>
-<%= link_to "Add a new Programme", new_user_programme_path(@user)%>
+<p class="log-out"><%= link_to "Log out", destroy_user_session_path, method: :delete %></p>

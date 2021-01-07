@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-
+  before_action :require_login, except: [:index, :show]
   def index
     @projects = Project.all
   end
@@ -54,6 +54,13 @@ class ProjectsController < ApplicationController
     end
   end
   private
+
+  def require_login
+    unless logged_in?
+      flash[:error] = "This section requires a login"
+      redirect_to root_path
+    end
+  end
 
   def project_params
     params.require(:project).permit(:title, :description, :project_date, :contributors, :link)

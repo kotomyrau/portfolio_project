@@ -5,10 +5,11 @@
 <p>Link to Project: <%= @project.link %></p>
 <% @project_programme.each do |pro|%>
   <%= pro.programme.name %><br>
-  <%= link_to "Remove this programme from Project", user_project_project_programme_path(@user, @project, pro), method: :delete, data: { confirm: "Are you sure you wish to delete your project?" }  %>
-
+  <% if user_signed_in? %>
+    <%= link_to "Remove this programme from Project", user_project_project_programme_path(@user, @project, pro), method: :delete, data: { confirm: "Are you sure you wish to delete your project?" }  %>
+    <%= link_to "Add programmes used to this project", new_user_project_project_programme_path(@user, @project)  %>
+  <% end %>
 <% end %>
-<%= link_to "Add programmes used to this project", new_user_project_project_programme_path(@user, @project)  %>
 
 <%= link_to "View all Projects", projects_path  %>
 <% if user_signed_in? %>
