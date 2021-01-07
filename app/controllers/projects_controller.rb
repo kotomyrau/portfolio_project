@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-
+  before_action :require_login, except: [:index, :show]
   def index
     @projects = Project.all
   end
@@ -25,7 +25,8 @@ class ProjectsController < ApplicationController
     @user = current_user
     @project = Project.find(params[:id])
     @project_programme = ProjectProgramme.where(project_id: @project.id)
-
+    @project_date = @project.project_date.strftime("%b %Y")
+    @project_image = @project.project_image
   end
 
   def edit
@@ -53,9 +54,17 @@ class ProjectsController < ApplicationController
       redirect_to project_path(@project), notice: 'There was a problem, this project was not deleted!'
     end
   end
+
   private
 
+  def require_login
+    unless user_signed_in?
+      flash[:error] = "This section requires a login"
+      redirect_to root_path
+    end
+  end
+
   def project_params
-    params.require(:project).permit(:title, :description, :project_date, :contributors, :link)
+    params.require(:project).permit(:title, :description, :project_date, :contributors, :link, :project_image, project_images: [])
   end
 end

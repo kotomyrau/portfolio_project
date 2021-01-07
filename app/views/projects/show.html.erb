@@ -1,17 +1,28 @@
+<% if @project.project_image.attached? %><br>
+  <%= cl_image_tag @project_image.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 <h1><%= @project.title %></h1>
 <p><%= @project.description %></p>
-<p><%= @project.project_date %></p>
+<p><%= @project_date %></p>
 <p>Worked with: <%= @project.contributors %></p>
-<p>Link to Project: <%= @project.link %></p>
+<a href=<%= @project.link %>>Github</a>
+
+
+<% (0...@project.project_images.count).each do |image| %>
+  <%= cl_image_tag (@project.project_images[image]).key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
+<h5>Programmes</h5>
 <% @project_programme.each do |pro|%>
-  <%= pro.programme.name %><br>
-  <%= link_to "Remove this programme from Project", user_project_project_programme_path(@user, @project, pro), method: :delete, data: { confirm: "Are you sure you wish to delete your project?" }  %>
-
-<% end %>
-<%= link_to "Add programmes used to this project", new_user_project_project_programme_path(@user, @project)  %>
-
-<%= link_to "View all Projects", projects_path  %>
-<% if user_signed_in? %>
-  <%= link_to "Edit this project", edit_user_project_path(@user, @project)  %>
+  <%= link_to pro.programme.name, programme_path(pro.programme) %>
+  <% if user_signed_in? %>
+    <%= link_to "Remove", user_project_project_programme_path(@user, @project, pro), method: :delete, data: { confirm: "#{pro.programme.name} will be removed from #{@project.title}" }%><br>
+  <% end %>
 <% end %>
 
+<h5>Edit Project</h5>
+  <% if user_signed_in? %>
+    <%= link_to "Add Programme", new_user_project_project_programme_path(@user, @project)  %> <br>
+    <%= link_to "Edit this project", edit_user_project_path(@user, @project)  %>
+  <% end %>

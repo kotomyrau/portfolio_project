@@ -1,8 +1,33 @@
-<h5>Aspiring software engineer looking for a job in Tokyo, Japan</h5>
-<p><%= link_to "Read more...", about_path %></p>
-<h5>Currently working on a Portfolio Project</h5>
-<p><%= link_to "View Projects", projects_path %></p>
-<h5>My favorite project has been <%= link_to "Project-name", "#" %></h5>
+
+<div class="slideshow-container">
+  <!-- Full-width slides/quotes -->
+  <div class="text-slide">
+    <h5>Aspiring software engineer looking for a job in Tokyo, Japan</h5>
+    <p class="slide-link"><%= link_to "Read more...", about_path %></p>
+  </div>
+
+  <div class="text-slide">
+    <h5>Currently working on a Portfolio Project</h5>
+    <p class="slide-link"><%= link_to "View Projects", projects_path %></p>
+  </div>
+
+  <div class="text-slide">
+    <h5>My favorite project has been </h5>
+    <p class="slide-link"><%= link_to "Project-name", "#" %></p>
+  </div>
+
+  <!-- Next/prev buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!-- Dots/bullets/indicators -->
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
 
 <% @projects.each do |project| %>
   <div class="preview_card">
