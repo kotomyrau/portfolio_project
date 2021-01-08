@@ -7,6 +7,7 @@ class ProjectProgrammesController < ApplicationController
     @projects = Project.all
     @project = Project.find(params[:project_id])
     @programmes = Programme.all
+
   end
 
   def create
