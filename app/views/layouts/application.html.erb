@@ -9,19 +9,57 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Psoppins%26display=swap" rel="stylesheet">
   </head>
 
   <body>
     <header>
-      <h1>KOTOMAIRA UCHIDA</h1>
+
     </header>
     <nav>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/projects">Portfolio</a>
+      <div class="nav-title">
+          <h3>KOTOMAIRA UCHIDA</h3>
+      </div>
+      <ul class="nav-links">
+          <li><a href=<% root_path %>>Home</a></li>
+          <li><a href=<% about_path %>>About</a></li>
+          <li><a href=<% projects_path %>>Portfolio</a></li>
+      </ul>
+      <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+      </div>
     </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
+
+<script>
+  function navSlide() {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+    const navLinks = document.querySelectorAll(".nav-links li");
+
+    burger.addEventListener("click", () => {
+        //Toggle Nav
+        nav.classList.toggle("nav-active");
+
+        //Animate Links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = ""
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+            }
+        });
+        //Burger Animation
+        burger.classList.toggle("toggle");
+    });
+
+}
+
+navSlide();</script>

@@ -29,11 +29,20 @@
 </div>
 
 
-<% @projects.each do |project| %>
+<% @preview_projects.each do |project| %>
   <div class="preview_card">
-    <!-- add project image-->
-    <%= project.title %>
+    <%= cl_image_tag project.project_image.key, height: 300, width: 400, crop: :fill %>
+    <%= link_to project.title, project_path(project) %>
   </div>
 <% end %>
 
+<% @projects.each do |project| %>
+  <%= project.title %><br>
+  <%= project.description %><br>
+  <% project.programmes.each do |programme| %>
+    <%= link_to programme.name, programme_path(programme) %><br>
+  <% end %>
+  <%= link_to "View", project_path(project) %><br>
+<% end %>
 <%= link_to 'View All Projects', projects_path  %>
+
