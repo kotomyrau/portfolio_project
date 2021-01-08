@@ -17,7 +17,7 @@
 <% @project_programme.each do |pro|%>
   <%= link_to pro.programme.name, programme_path(pro.programme) %>
   <% if user_signed_in? %>
-    <%= link_to "Remove", user_project_project_programme_path(@user, @project, pro), method: :delete, data: { confirm: "#{pro.programme.name} will be removed from #{@project.title}" }%><br>
+    <%= link_to "Remove", user_project_project_programme_path(@user, @project, pro.id), method: :delete, data: { confirm: "#{pro.programme.name} will be removed from #{@project.title}" }%><br>
   <% end %>
 <% end %>
 

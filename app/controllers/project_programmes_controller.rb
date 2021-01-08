@@ -12,23 +12,24 @@ class ProjectProgrammesController < ApplicationController
   def create
     @user = current_user
     @projects = Project.all
-    # @project = Project.find(params[:id])
+    # @project = ProjectProgramme.find(params[:project_id])
     @project_programme = ProjectProgramme.new(project_programme_params)
     if @project_programme.save
-      redirect_to projects_path
+      redirect_to project_path(params[:project_id])
     else
       render :new
     end
   end
 
     def destroy
-      @user = current_user
+      # @user = current_user
       @project_programme = ProjectProgramme.find(params[:id])
       if @project_programme.destroy
-        flash[:notice] = "Programme has been deleted"
-        redirect_to project_path(Project.find(params[:project_id]))
+        # flash[:notice] = "Programme has been deleted"
+        redirect_to project_path(params[:project_id])
       else
-        redirect_to projects_path
+        # flash[:notice] = "An error occured, try again"
+        redirect_to project_path(params[:project_id])
       end
     end
   private
