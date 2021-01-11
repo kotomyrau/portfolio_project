@@ -7,21 +7,22 @@
 nav {
     background-color: #F0EFEB;
     color: #CB997E;
-    position: fixed;
+    position: sticky;
+    z-index: 1;
     top: 0;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
-    height: 100px;
-    font-family: "Poppins", sans-serif;
+    height: 80px;
 }
 
-.nav-title {
-    text-transform: uppercase;
+.nav-title h3{
+    font-family: "Poppins", sans-serif;
     letter-spacing: 8px;
-    font-size: 16px;
+    font-size: 24px;
+    font-weight: 200;
 }
 
 .nav-links {
@@ -34,15 +35,22 @@ nav {
     list-style: none;
 }
 
+
+
 .nav-links a {
     color: #CB997E;
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 200;
     letter-spacing: 3px;
     text-decoration: none;
     text-transform: uppercase;
 }
 
+.nav-links a:hover {
+    font-size: 17px;
+    font-weight: 300;
+  }
 .burger {
     display: none;
 }
