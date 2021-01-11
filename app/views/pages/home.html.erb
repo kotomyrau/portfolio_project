@@ -22,25 +22,26 @@
 
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
 </div>
 
-<% @preview_projects.each do |project| %>
-  <div class="preview_card">
-    <%= cl_image_tag project.project_image.key, height: 300, width: 200, crop: :fill %>
-    <%= link_to project.title, project_path(project) %>
-  </div>
-<% end %>
-
-<% @projects.each do |project| %>
-  <%= project.title %><br>
-  <%= project.description %><br>
-  <% project.programmes.each do |programme| %>
-    <%= link_to programme.name, programme_path(programme) %><br>
+<div class="preview-container">
+  <% @preview_projects.each do |project| %>
+    <div class="preview_card">
+      <%= cl_image_tag project.project_image.key, height: 300, width: 200, crop: :fill %>
+      <%= link_to project.title, project_path(project) %>
+    </div>
   <% end %>
-  <%= link_to "View", project_path(project) %><br>
-<% end %>
-<%= link_to 'View All Projects', projects_path  %>
+
+  <% @projects.each do |project| %>
+    <%= project.title %><br>
+    <%= project.description %><br>
+    <% project.programmes.each do |programme| %>
+      <%= link_to programme.name, programme_path(programme) %><br>
+    <% end %>
+    <%= link_to "View", project_path(project) %><br>
+  <% end %>
+  <%= link_to 'View All Projects', projects_path  %>
+</div>
 
 <script>
     var slideIndex = 1;

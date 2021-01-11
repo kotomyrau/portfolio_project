@@ -1,1 +1,7 @@
 
+.preview-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: red;
+    margin: 8vh 12vw;
+}
