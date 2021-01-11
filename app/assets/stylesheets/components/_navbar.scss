@@ -1,43 +1,33 @@
-// * {
-//     margin: 0;
-//     padding: 0;
-//     box-sizing: border-box;
-// }
-
 nav {
+    align-items: center;
     background-color: #F0EFEB;
+    border-bottom: 3px solid #CB997E;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
     color: #CB997E;
+    display: flex;
+    height: 80px;
+    justify-content: space-around;
     position: sticky;
-    z-index: 1;
     top: 0;
     width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 8vh;
-    height: 80px;
+    z-index: 1;
 }
 
 .nav-title h3{
     font-family: "Poppins", sans-serif;
-    letter-spacing: 8px;
     font-size: 24px;
     font-weight: 200;
+    letter-spacing: 8px;
     margin: 0;
 }
 
 .nav-links {
     display: flex;
     justify-content: space-around;
-    width: 30%;
-    margin:0;
-}
-
-.nav-links li {
     list-style: none;
+    margin:0;
+    width: 30%;
 }
-
-
 
 .nav-links a {
     color: #CB997E;
@@ -45,15 +35,15 @@ nav {
     font-size: 16px;
     font-weight: 200;
     letter-spacing: 3px;
+    padding: 0 16px;
     text-decoration: none;
     text-transform: uppercase;
-    padding: 0 8px;
 }
 
 .nav-links a:hover {
     font-size: 17px;
     font-weight: 300;
-  }
+}
 
  // LAPTOP
 @media screen and (max-width: 1024px) {
@@ -64,12 +54,16 @@ nav {
 
 .burger {
     display: none;
+    cursor: pointer;
+    padding-right: 24px;
+    position: absolute;
+    right:0;
 }
 
 .burger div {
     width: 25px;
     height: 3px;
-    background-color: rgb(226, 226, 226);
+    background-color: #CB997E;
     margin: 5px;
     transition: all 0.3s ease;
 }
@@ -81,84 +75,77 @@ nav {
     }
 
     nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 0px 40px;
-      width: 100%;
-
+        display: flex;
+        justify-content: space-between;
+        padding: 0 80px 0 40px;
+        width: 100%;
     }
+
     .nav-title h3{
-          font-family: "Poppins", sans-serif;
-          letter-spacing: 8px;
-          font-size: 20px;
-          font-weight: 300;
-          margin: 0;
-      }
+        font-family: "Poppins", sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+    }
 
     .nav-links {
         align-items: center;
-        background-color: #F0EFEB;
+        background-color: #EDDCD2;
         display: flex;
         flex-direction: column;
         height: 92vh;
+        padding: 0 0 80px 0;
         position: fixed;
         right: 0px;
-        top: 21vh;
+        top: 80px;
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
         width: 100%;
     }
 
-    .nav-links li {
-        opacity: 0;
-
+    .nav-links {
+        a {
+            font-size: 16px;
+            font-weight: 300;
+        }
+        li {
+            opacity: 0;
+        }
     }
 
-
     .burger {
-      right: 0;
         display: block;
-        cursor: pointer;
     }
 }
 
-// TABLET
+// PHONE
 @media screen and (max-width: 440px) {
-
     body {
         overflow-x: hidden;
     }
 
     nav {
-      display: flex;
-      justify-content: space-between;
-      // padding: 0px 24px;
-      // text-align: center;
-
+        display: flex;
+        justify-content: space-between;
     }
-    .nav-title h3{
-          font-family: "Poppins", sans-serif;
-          letter-spacing: 8px;
-          font-size: 17px;
-          font-weight: 300;
-          margin: 0;
-          // text-align: center;
-          position: relative;
-          word-wrap: break-word;
-           padding: 0px 80px 0px 0px;
 
-      }
+    .nav-title h3 {
+        font-family: "Poppins", sans-serif;
+        font-size: 17px;
+        font-weight: 300;
+        letter-spacing: 8px;
+        margin: 0;
+        padding: 0px 80px 0px 0px;
+        position: relative;
+        word-wrap: break-word;
+    }
 
     .burger {
-      padding-right: 24px;
-      position: absolute;
-      right: 0;
         display: block;
-        cursor: pointer;
     }
 }
+
 .nav-active {
-        transform: translateX(0%);
+    transform: translateX(0%);
 }
 
 @keyframes navLinkFade {
@@ -183,11 +170,3 @@ nav {
 .toggle .line3 {
     transform: rotate(45deg) translate(-5px, -6px);
 }
-
-
-
-
-
-
-
-
