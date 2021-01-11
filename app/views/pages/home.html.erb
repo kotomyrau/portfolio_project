@@ -24,13 +24,17 @@
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 
-<div class="preview-container">
-  <% @preview_projects.each do |project| %>
-    <div class="preview_card">
-      <%= cl_image_tag project.project_image.key, height: 300, width: 200, crop: :fill %>
-      <%= link_to project.title, project_path(project) %>
-    </div>
-  <% end %>
+
+</div>
+    <% @preview_projects.each do |project| %>
+
+
+        <%= link_to (cl_image_tag project.project_image.key, height: 200, width: 400, overflow: :hidden, cover: :fill), project_path(project) %>
+
+        <%= link_to project.title, project_path(project) %>
+
+    <% end %>
+
 
   <% @projects.each do |project| %>
     <%= project.title %><br>
