@@ -1,94 +1,88 @@
 
 .slideshow-container {
-  position: relative;
-  background: #B7B7A4;
-  height: 180px;
-  align-items: center;
-  display: flex;
-  justify-content: space-around;
+    align-items: center;
+    background: #B7B7A4;
+    display: flex;
+    height: 180px;
+    justify-content: space-around;
+    position: relative;
 }
 
 .text-slide {
-  display: none;
-  text-align: center;
-  h5 {
-    font-family: "Poppins", sans-serif;
-    font-size: 20px;
-    font-weight: 200;
-    color: #F0EFEB;
-    margin-bottom: 24px;
-  }
+    display: none;
+    text-align: center;
+    h5 {
+        color: #F0EFEB;
+        font-family: "Poppins", sans-serif;
+        font-size: 20px;
+        font-weight: 200;
+        margin-bottom: 24px;
+    }
 }
 
 .slide-link a {
-   font-family: "Poppins", sans-serif;
+    color: #F0EFEB;
+    font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 300;
-    color: #F0EFEB;
     text-decoration: none;
     text-transform: uppercase;
 }
 
-    .slide-link a:hover{
-      color: pink;
-      text-decoration: none;
-    }
+.slide-link a:hover{
+    color: #F0EFEB;
+    font-weight: 500;
+    text-decoration: none;
+}
 
 .prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -30px;
-  padding: 16px;
-  color: #F0EFEB;
-  font-weight: bold;
-  font-size: 18px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+    color: #F0EFEB;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: -30px;
+    padding: 16px;
+    position: absolute;
+    top: 50%;
+    user-select: none;
+    width: auto;
 }
 
 .next {
-  position: absolute;
-  right: 5vw;
-  border-radius: 3px 0 0 3px;
+    right: 5vw;
 }
 
 .prev {
-  position: absolute;
-  left: 5vw;
-  border-radius: 3px 0 0 3px;
+    left: 5vw;
 }
 
 .prev:hover, .next:hover {
-  color: #F0EFEB;
-  font-size:22px;
-  background: transparent;
-  text-decoration: none;
+    background: transparent;
+    color: #F0EFEB;
+    font-size:20px;
+    text-decoration: none;
 }
 
 .dot-container {
-  position: absolute;
-  text-align: center;
-  padding: 0;
-  background: transparent;
-  bottom: 0;
+    position: absolute;
+    // text-align: center;
+    background: transparent;
+    bottom: 0;
 }
 
-
 .dot {
-  cursor: pointer;
-  height: 8px;
-  width: 8px;
-  margin: 0 4px 8px;
-  background-color: #A5A58D;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+    background-color: #A5A58D;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: 8px;
+    margin: 0 4px 8px;
+    transition: background-color 0.6s ease;
+    width: 8px;
 }
 
 .active, .dot:hover {
-  background-color: #F0EFEB;
+    background-color: #F0EFEB;
 }
 
 // TABLET
@@ -113,21 +107,21 @@
 
 @media screen and (max-width: 425px) {
     .text-slide {
-      width: 60vw;
-      h5 {
-          font-family: "Poppins", sans-serif;
-          font-size: 14px;
-          font-weight: 200;
-          margin-bottom: 16px;
+        width: 60vw;
+        h5 {
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+            font-weight: 200;
+            margin-bottom: 16px;
+        }
     }
 
     .slide-link a {
-       font-family: "Poppins", sans-serif;
+        color: #F0EFEB;
+        font-family: "Poppins", sans-serif;
         font-size: 12px;
         font-weight: 400;
-        color: #F0EFEB;
         text-decoration: none;
         text-transform: uppercase;
     }
-  }
 }
