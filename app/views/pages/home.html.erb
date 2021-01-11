@@ -1,9 +1,7 @@
-
 <div class="slideshow-container">
-  <!-- Full-width slides/quotes -->
   <div class="text-slide">
     <h5>Aspiring software engineer looking for a job in Tokyo, Japan</h5>
-    <p class="slide-link"><%= link_to "Read more...", about_path %></p>
+    <p class="slide-link"><%= link_to "Read more", about_path %></p>
   </div>
 
   <div class="text-slide">
@@ -16,33 +14,64 @@
     <p class="slide-link"><%= link_to "Project-name", "#" %></p>
   </div>
 
-  <!-- Next/prev buttons -->
+    <div class="dot-container">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 
-<!-- Dots/bullets/indicators -->
-<div class="dot-container">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
+
+</div>
+    <% @preview_projects.each do |project| %>
+
+
+        <%= link_to (cl_image_tag project.project_image.key, height: 200, width: 400, overflow: :hidden, cover: :fill), project_path(project) %>
+
+        <%= link_to project.title, project_path(project) %>
+
+    <% end %>
+
+
+  <% @projects.each do |project| %>
+    <%= project.title %><br>
+    <%= project.description %><br>
+    <% project.programmes.each do |programme| %>
+      <%= link_to programme.name, programme_path(programme) %><br>
+    <% end %>
+    <%= link_to "View", project_path(project) %><br>
+  <% end %>
+  <%= link_to 'View All Projects', projects_path  %>
 </div>
 
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
 
-<% @preview_projects.each do |project| %>
-  <div class="preview_card">
-    <%= cl_image_tag project.project_image.key, height: 300, width: 400, crop: :fill %>
-    <%= link_to project.title, project_path(project) %>
-  </div>
-<% end %>
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
 
-<% @projects.each do |project| %>
-  <%= project.title %><br>
-  <%= project.description %><br>
-  <% project.programmes.each do |programme| %>
-    <%= link_to programme.name, programme_path(programme) %><br>
-  <% end %>
-  <%= link_to "View", project_path(project) %><br>
-<% end %>
-<%= link_to 'View All Projects', projects_path  %>
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
 
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("text-slide");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+</script>
