@@ -1,7 +1,7 @@
 <div class="slideshow-container">
   <div class="text-slide">
     <h5>Aspiring software engineer looking for a job in Tokyo, Japan</h5>
-    <p class="slide-link"><%= link_to "Read more...", about_path %></p>
+    <p class="slide-link"><%= link_to "Read more", about_path %></p>
   </div>
 
   <div class="text-slide">
@@ -14,18 +14,16 @@
     <p class="slide-link"><%= link_to "Project-name", "#" %></p>
   </div>
 
-  <!-- Next/prev buttons -->
+    <div class="dot-container">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
 
-<!-- Dots/bullets/indicators -->
-<div class="dot-container">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
 </div>
-
 
 <% @preview_projects.each do |project| %>
   <div class="preview_card">
