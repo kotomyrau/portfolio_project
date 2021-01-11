@@ -29,7 +29,7 @@
 
 <% @preview_projects.each do |project| %>
   <div class="preview_card">
-    <%= cl_image_tag project.project_image.key, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag project.project_image.key, height: 300, width: 200, crop: :fill %>
     <%= link_to project.title, project_path(project) %>
   </div>
 <% end %>
