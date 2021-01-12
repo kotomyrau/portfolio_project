@@ -5,6 +5,7 @@
     margin: 4vh 0 2vh;
     text-align: center;
     letter-spacing: 0.2vw;
+    text-transform: uppercase;
     a {
       color: #DDBEA9;
       text-decoration: none;
@@ -106,13 +107,16 @@
   text-align: center;
 }
 
-.preview-programmes p {
+.preview-programmes {
+  margin: 4px 2px 0;
+  p {
     display: inline-block;
     color: #fff;
     font-size: 12px;
     border: 2px solid #FFF;
-    padding: 4px 4px;
-    margin: 0 4px;
-     text-align: center;
+    padding: 4px 2px;
+    text-align: center;
+    margin: 0;
 
+  }
 }

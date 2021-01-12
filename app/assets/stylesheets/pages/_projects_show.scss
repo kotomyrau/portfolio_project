@@ -1,0 +1,17 @@
+.main-image {
+  margin: 40px 0;
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 400px;
+        width: 80%;
+        object-fit: cover;
+    }
+}
+
+.project-title {
+  h1 {
+      text-align: center;
+  }
+}
