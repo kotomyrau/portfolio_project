@@ -1,0 +1,74 @@
+ .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 2vw;
+    grid-template-areas:
+      "pro1 pro1 pro2 pro2"
+      "pro-3 pro-3 pro-3 pro-3"
+      ". . . .";
+      margin: 50px 12vw;
+}
+
+.preview-project-one {grid-area: pro1;}
+.preview-project-two {grid-area: pro2;}
+
+.preview-project-one, .preview-project-two {
+  background-color: pink;
+  height: 260px;
+  position: relative;
+      img {
+          display: block;
+          opacity: 1;
+          height: 260px;
+          width: 37vw;
+          object-fit: cover;
+          // z-index: 1;
+          transition: .5s ease;
+      }
+
+      img:hover {
+          opacity: 0.3;
+     }
+ }
+
+
+.preview-cover {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+
+}
+.preview-project-one:hover img {
+  opacity: 0.3;
+}
+
+.preview-project-one:hover .preview-cover {
+  opacity: 1;
+}
+
+.preview-text a {
+  background-color: transparent;
+  // border: 4px solid #FFFFFF;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 16px 32px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+// .pro2 {
+//   grid-area: pro2;
+//   background-color: yellow;
+//    }
+.pro-3 {
+  grid-area: pro-3;
+  background-color: blue;
+   }
