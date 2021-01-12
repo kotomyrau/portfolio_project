@@ -24,28 +24,38 @@
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 
-
 </div>
 
 <div class="grid-title">
   <h5>Portfolio</h5>
 </div>
 <div class="grid-container">
-
-<div class="preview-project-one">
-    <%= link_to (cl_image_tag  @preview_projects[0].project_image.key, overflow: :hidden), project_path(@preview_projects[0]) %>
-    <div class="preview-cover">
-        <div class="preview-text">
-            <%= link_to @preview_projects[0].title, project_path(@preview_projects[0]) %>
+    <div class="preview-project-one">
+        <%= link_to (cl_image_tag  @preview_projects[0].project_image.key, overflow: :hidden), project_path(@preview_projects[0]) %>
+        <div class="preview-cover">
+            <div class="preview-text">
+                <%= link_to @preview_projects[0].title, project_path(@preview_projects[0]) %>
+            </div>
+            <div class="preview-programmes">
+                <% @preview_projects[0].programmes.each do |programme| %>
+                    <p><%= programme.name %></p>
+                <% end %>
+            </div>
         </div>
     </div>
-</div>
-  <div class="preview-project-two">
-    <%= link_to (cl_image_tag  @preview_projects[1].project_image.key, overflow: :hidden), project_path(@preview_projects[1]) %>
-  </div>
-  <div class="pro-3">
-    <%= link_to (cl_image_tag  @preview_projects[2].project_image.key, height: 200, width: 400, overflow: :hidden, cover: :fill), project_path(@preview_projects[2]) %>
-</div>
+    <div class="preview-project-two">
+        <%= link_to (cl_image_tag  @preview_projects[1].project_image.key, overflow: :hidden), project_path(@preview_projects[1]) %>
+        <div class="preview-cover">
+            <div class="preview-text">
+                <%= link_to @preview_projects[1].title, project_path(@preview_projects[1]) %>
+            </div>
+            <div class="preview-programmes">
+                <% @preview_projects[1].programmes.each do |programme| %>
+                    <p><%= programme.name %></p>
+                <% end %>
+            </div>
+        </div>
+    </div>
 </div>
     <% @preview_projects.each do |project| %>
 
