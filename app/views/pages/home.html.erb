@@ -56,25 +56,19 @@
             </div>
         </div>
     </div>
-</div>
-    <% @preview_projects.each do |project| %>
-
-
-
-        <%= link_to project.title, project_path(project) %>
-
-    <% end %>
-
-
-  <% @projects.each do |project| %>
-    <%= project.title %><br>
-    <%= project.description %><br>
-    <% project.programmes.each do |programme| %>
-      <%= link_to programme.name, programme_path(programme) %><br>
-    <% end %>
-    <%= link_to "View", project_path(project) %><br>
-  <% end %>
-  <%= link_to 'View All Projects', projects_path  %>
+    <div class="preview-project-three">
+        <%= link_to (cl_image_tag  @preview_projects[2].project_image.key, overflow: :hidden), project_path(@preview_projects[2]) %>
+        <div class="preview-cover">
+            <div class="preview-text">
+                <%= link_to @preview_projects[2].title, project_path(@preview_projects[2]) %>
+            </div>
+            <div class="preview-programmes">
+                <% @preview_projects[2].programmes.each do |programme| %>
+                    <p><%= programme.name %></p>
+                <% end %>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
