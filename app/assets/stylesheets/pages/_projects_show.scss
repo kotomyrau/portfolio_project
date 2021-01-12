@@ -10,8 +10,39 @@
     }
 }
 
-.project-title {
-  h1 {
-      text-align: center;
+.project-info {
+  position: relative;
+  background-color: #B7B7A4;
+  padding: 16px 0 144px;
+
+}
+
+.project-description {
+  display: inline-block;
+  width: 50%;
+}
+.project-right {
+  display: inline-block;
+  width: 30%;
+  text-align: right;
+  float: right;
+  margin: 0;
+}
+.image-container {
+  display: grid;
+  grid-template-rows: 2fr 2fr;
+  grid-template-columns: 2fr 2fr;
+  // position: absolute;
+  // height: 500px;
+  transform: translatey(-16%);
+    width: 80%;
+    grid-gap:2vw;
+    margin: 0 auto;
+  //   align-items: center;
+  justify-content: center;
+  img {
+    height: 200px;
+    width: 500px;
+    object-fit: cover;
   }
 }
