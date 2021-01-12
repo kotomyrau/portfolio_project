@@ -1,8 +1,23 @@
-.grid-title {
-    text-align: center;
+.social-links {
+  display: inline-block;
+    align-items: center;
+
+    margin: auto 40px;
+    a{
+          background-color: blue;
+border-radius: 50%;
+
+      color: pink;
+    }
 }
 
-
+.grid-title h5{
+    color: #CB997E;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 8vh 0 2vh;
+    text-align: center;
+}
 
 .grid-container {
     display: grid;
@@ -13,7 +28,7 @@
       "pro1 pro1 pro2 pro2"
       "pro3 pro3 pro3 pro3"
       ". . . .";
-      margin: 50px 12vw;
+      margin: 4vh 12vw;
 }
 
 .preview-project-one {grid-area: pro1;}
@@ -95,11 +110,11 @@
 }
 
 .preview-programmes p {
+    display: inline-block;
     color: #fff;
     font-size: 12px;
     border: 2px solid #FFF;
     padding: 4px 4px;
-    float: left;
     margin: 0 4px;
      text-align: center;
 

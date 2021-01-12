@@ -26,10 +26,12 @@
 
 </div>
 
+
 <div class="grid-title">
-  <h5>Portfolio</h5>
+  <h5><strong>PORTFOLIO</strong></h5>
 </div>
 <div class="grid-container">
+<!--   maybe use an/add an id instead-->
     <div class="preview-project-one">
         <%= link_to (cl_image_tag  @preview_projects[0].project_image.key, overflow: :hidden), project_path(@preview_projects[0]) %>
         <div class="preview-cover">
