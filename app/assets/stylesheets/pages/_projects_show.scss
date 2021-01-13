@@ -49,7 +49,7 @@
 
 
 .image-container {
-      background-color: pink;
+    background-color: pink;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
         padding: 4vw;
         border-radius: 0.5%;
@@ -57,7 +57,7 @@
   grid-template-rows: 2fr 2fr;
   grid-template-columns: 2fr 2fr;
   // position: absolute;
-  // height: 500px;
+  height: auto;
   transform: translatey(-10%);
     width: 80%;
     grid-gap:1vw;

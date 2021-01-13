@@ -1,4 +1,4 @@
-.user-settings {
+#removeProgramme {
     display: inline-block;
     margin: auto 2vw auto 0;
     vertical-align: top;
@@ -8,11 +8,18 @@
       text-decoration: none;
       color: #FFF;
     }
-    h5 {
-      margin-top: 1vh;
-      color: #FFF;
-    }
-}
+  }
+
+  .user-settings {
+    display: inline-block;
+    float: right;
+        color: #FFF;
+      a {
+        color: #FFF;
+      text-decoration: none;
+      margin-left: 2vw;
+    } }
+
 
 .preview-programmes {
   margin: 4px 2px 4px;

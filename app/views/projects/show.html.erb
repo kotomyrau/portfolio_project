@@ -20,18 +20,22 @@
         <h5>Link</h5>
             <a href=<%= @project.link %>>Github</a>
     </div>
-        <% @project.programmes.each do |programme| %>
-            <div class="preview-programmes">
-                <%= link_to programme.name, programme_path(programme) %>
-            </div>
-            <% if user_signed_in? %>
-            <div class="user-settings">
+    <% @project.programmes.each do |programme| %>
+        <div class="preview-programmes">
+            <%= link_to programme.name, programme_path(programme) %>
+        </div>
+        <% if user_signed_in? %>
+            <div id="removeProgramme">
                 <%= link_to "×", user_project_project_programme_path(@user, @project, programme.id), method: :delete, data: { confirm: "#{programme.name} will be removed from #{@project.title}" }%>
             </div>
-          <% end %>
         <% end %>
-
-<br><h5 class="user-settings"><%= link_to "Add Programme", new_user_project_project_programme_path(@user, @project)  %></h5>
+    <% end %>
+    <% if user_signed_in? %>
+        <div class="user-settings">
+            <%= link_to "ADD SKILL ﹢", new_user_project_project_programme_path(@user, @project)  %>
+            <%= link_to "EDIT PROJECT ﹢", edit_user_project_path(@user, @project)  %>
+        </div>
+    <% end %>
 </div>
 
 <div class="image-container">
@@ -39,14 +43,3 @@
       <%= cl_image_tag (@project.project_images[image]).key, overflow: :hidden%>
     <% end %>
 </div>
-<h5>Programmes</h5>
-<% @project_programme.each do |pro|%>
-  <%= link_to pro.programme.name, programme_path(pro.programme) %>
-
-<% end %>
-
-<h5>Edit Project</h5>
-  <% if user_signed_in? %>
-    <%= link_to "Add Programme", new_user_project_project_programme_path(@user, @project)  %> <br>
-    <%= link_to "Edit this project", edit_user_project_path(@user, @project)  %>
-  <% end %>
