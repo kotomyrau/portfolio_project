@@ -27,6 +27,7 @@ class ProjectsController < ApplicationController
     @project_programme = ProjectProgramme.where(project_id: @project.id)
     @project_date = @project.project_date.strftime("%b %Y")
     @project_image = @project.project_image
+      @project_images = @project.project_images
   end
 
   def edit
