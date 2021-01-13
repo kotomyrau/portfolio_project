@@ -1,6 +1,6 @@
 .preview-programmes {
   margin: 4px 2px 0;
-  p, a {
+  a {
     display: inline-block;
     color: #fff;
     font-size: 12px;
@@ -14,4 +14,8 @@
     text-decoration: none;
     cursor: pointer;
   }
+
+}
+.user-settings {
+    color: blue;
 }

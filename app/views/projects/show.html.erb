@@ -22,8 +22,18 @@
     </div>
     <div class="preview-programmes">
         <% @project.programmes.each do |programme| %>
-            <%= link_to programme.name, programme_path(programme) %>
+
+            <div class="user-settings">
+                <% if user_signed_in? %>
+                  <%= link_to programme.name, programme_path(programme) %>
+                  <%= link_to "Remove", user_project_project_programme_path(@user, @project, programme.id), method: :delete, data: { confirm: "#{programme.name} will be removed from #{@project.title}" }%>
+                <% else %>
+                    <%= link_to programme.name, programme_path(programme) %>
+                    <%= link_to "Remove", user_project_project_programme_path(@user, @project, programme.id), method: :delete, data: { confirm: "#{programme.name} will be removed from #{@project.title}" }%>
+               <% end %>
+            </div>
         <% end %>
+
     </div>
 </div>
 
@@ -35,9 +45,7 @@
 <h5>Programmes</h5>
 <% @project_programme.each do |pro|%>
   <%= link_to pro.programme.name, programme_path(pro.programme) %>
-  <% if user_signed_in? %>
-    <%= link_to "Remove", user_project_project_programme_path(@user, @project, pro.id), method: :delete, data: { confirm: "#{pro.programme.name} will be removed from #{@project.title}" }%><br>
-  <% end %>
+
 <% end %>
 
 <h5>Edit Project</h5>

@@ -44,24 +44,30 @@
         font-weight: 200;
         text-decoration: none;
         letter-spacing: 0.1vw;
-
     }
+}
+
+.user-settings {
 
 }
 .image-container {
+      background-color: pink;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        padding: 4vw;
+        border-radius: 0.5%;
   display: grid;
   grid-template-rows: 2fr 2fr;
   grid-template-columns: 2fr 2fr;
   // position: absolute;
   // height: 500px;
-  transform: translatey(-16%);
+  transform: translatey(-10%);
     width: 80%;
-    grid-gap:2vw;
+    grid-gap:1vw;
     margin: 0 auto;
   //   align-items: center;
   justify-content: center;
   img {
-    height: 200px;
+    height: 500px;
     width: 500px;
     object-fit: cover;
   }
