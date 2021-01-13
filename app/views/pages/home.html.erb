@@ -40,7 +40,7 @@
             </div>
             <div class="preview-programmes">
                 <% @preview_projects[0].programmes.each do |programme| %>
-                    <p><%= programme.name %></p>
+                    <%= link_to programme.name, programme_path(programme) %>
                 <% end %>
             </div>
         </div>
@@ -53,7 +53,7 @@
             </div>
             <div class="preview-programmes">
                 <% @preview_projects[1].programmes.each do |programme| %>
-                    <p><%= programme.name %></p>
+                    <%= link_to programme.name, programme_path(programme) %>
                 <% end %>
             </div>
         </div>
@@ -66,7 +66,7 @@
             </div>
             <div class="preview-programmes">
                 <% @preview_projects[2].programmes.each do |programme| %>
-                    <p><%= programme.name %></p>
+                    <%= link_to programme.name, programme_path(programme) %>
                 <% end %>
             </div>
         </div>
