@@ -1,7 +1,25 @@
-.preview-programmes {
-  margin: 4px 2px 0;
-  a {
+.user-settings {
     display: inline-block;
+    margin: auto 2vw auto 0;
+    vertical-align: top;
+    padding: auto;
+    font-size: 16px;
+    a {
+      text-decoration: none;
+      color: #FFF;
+    }
+    h5 {
+      margin-top: 1vh;
+      color: #FFF;
+    }
+}
+
+.preview-programmes {
+  margin: 4px 2px 4px;
+      display: inline-block;
+
+
+  a {
     color: #fff;
     font-size: 12px;
     border: 2px solid #FFF;
@@ -15,7 +33,4 @@
     cursor: pointer;
   }
 
-}
-.user-settings {
-    color: blue;
 }

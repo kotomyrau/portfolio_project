@@ -20,21 +20,18 @@
         <h5>Link</h5>
             <a href=<%= @project.link %>>Github</a>
     </div>
-    <div class="preview-programmes">
         <% @project.programmes.each do |programme| %>
-
-            <div class="user-settings">
-                <% if user_signed_in? %>
-                  <%= link_to programme.name, programme_path(programme) %>
-                  <%= link_to "Remove", user_project_project_programme_path(@user, @project, programme.id), method: :delete, data: { confirm: "#{programme.name} will be removed from #{@project.title}" }%>
-                <% else %>
-                    <%= link_to programme.name, programme_path(programme) %>
-                    <%= link_to "Remove", user_project_project_programme_path(@user, @project, programme.id), method: :delete, data: { confirm: "#{programme.name} will be removed from #{@project.title}" }%>
-               <% end %>
+            <div class="preview-programmes">
+                <%= link_to programme.name, programme_path(programme) %>
             </div>
+            <% if user_signed_in? %>
+            <div class="user-settings">
+                <%= link_to "×", user_project_project_programme_path(@user, @project, programme.id), method: :delete, data: { confirm: "#{programme.name} will be removed from #{@project.title}" }%>
+            </div>
+          <% end %>
         <% end %>
 
-    </div>
+<br><h5 class="user-settings"><%= link_to "Add Programme", new_user_project_project_programme_path(@user, @project)  %></h5>
 </div>
 
 <div class="image-container">
