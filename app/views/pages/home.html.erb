@@ -1,4 +1,4 @@
-<div class="slideshow-container">
+<div class="text-container">
   <div class="text-slide">
     <h5>Aspiring software engineer looking for a job in Tokyo, Japan</h5>
     <p class="slide-link"><%= link_to "Read more", about_path %></p>
@@ -14,14 +14,6 @@
     <p class="slide-link"><%= link_to "Project-name", "#" %></p>
   </div>
 
-    <div class="dot-container">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
-
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 
 </div>
@@ -40,7 +32,7 @@
             </div>
             <div class="preview-programmes">
                 <% @preview_projects[0].programmes.each do |programme| %>
-                    <p><%= programme.name %></p>
+                    <%= link_to programme.name, programme_path(programme) %>
                 <% end %>
             </div>
         </div>
@@ -53,7 +45,7 @@
             </div>
             <div class="preview-programmes">
                 <% @preview_projects[1].programmes.each do |programme| %>
-                    <p><%= programme.name %></p>
+                    <%= link_to programme.name, programme_path(programme) %>
                 <% end %>
             </div>
         </div>
@@ -66,7 +58,7 @@
             </div>
             <div class="preview-programmes">
                 <% @preview_projects[2].programmes.each do |programme| %>
-                    <p><%= programme.name %></p>
+                    <%= link_to programme.name, programme_path(programme) %>
                 <% end %>
             </div>
         </div>
@@ -76,31 +68,19 @@
   <h5><%= link_to "VIEW MORE PROJECTS", projects_path %></h5>
 </div>
 <script>
-    var slideIndex = 1;
-    showSlides(slideIndex);
+    var slideIndex = 0;
+    showSlides();
 
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
+    function showSlides() {
       var i;
       var slides = document.getElementsByClassName("text-slide");
-      var dots = document.getElementsByClassName("dot");
-      if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
       slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 4000);
     }
 </script>
 

@@ -1,0 +1,44 @@
+#removeProgramme {
+    display: inline-block;
+    margin: auto 2vw auto 0;
+    vertical-align: top;
+    padding: auto;
+    font-size: 16px;
+    a {
+      text-decoration: none;
+      color: #FFF;
+    }
+  }
+
+  .user-settings {
+    display: inline-block;
+    float: right;
+    text-align: right;
+        color: #FFF;
+      a {
+        color: #FFF;
+      text-decoration: none;
+      margin-left: 2vw;
+    } }
+
+
+.preview-programmes {
+  margin: 4px 2px 4px;
+      display: inline-block;
+
+
+  a {
+    color: #fff;
+    font-size: 12px;
+    border: 2px solid #FFF;
+    padding: 4px 2px;
+    text-align: center;
+    margin: 0;
+    font-weight: 300;
+  }
+  a:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+}
