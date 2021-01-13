@@ -13,20 +13,40 @@
 .project-info {
   position: relative;
   background-color: #B7B7A4;
-  padding: 16px 0 144px;
+  padding: 16px 16vw 144px;
 
 }
 
-.project-description {
+.project-left {
+  padding-top: 16px;
   display: inline-block;
-  width: 50%;
+  width: 72%;
+  p {
+    font-size: 16px;
+    font-weight: 200;
+  }
 }
 .project-right {
-  display: inline-block;
-  width: 30%;
-  text-align: right;
-  float: right;
-  margin: 0;
+  padding-top: 16px;
+    display: inline-block;
+    float: right;
+    margin: 0 0 0 0;
+    text-align: right;
+    width: 24%;
+    text-transform: uppercase;
+
+    h5 {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    p, a {
+        color: #000000;
+        font-weight: 200;
+        text-decoration: none;
+        letter-spacing: 0.1vw;
+
+    }
+
 }
 .image-container {
   display: grid;

@@ -1,0 +1,17 @@
+.preview-programmes {
+  margin: 4px 2px 0;
+  p, a {
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+    border: 2px solid #FFF;
+    padding: 4px 2px;
+    text-align: center;
+    margin: 0;
+    font-weight: 300;
+  }
+  a:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
