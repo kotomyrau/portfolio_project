@@ -1,6 +1,5 @@
 
 <div class="session-form">
-  <div id="card-sign-up-form">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
             <div class="page-title">
@@ -17,18 +16,17 @@
               <%= f.input :password,
                           required: false,
                           input_html: { class: 'form-email'} %>
-           </div>
+
           <div class="form-actions">
               <div class="form-button">
                   <%= f.button :submit, "LOG IN" %><br>
               </div>
               <%= render "devise/shared/links" %>
-          </div>
+          </div> </div>
         </div>
           <% end %>
       </div>
 </div>
-
 
 
 
