@@ -1,0 +1,38 @@
+ .session-form {
+  width: 24%;
+  margin: auto;
+  height: auto;
+ }
+
+.form-inputs {
+  background-color: pink;
+  padding: 32px;
+  min-height: auto;
+  height: 500px;
+  margin: 4vh 0;
+  text-align: center;
+  }
+
+.input {
+    color: blue;
+    background-color: yellow;
+    margin: 4vh 0px;
+
+  }
+
+.form-actions {
+  label {
+    color: blue;
+
+  }
+  a {
+    font-size: 10px;
+    color: black;
+    /* font-weight: 200; */
+    letter-spacing: 0.08vw;
+  }
+  a:hover {
+    text-decoration: none;
+    color: yellow;
+  }
+}
