@@ -4,35 +4,82 @@
   height: auto;
  }
 
-.form-inputs {
-  background-color: pink;
-  padding: 32px;
-  min-height: auto;
-  height: 500px;
-  margin: 4vh 0;
-  text-align: center;
-  }
+// .form-inputs {
+//   background-color: pink;
+//   padding: 32px;
+//   min-height: auto;
+//   height: 500px;
+//   margin: 4vh 0;
+//   text-align: center;
+//   }
 
 .input {
     color: blue;
     background-color: yellow;
     margin: 4vh 0px;
+    input {
+      background-color: pink;
+    }
+.form-control {
+      display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #pink;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #red;
+    border-radius: 2px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  #user_email {
+    color: pink;
 
   }
+}
+
+  }
+
+
+   .form-group input{
+    background-color: transparent;
+    border: none;
+    color: pink;
+
+    border-bottom: 1px solid #F5CAC3;
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;    input:focus {
+
+      }
+    }
+
+
 
 .form-actions {
-  label {
-    color: blue;
-
-  }
   a {
     font-size: 10px;
-    color: black;
-    /* font-weight: 200; */
+    color: #000;
     letter-spacing: 0.08vw;
   }
   a:hover {
+    color: #F5CAC3;
     text-decoration: none;
-    color: yellow;
+  }
+}
+
+.form-button {
+  input {
+      border: 2px solid #000;
+
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+
+  input:hover {
+    color: pink;
+    background-color: white;
   }
 }
