@@ -89,7 +89,7 @@
   display: none;
 }
 
-#greeting-eng:hover + #aboutMe-eng, #greeting-jpn:hover + #aboutMe-jpn  {
+.about-container h5:hover + #aboutMe-eng, #greeting-jpn:hover + #aboutMe-jpn  {
   display: flex;
   justify-content: space-between;
   margin: auto 24vw;
@@ -99,23 +99,23 @@
       font-weight: 200;
       position: absolute;
       height: 100%;
-
-      p {
-         display: block;
-          margin: auto;
-      }
+      // p {
+      //    display: inline-block;
+      //     margin: auto;
+      // }
 
 }
 
 #greeting-eng, #greeting-jpn{
-    padding: 5px;
-    width: 100%;
     h5 {
       color: pink;
     font-size: 72px;
     font-weight: bold;
     vertical-align: middle;
-    margin: 0 11vw;}
+    margin: 0 2vw;
+    display: block;
+
+  }
     p {
 
     }

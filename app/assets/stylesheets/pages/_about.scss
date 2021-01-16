@@ -1,4 +1,6 @@
-
+.container-about {
+  margin: 0px 16vw;
+}
 .about-container {
     background-color: #F7EDE2;
     width: 100%;
@@ -8,7 +10,16 @@
     display: flex;
       flex-direction: column;
     justify-content: space-between;
-    margin: 4vh 0;
+    margin: 4vh 0 0;
+        h5 {
+      color: pink;
+    font-size: 72px;
+    font-weight: bold;
+    vertical-align: middle;
+    margin: 0 2vw;
+    display: inline-block;
+
+  }
 }
 
 .about {
@@ -25,7 +36,8 @@
 }
 .about-links {
   display: block;
-
+    // background-color: #FDFDFD;
+    // box-shadow: 0 0 4px rgba(0,0,0,0.2);
   margin: auto;
   text-align: center;
 
@@ -52,7 +64,7 @@
 .programmes-container {
       display: block;
 
-  margin: auto;
+  margin: 4vh auto;
   text-align: center;
 }
 .about-programmes {

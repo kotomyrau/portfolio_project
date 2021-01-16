@@ -1,51 +1,51 @@
-
-<div class="page-title">
-    <h5> ABOUT ME </h5>
-</div>
-
-<div class="about-container">
-    <div id="greeting-eng">
-        <h5>Hello!</h5>
-    </div>
-    <div id="aboutMe-eng">
-        <p>
-            japanese for about me Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias doloribus sit iure consequuntur expedita provident. Facilis reprehenderit quaerat saepe molestiae, ipsam, esse a porro dolorum quos, veritatis adipisci voluptatem magnam. Eos reprehenderit nisi, optio debitis architecto, facilis laboriosam mollitia delectus odio soluta ipsum adipisci eum autem quasi natus atque doloremque.
-        </p>
-    </div>
-    <div id="greeting-jpn">
-        <h5>こんにちは!</h5>
-    </div>
-    <div id="aboutMe-jpn">
-        <p>
-            description for about me Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias doloribus sit iure consequuntur expedita provident. Facilis reprehenderit quaerat saepe molestiae, ipsam, esse a porro dolorum quos, veritatis adipisci voluptatem magnam. Eos reprehenderit nisi, optio debitis architecto, facilis laboriosam mollitia delectus odio soluta ipsum adipisci eum autem quasi natus atque doloremque.
-        </p>
-    </div>
-</div>
-
-
-<div class="about-links">
-    <div class="basic-btn">
-        <%= link_to "DOWNLOAD RESUME", "/kmu_resume.pdf", target: :blank  %>
-    </div><br>
-    <a href="#" class="fa fa-github"></a>
-    <a href="#" class="fa fa-linkedin"></a>
-</div>
-
-<div class="sub-title">
-    <h5>Skills</h5>
-</div>
-<div class="programmes-container">
-
-
-    <div class="about-programmes">
-        <% @programmes.each do |programme| %>
-            <%= link_to programme.name, programme_path(programme) %>
-        <% end %>
-    </div>
-</div>
-
-
-
-  <br>   <div class="basic-btn">
-   <%= link_to "VIEW PORTFOLIO", projects_path  %>
+<div class="container-about">
+  <div class="page-title">
+      <h5> ABOUT ME </h5>
   </div>
+
+  <div class="about-container">
+      <h5>Hello!</h5>
+      <p id="aboutMe-eng">
+       japanese for about me Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias doloribus sit iure consequuntur expedita provident. Facilis reprehenderit quaerat saepe molestiae, ipsam, esse a porro dolorum quos, veritatis adipisci voluptatem magnam. Eos reprehenderit nisi, optio debitis architecto, facilis laboriosam mollitia delectus odio soluta ipsum adipisci eum autem quasi natus atque doloremque.
+      </p>
+
+
+      <div id="greeting-jpn">
+          <h5>こんにちは!</h5>
+      </div>
+      <div id="aboutMe-jpn">
+          <p>
+              description for about me Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias doloribus sit iure consequuntur expedita provident. Facilis reprehenderit quaerat saepe molestiae, ipsam, esse a porro dolorum quos, veritatis adipisci voluptatem magnam. Eos reprehenderit nisi, optio debitis architecto, facilis laboriosam mollitia delectus odio soluta ipsum adipisci eum autem quasi natus atque doloremque.
+          </p>
+      </div>
+  </div>
+
+
+
+  <div class="programmes-container">
+      <div class="sub-title">
+          <h5>Skills</h5>
+      </div>
+
+      <div class="about-programmes">
+          <% @programmes.each do |programme| %>
+              <%= link_to programme.name, programme_path(programme) %>
+          <% end %>
+      </div>
+  </div>
+
+  <div class="about-links">
+      <div class="basic-btn">
+          <%= link_to "DOWNLOAD RESUME", "/kmu_resume.pdf", target: :blank  %>
+      </div><br>
+      <a href="http://www.github.com/kotomyrau" class="fa fa-github" target='blank'></a>
+      <a href="https://www.linkedin.com/in/kotomyra-uchida/" class="fab fa-linkedin" target='blank'></a>
+      <a href="mailto:kotomairau@gmail.com" class="fas fa-envelope-square"></a>
+  </div>
+
+
+
+    <br>   <div class="basic-btn">
+     <%= link_to "VIEW PORTFOLIO", projects_path  %>
+    </div>
+</div>
