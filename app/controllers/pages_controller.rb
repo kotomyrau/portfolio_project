@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
 
   def about
-    @programmes = Programme.all
-
+    # @programmes = Programme.all
+    @programmes = Programme.order('name ASC')
   end
 end

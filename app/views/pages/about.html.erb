@@ -29,17 +29,21 @@
     </div><br>
     <a href="#" class="fa fa-github"></a>
     <a href="#" class="fa fa-linkedin"></a>
-
 </div>
 
 <div class="sub-title">
     <h5>Skills</h5>
 </div>
-    <% @programmes.each do |programme| %>
-<div class="preview-programmes">
-      <%= link_to programme.name, programme_path(programme) %> <br>
- </div>
-    <% end %>
+<div class="programmes-container">
+
+
+    <div class="about-programmes">
+        <% @programmes.each do |programme| %>
+            <%= link_to programme.name, programme_path(programme) %>
+        <% end %>
+    </div>
+</div>
+
 
 
   <br>   <div class="basic-btn">
