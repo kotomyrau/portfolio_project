@@ -71,9 +71,9 @@
 //   color: red;
 
 // }
-#aboutMe-jpn {
-  display: none;
-}
+// #aboutMe-jpn {
+//   display: none;
+// }
 
 // #greeting-jpn:hover + #aboutMe-jpn {
 //     display: block;
@@ -85,43 +85,43 @@
 // }
 
 
-#aboutMe-eng {
-  display: none;
-}
+// #aboutMe-eng {
+//   display: none;
+// }
 
-.about-container h5:hover + #aboutMe-eng, #greeting-jpn:hover + #aboutMe-jpn  {
-  display: flex;
-  justify-content: space-between;
-  margin: auto 24vw;
-  text-align: center;
-  color: #000;
-      font-size: 16px;
-      font-weight: 200;
-      position: absolute;
-      height: 100%;
-      // p {
-      //    display: inline-block;
-      //     margin: auto;
-      // }
+// #greeting-eng:hover + #aboutMe-eng, #greeting-jpn:hover + #aboutMe-jpn  {
+//   display: flex;
+//   justify-content: space-between;
+//   margin: auto 24vw;
+//   text-align: center;
+//   color: #000;
+//       font-size: 16px;
+//       font-weight: 200;
+//       position: absolute;
+//       height: 100%;
+//       // p {
+//       //    display: inline-block;
+//       //     margin: auto;
+//       // }
 
-}
+// }
 
-#greeting-eng, #greeting-jpn{
-    h5 {
-      color: pink;
-    font-size: 72px;
-    font-weight: bold;
-    vertical-align: middle;
-    margin: 0 2vw;
-    display: block;
+// #greeting-eng, #greeting-jpn{
+//     h5 {
+//       color: pink;
+//     font-size: 72px;
+//     font-weight: bold;
+//     vertical-align: middle;
+//     margin: 0 2vw;
+//     display: block;
 
-  }
-    p {
+//   }
+//     p {
 
-    }
-}
+//     }
+// }
 
-#greeting-jpn {
-  text-align: right;
+#greeting-jpn h5 {
+  float: right;
 }
 
