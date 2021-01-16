@@ -5,7 +5,7 @@
 
 <div class="about-container">
     <div id="greeting-eng">
-        <h5>Hello</h5>
+        <h5>Hello!</h5>
     </div>
     <div id="aboutMe-eng">
         <p>
@@ -21,17 +21,27 @@
         </p>
     </div>
 </div>
+
+
 <div class="about-links">
     <div class="basic-btn">
         <%= link_to "DOWNLOAD RESUME", "/kmu_resume.pdf", target: :blank  %>
     </div><br>
     <a href="#" class="fa fa-github"></a>
-    <a href="#" class="fa fa-twitter"></a>
+    <a href="#" class="fa fa-linkedin"></a>
 
 </div>
 
+<div class="sub-title">
+    <h5>Skills</h5>
+</div>
+    <% @programmes.each do |programme| %>
+<div class="preview-programmes">
+      <%= link_to programme.name, programme_path(programme) %> <br>
+ </div>
+    <% end %>
 
-  <h5>Skills</h5>
-  <% @programmes.each do |programme| %>
-    <%= link_to programme.name, programme_path(programme) %> <br>
-  <% end %>
+
+  <br>   <div class="basic-btn">
+   <%= link_to "VIEW PORTFOLIO", projects_path  %>
+  </div>

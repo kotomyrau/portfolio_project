@@ -1,3 +1,16 @@
+
+.about-container {
+    background-color: #F7EDE2;
+    width: 100%;
+    position: relative;
+    min-height: 300px;
+    height: 500px;
+    display: flex;
+      flex-direction: column;
+    justify-content: space-between;
+    margin: 4vh 0;
+}
+
 .about {
   background-color: #84A59D;
   width: 100%;
@@ -11,12 +24,15 @@
   }
 }
 .about-links {
-  dsplay: block;
+  display: block;
+
   margin: auto;
   text-align: center;
 
   a {
-    color: pink;
+        margin: 2vh 1vw;
+    font-size: 40px;
+    color: #84A59D;
   }
 }
 
@@ -24,10 +40,10 @@
 .basic-btn {
 
   display:inline-block;
-  border: 2px solid #000;
+  border: 2px solid #2f2f2f;
   padding: 2px;
   a{
-    color: #000;
+    color: #2f2f2f;
     font-size: 16px;
     font-weight: bold;
   }
