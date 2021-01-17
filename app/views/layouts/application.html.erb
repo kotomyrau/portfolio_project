@@ -37,8 +37,16 @@
         <p class="alert"><%= alert %></p>
     </body>
     <footer>
-        <a href="#" class="fa fa-facebook"></a>
-        <a href="#" class="fa fa-twitter"></a>
+
+          <%= link_to "DOWNLOAD RESUME", "/kmu_resume.pdf", target: :blank  %>
+  <br>
+          <a href="http://www.github.com/kotomyrau" class="fa fa-github" target='blank'></a>
+          <a href="https://www.linkedin.com/in/kotomyra-uchida/" class="fab fa-linkedin" target='blank'></a>
+          <a href="mailto:kotomairau@gmail.com" class="fas fa-envelope-square"></a>
+
+
+          <%= link_to "VIEW PORTFOLIO", projects_path  %>
+
 
     </footer>
 </html>
