@@ -9,7 +9,6 @@
     height: 500px;
     display: flex;
     flex-direction: column;
-    // align-items: center;
     justify-content: space-between;
     margin: 4vh 0 0;
         // h5 {
@@ -20,44 +19,82 @@
         //     margin: 0 2vw;
         //     display: inline-block;
         // }
-        p {
+      #bioEng, #bioJpn  {
             display: none;
         }
         // h5:hover + #aboutMe-eng {
         //   color: #000;}
 }
-.row {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    h5 {
-            color: pink;
-            font-size: 72px;
-            font-weight: bold;
-            vertical-align: middle;
-            margin: 0 2vw;
-            display: inline-block;
-        }
+// .row {
+//     // display: flex;
+//     // flex-direction: column;
+//     // justify-content: space-between;
+//     // h5 {
+//     //         color: pink;
+//     //         font-size: 72px;
+//     //         font-weight: bold;
+//     //         vertical-align: middle;
+//     //         margin: 0 2vw;
+//     //         display: inline-block;
+//     //     }
+// }
+
+#greetingEng, #greetingJpn {
+  color: pink;
+  font-size: 72px;
+  font-weight: bold;
+  vertical-align: middle;
+  margin: 0 2vw;
+  display: inline-block;
+  }
+
+// #bioEng, #bioJpn {
+//     display:none;
+//   }
+
+
+#greetingJpn {
+  text-align: right;
 }
 
-#english h5:hover + #aboutMe-eng, #japanese h5:hover  + #aboutMe-jpn {
-  color: yellow;
+
+#greetingEng:hover + #bioEng, #greetingJpn:hover + #bioJpn  {
+  color: black;
   cursor: pointer;
-    display: flex;
-  justify-content: space-between;
-  margin: auto 24vw;
-  text-align: center;
-  color: #000;
-      font-size: 16px;
-      font-weight: 200;
-      position: absolute;
-      height: 100%;
-      p {
-         display: inline-block;
-          margin: auto;
-      }
+  display: flex;
+  margin: 0 8vw;
+  text-align: justify;
+  transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
 
+//     display: flex;
+//   justify-content: space-between;
+//   margin: auto 24vw;
+//   text-align: center;
+//   color: #000;
+//       font-size: 16px;
+//       font-weight: 200;
+//       position: absolute;
+//       height: 100%;
 }
+
+// #greetingJpn:hover + #bioJpn {
+//   color: black;
+//   cursor: pointer;
+//   display: block;
+//   margin: auto;
+//   position: absolute;
+// //     display: flex;
+// //   justify-content: space-between;
+// //   margin: auto 24vw;
+// //   text-align: center;
+// //   color: #000;
+// //       font-size: 16px;
+// //       font-weight: 200;
+// //       position: absolute;
+// //       height: 100%;
+// }
 // #greeting-eng h5:hover + #aboutMe-eng, #greeting-jpn:hover + #aboutMe-jpn  {
 //   // display: flex;
 //   // justify-content: space-between;
@@ -81,11 +118,6 @@
   margin: 4vh 0 0;
 }
 
-.greeting {
-  h1 {
-    font-size: 70px;
-  }
-}
 .about-links {
 
       text-align: center;
@@ -98,7 +130,7 @@
 
 
   a {
-        margin: 2vh 1vw;
+    margin: 2vh 1vw;
     font-size: 40px;
     color: #84A59D;
   }
