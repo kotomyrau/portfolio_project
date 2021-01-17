@@ -17,110 +17,23 @@
     }
 }
 
-.about-picture {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  overflow: hidden;
-  margin: 4vh 0 0 16vw;
 
-}
-
-
-.about-container {
-    background-color: #F7EDE2;
-    width: 100%;
-    position: relative;
-    height: 364px;
-    display: flex;
-      flex-direction: column;
-    justify-content: space-between;
-}
-// .greeting {
-//   background-color: #F6BD60;
-//   position: absolute;
-//   bottom: 0;
-//   padding: 16px;
-//     margin-left: auto;
-//     margin-right: auto;
-//     width: 8em
-
-//   h5 {
-//     margin: auto;
-//   }
-// }}
-
-// .greeting-jpn {
-//   // background-color: #F6BD60;
-//   // position: absolute;
-//   // bottom: 0;
-//   // padding: 16px;
-//   // margin: 16vh 5vw;
-
-//   // h5 {
-//   //   margin: auto;
-
-// // }}
-// }
-// .description {
-//   display:none
-// }
-// .greeting-jpn:hover + .description{
-//   display: block;
-//   color: red;
-
-// }
-#aboutMe-jpn {
-  display: none;
-}
-
-// #greeting-jpn:hover + #aboutMe-jpn {
-//     display: block;
-//   margin: 0 24vw 0 ;
-//   text-align: center;
-//   color: #000;
-//       font-size: 16px;
-//       font-weight: 200;
-// }
-
-
-#aboutMe-eng {
-  display: none;
-}
-
-#greeting-eng:hover + #aboutMe-eng, #greeting-jpn:hover + #aboutMe-jpn  {
-  display: flex;
-  justify-content: space-between;
-  margin: auto 24vw;
-  text-align: center;
-  color: #000;
-      font-size: 16px;
-      font-weight: 200;
-      position: absolute;
-      height: 100%;
-
-      p {
-         display: block;
-          margin: auto;
-      }
-
-}
-
-#greeting-eng, #greeting-jpn{
-    padding: 5px;
-    width: 100%;
-    h5 {
-      color: pink;
-    font-size: 72px;
-    font-weight: bold;
-    vertical-align: middle;
-    margin: 0 11vw;}
-    p {
+.sub-title {
+    color: #212121;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 4vh 0 2vh;
+    text-align: center;
+    letter-spacing: 0.2vw;
+    text-transform: uppercase;
+    a {
+      color: #DDBEA9;
+      text-decoration: none;
 
     }
-}
-
-#greeting-jpn {
-  text-align: right;
+    a:hover {
+       color: #CB997E;
+        font-weight: bold;
+    }
 }
 

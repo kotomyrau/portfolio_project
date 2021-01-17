@@ -1,34 +1,71 @@
-.about {
-  background-color: #84A59D;
-  width: 100%;
-  height: 150px;
-  margin: 4vh 0 0;
+.about-container {
+  margin: 0px 16vw;
+}
+.greetingBio{
+    background-color: #F28482;
+    width: 100%;
+    position: relative;
+    min-height: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 4vh 0 0;
+      #bioEng, #bioJpn  {
+            display: none;
+        }
 }
 
-.greeting {
-  h1 {
-    font-size: 70px;
-  }
-}
-.about-links {
-  dsplay: block;
-  margin: auto;
-  text-align: center;
-
-  a {
-    color: pink;
-  }
-}
-
-
-.basic-btn {
-
-  display:inline-block;
-  border: 2px solid #000;
-  padding: 2px;
-  a{
-    color: #000;
-    font-size: 16px;
+#greetingEng, #greetingJpn {
+    color: #F7EDE2;
+    font-size: 72px;
     font-weight: bold;
-  }
+    margin: 0 2vw;
+    display: inline-block;
+    // width: max-content;
 }
+
+#greetingJpn {
+    text-align: right;
+}
+
+#greetingEng:hover + #bioEng, #greetingJpn:hover + #bioJpn  {
+    color: #212121;
+    cursor: pointer;
+    display: flex;
+    margin: 0 8vw;
+    text-align: center;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    letter-spacing: 0.2vw;
+}
+
+.programmes-container {
+    display: block;
+    margin: 4vh auto;
+    text-align: center;
+}
+
+
+
+.about-links {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 16vw;
+    padding: 8vh 0;
+    border-top: 0.5px solid #212121;
+    .social-links a {
+        margin: 2vh 1vw;
+        font-size: 40px;
+        color: #84A59D;
+    }
+    .social-links a:hover {
+        text-decoration: none;
+        font-size: 44px;
+        transition: 0.4s;
+    }
+}
+

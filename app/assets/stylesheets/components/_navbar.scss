@@ -1,9 +1,9 @@
 nav {
     align-items: center;
-    background-color: #F0EFEB;
-    border-bottom: 3px solid #CB997E;
+    background-color: #FDFDFD;
+
     box-shadow: 0 0 4px rgba(0,0,0,0.2);
-    color: #CB997E;
+
     display: flex;
     height: 80px;
     justify-content: space-around;
@@ -15,7 +15,7 @@ nav {
 }
 
 .nav-title a {
-    color: #CB997E;
+    color: #212121;
     font-family: "Poppins", sans-serif;
     font-size: 24px;
     font-weight: 200;
@@ -36,7 +36,7 @@ nav {
 }
 
 .nav-links a {
-    color: #CB997E;
+    color: #2f2f2f;
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 200;
