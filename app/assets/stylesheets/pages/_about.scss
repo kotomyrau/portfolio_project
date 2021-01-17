@@ -2,7 +2,7 @@
   margin: 0px 16vw;
 }
 .about-container {
-    background-color: #F7EDE2;
+    background-color: #F28482;
     width: 100%;
     position: relative;
     min-height: 300px;
@@ -40,7 +40,7 @@
 // }
 
 #greetingEng, #greetingJpn {
-  color: pink;
+  color: #F7EDE2;
   font-size: 72px;
   font-weight: bold;
   vertical-align: middle;
@@ -63,10 +63,11 @@
   cursor: pointer;
   display: flex;
   margin: 0 8vw;
-  text-align: justify;
+  text-align: center;
   transform: translateY(-50%);
   position: absolute;
   top: 50%;
+  letter-spacing: 0.2vw;
 
 //     display: flex;
 //   justify-content: space-between;
