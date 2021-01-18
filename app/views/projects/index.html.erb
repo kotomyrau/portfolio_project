@@ -1,9 +1,16 @@
-<div class="home-container">
+
     <div class="page-title">
         <h5>ALL PROJECTS</h5>
     </div>
 
+    <div class="mySkills-btn" id="viewBy-skills">
+      <p>View by Language: </p>
+      <% @programmes.each do |programme| %>
+          <%= link_to programme.name, programme_path(programme) %>
+      <% end %>
+  </div>
 
+<div class="home-container">
     <div class="grid-container-index">
 
       <% @projects.each_with_index do |project, index| %>
