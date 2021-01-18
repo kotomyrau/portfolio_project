@@ -3,41 +3,27 @@
       <h5><%= @programme.name %></h5>
     </div>
 
-
-
     <div class="grid-container-index">
-
-      <% @project_programme.each_with_index do |project, index| %>
-
-          <div class="project-card" id="pro<%= index %>">
-              <%= link_to (cl_image_tag  project.project.project_image.key, overflow: :hidden), project_path(project.project) %>
-              <div class="project-card-text">
-                 <h5><%= link_to project.project.title, project_path(project.project) %></h5>
-              <div class="mySkills-btn">
-                <% project.project.programmes.each do |programme| %>
-                      <%= link_to programme.name, programme_path(programme) %>
-                  <% end %>
-              </div>
-
-            </div>
-
-          </div>
-
-
-
-
-
+        <% @project_programme.each_with_index do |project, index| %>
+        <div class="project-card" id="pro<%= index %>">
+            <%= link_to (cl_image_tag  project.project.project_image.key, overflow: :hidden), project_path(project.project) %>
+                <div class="project-card-text">
+                    <h5><%= link_to project.project.title, project_path(project.project) %></h5>
+                        <div class="mySkills-btn">
+                            <% project.project.programmes.each do |programme| %>
+                                <%= link_to programme.name, programme_path(programme) %>
+                            <% end %>
+                        </div>
+                </div>
+        </div>
         <% end %>
-
-      </div>
-
     </div>
     <div class="basic-btn">
-       <%= link_to 'View all Projects', projects_path %>
+        <%= link_to 'View all Projects', projects_path %>
     </div>
-
+</div>
 
 <%= link_to 'Edit this programme', edit_user_programme_path(@programme) %>
 
-</div>
+
 
