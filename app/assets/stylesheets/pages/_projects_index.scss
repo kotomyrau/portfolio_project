@@ -58,6 +58,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
+    width: fit-content;
     h5 a{
         color: #FDFDFD;
         text-decoration: none;
@@ -75,4 +76,17 @@
 
 .project-card:hover .project-card-text {
     opacity: 1;
+}
+
+.mySkills-btn {
+  a {
+      color: #FDFDFD;
+      border: 2px solid #FDFDFD;
+      font-size: 12px;
+  }
+  a:hover {
+      border: 2px solid #FDFDFD;
+      background-color: #FDFDFD;
+      color: #212121;
+  }
 }

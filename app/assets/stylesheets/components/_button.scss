@@ -23,24 +23,22 @@
 // skills button
 .mySkills-btn {
     margin: 4px 2px 4px;
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
 
     a {
-        color: #212121;
-        font-size: 14px;
-        border: 2px solid #212121;
         padding: 4px 4px;
         text-align: center;
-        margin: 0 0.25vw;
+        margin: 0.5vh 0.25vw;
         font-weight: normal;
         text-transform: lowercase;
+        white-space: nowrap;
     }
     a:hover {
         text-decoration: none;
         cursor: pointer;
-        border: 2px solid #84A59D;
-        background-color: #84A59D;
-        color: #FDFDFD;
         transition: 0.4s;
     }
 }

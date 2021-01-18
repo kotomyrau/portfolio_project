@@ -27,7 +27,7 @@
           <h5>Skills</h5>
       </div>
 
-      <div class="mySkills-btn">
+      <div class="mySkills-btn" id="about-skills">
           <% @programmes.each do |programme| %>
               <%= link_to programme.name, programme_path(programme) %>
           <% end %>
