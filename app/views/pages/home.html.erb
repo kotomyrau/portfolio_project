@@ -30,7 +30,7 @@
                 <div class="preview-text">
                     <%= link_to @preview_projects[0].title, project_path(@preview_projects[0]) %>
                 </div>
-                <div class="preview-programmes">
+                <div class="mySkills-btn">
                     <% @preview_projects[0].programmes.each do |programme| %>
                         <%= link_to programme.name, programme_path(programme) %>
                     <% end %>
