@@ -18,54 +18,55 @@
 
 </div>
 
-
-<div class="sub-title">
-  <h5><strong>LATEST PROJECTS</strong></h5>
-</div>
-<div class="grid-container">
-<!--   maybe use an/add an id instead-->
-    <div class="preview-project-one">
-        <%= link_to (cl_image_tag  @preview_projects[0].project_image.key, overflow: :hidden), project_path(@preview_projects[0]) %>
-        <div class="preview-cover">
-            <div class="preview-text">
-                <%= link_to @preview_projects[0].title, project_path(@preview_projects[0]) %>
+<div class="home-container">
+    <div class="sub-title">
+      <h5><strong>LATEST PROJECTS</strong></h5>
+    </div>
+    <div class="grid-container">
+    <!--   maybe use an/add an id instead-->
+        <div class="preview-project-one">
+            <%= link_to (cl_image_tag  @preview_projects[0].project_image.key, overflow: :hidden), project_path(@preview_projects[0]) %>
+            <div class="preview-cover">
+                <div class="preview-text">
+                    <%= link_to @preview_projects[0].title, project_path(@preview_projects[0]) %>
+                </div>
+                <div class="preview-programmes">
+                    <% @preview_projects[0].programmes.each do |programme| %>
+                        <%= link_to programme.name, programme_path(programme) %>
+                    <% end %>
+                </div>
             </div>
-            <div class="preview-programmes">
-                <% @preview_projects[0].programmes.each do |programme| %>
-                    <%= link_to programme.name, programme_path(programme) %>
-                <% end %>
+        </div>
+        <div class="preview-project-two">
+            <%= link_to (cl_image_tag  @preview_projects[1].project_image.key, overflow: :hidden), project_path(@preview_projects[1]) %>
+            <div class="preview-cover">
+                <div class="preview-text">
+                    <%= link_to @preview_projects[1].title, project_path(@preview_projects[1]) %>
+                </div>
+                <div class="preview-programmes">
+                    <% @preview_projects[1].programmes.each do |programme| %>
+                        <%= link_to programme.name, programme_path(programme) %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="preview-project-three">
+            <%= link_to (cl_image_tag  @preview_projects[2].project_image.key, overflow: :hidden), project_path(@preview_projects[2]) %>
+            <div class="preview-cover">
+                <div class="preview-text">
+                    <%= link_to @preview_projects[2].title, project_path(@preview_projects[2]) %>
+                </div>
+                <div class="preview-programmes">
+                    <% @preview_projects[2].programmes.each do |programme| %>
+                        <%= link_to programme.name, programme_path(programme) %>
+                    <% end %>
+                </div>
             </div>
         </div>
     </div>
-    <div class="preview-project-two">
-        <%= link_to (cl_image_tag  @preview_projects[1].project_image.key, overflow: :hidden), project_path(@preview_projects[1]) %>
-        <div class="preview-cover">
-            <div class="preview-text">
-                <%= link_to @preview_projects[1].title, project_path(@preview_projects[1]) %>
-            </div>
-            <div class="preview-programmes">
-                <% @preview_projects[1].programmes.each do |programme| %>
-                    <%= link_to programme.name, programme_path(programme) %>
-                <% end %>
-            </div>
-        </div>
+    <div class="basic-btn">
+      <h5><%= link_to "VIEW MORE PROJECTS", projects_path %></h5>
     </div>
-    <div class="preview-project-three">
-        <%= link_to (cl_image_tag  @preview_projects[2].project_image.key, overflow: :hidden), project_path(@preview_projects[2]) %>
-        <div class="preview-cover">
-            <div class="preview-text">
-                <%= link_to @preview_projects[2].title, project_path(@preview_projects[2]) %>
-            </div>
-            <div class="preview-programmes">
-                <% @preview_projects[2].programmes.each do |programme| %>
-                    <%= link_to programme.name, programme_path(programme) %>
-                <% end %>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="sub-title">
-  <h5><%= link_to "VIEW MORE PROJECTS", projects_path %></h5>
 </div>
 <script>
     var slideIndex = 0;
