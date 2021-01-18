@@ -1,4 +1,4 @@
-.grid-containerrr {
+.grid-container-index {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
@@ -23,11 +23,56 @@
 
 
 .project-card {
-  background-color: pink;
-  height: 240px;
+    background-color: #F6BD60;
+    height: 240px;
+    position: relative;
+    img {
+        display: block;
+        opacity: 1;
+        height: 240px;
+        width: 100%;
+        object-fit: cover;
+        transition: .5s ease;
+    }
 }
-
+#pro2, #pro6 {
+    background-color: #F28482;
+    height:320px;
+        img {
+            height: 320px;
+        }
+}
 #pro3{
-  height: 496px;
+    background-color: #84A59D;
+    height: 496px;
+        img {
+            height: 496px;
+        }
 }
 
+.project-card-text {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    h5 a{
+        color: #FDFDFD;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 0.2vw;
+        text-align: center;
+    }
+}
+.project-card:hover img {
+    opacity: 0.1;
+}
+
+
+.project-card:hover .project-card-text {
+    opacity: 1;
+}

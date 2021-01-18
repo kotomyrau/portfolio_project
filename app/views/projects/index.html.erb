@@ -10,16 +10,33 @@
     <%= link_to 'about', about_path  %>
     <%= link_to 'Return to Home', root_path  %>
 
-    <div class="grid-containerrr">
+    <div class="grid-container-index">
 
       <% @projects.each_with_index do |project, index| %>
 
           <div class="project-card" id="pro<%= index %>">
-              <%= project.title %>
-              <%= index %>
+
+                  <%= link_to (cl_image_tag  project.project_image.key, overflow: :hidden), project_path(project) %>
+              <div class="project-card-text">
+              <h5><%= link_to project.title, project_path(project) %></h5>
+              <div class="preview-programmes">
+                 <% project.programmes.each do |programme| %>
+                      <%= link_to programme.name, programme_path(programme) %>
+                  <% end %>
+              </div>
+
+            </div>
+
           </div>
+
+
+
+
+
         <% end %>
+
       </div>
 
     </div>
+
 </div>
