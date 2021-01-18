@@ -2,7 +2,9 @@
     <div class="page-title">
         <h5> ABOUT ME </h5>
     </div>
-
+    <div class="hoverMe">
+        <h5>HOVER!</h5><p>⤵</p>
+    </div>
     <div class="greetingBio">
         <div id="greetingEng" class="row">
             Hello!
@@ -23,7 +25,7 @@
           <h5>Skills</h5>
       </div>
 
-      <div class="mySkills-btn">
+      <div class="mySkills-btn" id="about-skills">
           <% @programmes.each do |programme| %>
               <%= link_to programme.name, programme_path(programme) %>
           <% end %>

@@ -1,0 +1,113 @@
+.grid-container-index {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 16px;
+  grid-template-areas:
+    "project0 project0 project1 project1"
+    "project2 project2 project2 project2"
+    "project3 project3 project4 project4"
+    "project3 project3 project5 project5"
+    "project6 project6 project6 project6"
+    "project7 project7 project8 project8";
+}
+#pro0 { grid-area: project0; }
+#pro1  { grid-area: project1; }
+#pro2 { grid-area: project2; }
+#pro3 { grid-area: project3; }
+#pro4  { grid-area: project4; }
+#pro5  { grid-area: project5; }
+#pro6 { grid-area: project6; }
+#pro7  { grid-area: project7; }
+#pro8 { grid-area: project8; }
+
+
+.project-card {
+    background-color: #F6BD60;
+    height: 240px;
+    position: relative;
+    img {
+        display: block;
+        opacity: 1;
+        height: 240px;
+        width: 100%;
+        object-fit: cover;
+        transition: .5s ease;
+    }
+}
+#pro2, #pro6 {
+    background-color: #F28482;
+    height:320px;
+        img {
+            height: 320px;
+        }
+}
+#pro3{
+    background-color: #84A59D;
+    height: 496px;
+        img {
+            height: 496px;
+        }
+}
+
+.project-card-text {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    width: fit-content;
+    h5 a{
+        color: #FDFDFD;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 0.2vw;
+        text-align: center;
+    }
+    a:hover {
+      transition: .5s ease;
+      color: black;
+    }
+}
+.project-card:hover img {
+    opacity: 0.1;
+}
+.project-card:hover .project-card-text {
+    opacity: 1;
+}
+
+.mySkills-btn {
+  a {
+      color: #FDFDFD;
+      border: 2px solid #FDFDFD;
+      font-size: 12px;
+  }
+  a:hover {
+      border: 2px solid #FDFDFD;
+      background-color: #FDFDFD;
+      color: #212121;
+  }
+}
+
+#viewBy-skills.mySkills-btn {
+  margin-left: 12vw;
+  display: inline-block;
+  margin-bottom: 4vh;
+    a {
+      color: #212121;
+      border: 2px solid #212121;
+      font-size: 12px;
+  }
+  a:hover {
+      border: 2px solid #84A59D;
+      background-color: #84A59D;
+      color: #FDFDFD;
+  }
+  p {
+    font-size: 12px;
+  }
+}

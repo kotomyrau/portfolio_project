@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
   before_action :require_login, except: [:index, :show]
   def index
-    @projects = Project.all
+    @projects = Project.order('project_date DESC')
+    @programmes = Programme.order('name ASC')
   end
 
   def new
