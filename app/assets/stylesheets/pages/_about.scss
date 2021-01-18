@@ -3,15 +3,16 @@
 }
 
 .hoverMe {
-  img {
-    position: absolute;
-    z-index: 1;
-    left: 12vw;
-  }
+    display: flex;
+
   h5 {
     font-family: 'Amatic SC', cursive;
     font-size: 32px;
     letter-spacing: 0.2vw;
+  }
+  p {
+    font-size: 24px;
+    transform: translateY(8px);
   }
 }
 .greetingBio{
