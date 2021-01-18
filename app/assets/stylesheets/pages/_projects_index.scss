@@ -68,12 +68,14 @@
         letter-spacing: 0.2vw;
         text-align: center;
     }
+    a:hover {
+      transition: .5s ease;
+      color: black;
+    }
 }
 .project-card:hover img {
     opacity: 0.1;
 }
-
-
 .project-card:hover .project-card-text {
     opacity: 1;
 }
