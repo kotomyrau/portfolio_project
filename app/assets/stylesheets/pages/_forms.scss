@@ -1,65 +1,41 @@
- .session-form {
-  width: 24%;
-  margin: auto;
-  // height: auto;
-  height: 500px;
-  vertical-align: middle;
- }
-.card-sign-up-form {
-  vertical-align: middle;
-}
-.form-inputs {
+ .form-card {
   background-color: #FFF;
-  // border: 1px solid black;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   padding: 32px;
-  min-height: auto;
+  width: 24%;
+  margin: 4vh auto;
   height: auto;
-  margin: 4vh 0;
-  text-align: center;
-  position: relative;
+  // height: 500px;
+ }
 
-  label {
-    text-transform: uppercase;
-    font-size: 12px;
-    float: left;
-  }
-}
-
-
-
-
-
-   .form-group input{
-    background-color: transparent;
-    border: none;
-    font-size: 16px;
-    font-weight: 200;
-
-
-    border-bottom: 1px solid #F5CAC3;
-    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;    input:focus {
-
-      }
+.form-inputs {
+    min-height: auto;
+    height: auto;
+    margin: 4vh auto;
+    text-align: center;
+    position: relative;
+    label {
+      text-transform: uppercase;
+      font-size: 12px;
+      float: left;
     }
-
-
+  }
 
 .form-actions {
-  align-items: center;
-  a {
-
-
-    font-size: 10px;
-    color: #000;
-    letter-spacing: 0.08vw;
+    color: #212121;
+    font-size: 12px;
+    margin-bottom: 8vh;
+    text-align: center;
+    white-space: normal;
+    a {
+        text-decoration: none;
+        color: #212121;
+    }
+    a:hover {
+      font-weight: bold;
+          transition: 0.2s;
+    }
   }
-  a:hover {
-    color: #F5CAC3;
-    text-decoration: none;
-    transition: 0.2s;
-  }
-}
 
 .form-button {
     margin: 4vh 0 1vh;
@@ -68,7 +44,9 @@
 
     color: #000;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600;
+    letter-spacing: 0.1vw;
+    text-transform: uppercase;
   }
 
 
