@@ -3,5 +3,4 @@ class Programme < ApplicationRecord
   has_many :projects, through: :project_programmes
 
   validates :name, presence: true, uniqueness: true
-  validates :skill, presence: true
 end

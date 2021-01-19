@@ -1,4 +1,4 @@
- .form-card {
+ .form-card-devise {
   background-color: #FFF;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   padding: 32px;
@@ -7,7 +7,14 @@
   height: auto;
   // height: 500px;
  }
-
+ .form-card {
+    background-color: #FFF;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 32px;
+    width: 48%;
+    margin: 4vh auto;
+    height: auto;
+ }
 .form-inputs {
     min-height: auto;
     height: auto;
@@ -20,6 +27,12 @@
       float: left;
     }
   }
+
+button, input {
+    overflow: visible;
+    text-transform: uppercase;
+    font-size: 12px;
+}
 
 .form-actions {
     color: #212121;

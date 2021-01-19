@@ -1,13 +1,20 @@
 <%= simple_form_for model, method: verb, url: url do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-    <%= f.input :title, label: "Name your project" %> <hr>
-    <%= f.input :project_image, label: "Project Cover Image", as: :file %>
-    <%= f.input :description, label: "Describe your project"%> <hr>
-    <%= f.input :project_date, html5: true %> <hr>
-    <%= f.input :contributors %> <hr>
-    <%= f.input :link %> <hr>
-    <%= f.file_field :project_images, as: :file, multiple: true%> <hr>
-  <%= f.button :submit %>
-<% end %>
+    <div class="form-inputs">
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+          <%= f.input :project_image, label: "Project Cover Image", as: :file %>
+          <%= f.input :title, label: "Name your project" %> <hr>
+          <%= f.input :description, label: "Describe your project"%> <hr>
+          <%= f.input :project_date, html5: true %> <hr>
+          <!-- f.input :contributors -->
+          <%= f.input :link %> <hr>
+          <%= f.file_field :project_images, as: :file, multiple: true%><hr>
+
+    </div>
+    <div class="form-actions">
+        <div class="form-button">
+            <%= f.button :submit %>
+        </div>
+    <% end %>
+</div>
 
