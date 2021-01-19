@@ -6,5 +6,7 @@ class Project < ApplicationRecord
 
   validates :title, presence: true, uniqueness: true
   validates :description, presence: true
-
+  validates :project_image, presence: true
+  validates :project_date, presence: true
+  validates :link, presence: true
 end

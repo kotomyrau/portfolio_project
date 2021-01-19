@@ -12,9 +12,9 @@
 
 .project-info {
   position: relative;
-  background-color: #83C5BE;
+  background-color: #F28482;
   padding: 16px 16vw 144px;
-
+  text-align: left;
 }
 
 .project-left {
@@ -42,62 +42,58 @@
         font-weight: 600;
     }
     p, a {
-        color: #000000;
+        color: #212121;
         font-weight: 200;
         text-decoration: none;
         letter-spacing: 0.1vw;
     }
 }
 
-
-// .image-container {
-//     background-color: pink;
-//     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-//         padding: 4vw;
-//         border-radius: 0.5%;
-//   display: grid;
-//   grid-template-rows: 2fr 2fr;
-//   grid-template-columns: 2fr 2fr;
-//   // position: absolute;
-//   height: auto;
-//   transform: translatey(-10%);
-//     width: 80%;
-//     grid-gap:1vw;
-//     margin: 0 auto;
-//   //   align-items: center;
-//   justify-content: center;
-//   img {
-//     height: 500px;
-//     width: 500px;
-//     object-fit: cover;
-//   }
-// }
-
-
-* {box-sizing:border-box}
-
-/* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
-  position: relative;
-   margin: 16px 16vw 144px;
-   background-color: #006D77;
-   height: 80.42895442359249vh;
-   transform: translatey(-24%);
+    background-color: #F7EDE2;
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+    justify-content: space-around;
+    margin: 16px 16vw;
+    margin-bottom: -7%;
+    max-width: 1000px;
+    position: relative;
+    transform: translateY(-24%);
+    a {
+        background: transparent;
+        color: #F28482;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        font-size: 48px;
+        justify-content: center;
+        margin: auto 2vw;
+        opacity: 0.6;
+        text-decoration: none;
+        transition: 0.8s;
+    }
+    a:hover {
+        opacity: 1;
+    }
+}
 
-  }
 
   .project-images {
-    padding: 0 20px;
-
-    display: block;
+    margin: auto;
    img {
 
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
     object-fit: cover;
-    height: 67.02412868632707vh;
-    width: 62.456627342123525vw;
+    height: 70vh;
+    width: 100%;
+  }
 }
+
+
+.show-container {
+  margin: 0;
+  text-align: center;
 }

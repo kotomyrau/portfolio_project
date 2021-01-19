@@ -1,65 +1,48 @@
- .session-form {
-  width: 24%;
-  margin: auto;
-  // height: auto;
-  height: 500px;
-  vertical-align: middle;
- }
-.card-sign-up-form {
-  vertical-align: middle;
-}
-.form-inputs {
+ .form-card-devise {
   background-color: #FFF;
-  // border: 1px solid black;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   padding: 32px;
-  min-height: auto;
+  width: 24%;
+  margin: 4vh auto;
   height: auto;
-  margin: auto 0 8vh;
-  text-align: center;
-  position: relative;
-
-  label {
-    text-transform: uppercase;
-    font-size: 12px;
-    float: left;
-  }
-}
-
-
-
-
-
-   .form-group input{
-    background-color: transparent;
-    border: none;
-    font-size: 16px;
-    font-weight: 200;
-
-
-    border-bottom: 1px solid #F5CAC3;
-    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;    input:focus {
-
-      }
+  // height: 500px;
+ }
+ .form-card {
+    background-color: #FFF;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 32px;
+    width: 48%;
+    margin: 4vh auto;
+    height: auto;
+ }
+.form-inputs {
+    min-height: auto;
+    height: auto;
+    margin: 4vh auto;
+    text-align: center;
+    position: relative;
+    label {
+      text-transform: uppercase;
+      font-size: 12px;
+      float: left;
     }
-
-
+  }
 
 .form-actions {
-  align-items: center;
-  a {
-
-
-    font-size: 10px;
-    color: #000;
-    letter-spacing: 0.08vw;
+    color: #212121;
+    font-size: 12px;
+    margin-bottom: 8vh;
+    text-align: center;
+    white-space: normal;
+    a {
+        text-decoration: none;
+        color: #212121;
+    }
+    a:hover {
+      font-weight: bold;
+          transition: 0.2s;
+    }
   }
-  a:hover {
-    color: #F5CAC3;
-    text-decoration: none;
-    transition: 0.2s;
-  }
-}
 
 .form-button {
     margin: 4vh 0 1vh;
@@ -68,15 +51,33 @@
 
     color: #000;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600;
+    letter-spacing: 0.1vw;
+    text-transform: uppercase;
   }
 
 
   input:hover {
-    color: #F5CAC3;
-    background-color: white;
-    transition: 0.2s;
-    box-shadow: inset 0 0 0 3px #F5CAC3;
+    color: #FDFDFD;
+    background-color: #f28482;
+    border: 2px solid #f28482;
+
+    transition: 0.4s;
 
   }
+}
+
+.form-otherActions {
+
+    text-align: center;
+    text-transform: uppercase;
+
+    a {
+        border-top: 0.5px solid #212121;
+        padding: 16px 32px 0;
+        font-size: 14px;
+        text-decoration: none;
+        color: #f28482;
+        font-weight: bold;
+    }
 }

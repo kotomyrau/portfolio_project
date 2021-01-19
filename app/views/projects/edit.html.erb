@@ -1,4 +1,9 @@
-<h1>edit this <%= @project.title %></h1>
-<%= render partial: 'projects/form', locals: {model: @project, url: user_project_path(@user, @project), verb: :patch} %>
-
-<%= link_to "Delete this project", user_project_path(@project), method: :delete, data: { confirm: "Are you sure you wish to delete your project?" }  %>
+<div class="form-card">
+    <div class="page-title">
+        <h5>Edit "<%=@project.title%>"</h5>
+    </div>
+    <%= render partial: 'projects/form', locals: {model: @project, url: user_project_path(@user, @project), verb: :patch} %>
+    <div class="form-otherActions">
+        <%= link_to "Delete this project", user_project_path(@project), method: :delete, data: { confirm: "Are you sure you wish to delete your project?" }  %>
+    </div>
+</div>

@@ -1,3 +1,4 @@
+<div class="show-container">
 <% if @project.project_image.attached? %>
     <div class="main-image">
         <%= cl_image_tag @project_image.key, overflow: :hidden %>
@@ -21,7 +22,7 @@
             <a href=<%= @project.link %>>Github</a>
     </div>
     <% @project.programmes.each do |programme| %>
-        <div class="preview-programmes">
+        <div id= "projectShow" class="mySkills-btn">
             <%= link_to programme.name, programme_path(programme) %>
         </div>
         <% if user_signed_in? %>
@@ -36,26 +37,29 @@
             <%= link_to "EDIT PROJECT ﹢", edit_user_project_path(@user, @project)  %>
         </div>
     <% end %>
-</div>
 
+</div>
 
 <!-- Slideshow container -->
 <div class="slideshow-container">
-
+ <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   <!-- Full-width images with number and caption text -->
     <% (0...@project_images.count).each do |image| %>
 
-      <div class="project-images">
+      <div class="project-images" style="width:100%">
           <%= cl_image_tag (@project_images[image]).key, overflow: :hidden%>
       </div>
       <% end %>
 
   <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
-<br>
 
+    <div class="basic-btn">
+      <h5><%= link_to "VIEW MORE PROJECTS", projects_path %></h5>
+    </div>
+</div>
 
 <script>
     var slideIndex = 1;
