@@ -42,7 +42,7 @@
         font-weight: 600;
     }
     p, a {
-        color: #000000;
+        color: #212121;
         font-weight: 200;
         text-decoration: none;
         letter-spacing: 0.1vw;
@@ -50,7 +50,7 @@
 }
 
 .slideshow-container {
-    background-color: #F5CAC3;
+    background-color: #F7EDE2;
     display: flex;
     flex-direction: row;
     height: 80vh;
@@ -62,14 +62,14 @@
     transform: translateY(-24%);
     a {
         background: transparent;
-        color: #FDFDFD;
+        color: #F28482;
         cursor: pointer;
         display: flex;
         flex-direction: column;
         font-size: 48px;
         justify-content: center;
         margin: auto 2vw;
-        opacity: 0.4;
+        opacity: 0.6;
         text-decoration: none;
         transition: 0.8s;
     }
