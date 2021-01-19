@@ -24,7 +24,7 @@ class ProjectProgrammesController < ApplicationController
 
     def destroy
       # @user = current_user
-      @project_programme = ProjectProgramme.find(params[:id])
+      @project_programme = ProjectProgramme.find(params[:project_programme_id])
       if @project_programme.destroy
         # flash[:notice] = "Programme has been deleted"
         redirect_to project_path(params[:project_id])
