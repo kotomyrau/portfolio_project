@@ -69,16 +69,17 @@
     flex-direction: column;
     justify-content: space-around;
     margin: 0 16vw;
-    padding: 8vh 0;
+    padding: 8vh 0 0;
     border-top: 0.5px solid #212121;
     .social-links a {
         margin: 2vh 1vw;
         font-size: 40px;
         color: #84A59D;
+        opacity: 0.8;
     }
     .social-links a:hover {
         text-decoration: none;
-        font-size: 44px;
+        opacity: 1;
         transition: 0.4s;
     }
 }
