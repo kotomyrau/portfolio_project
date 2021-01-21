@@ -12,14 +12,16 @@
         <p class="slide-link"><%= link_to "Project-name", "#" %></p>
     </div>
 </div>
-
-<div class="home-container">
+<div class="main-container">
     <% if @preview_projects.empty? %>
-        <div class="sub-title">
+        <div class="page-title">
             <h5>Currently working on projects...</h5>
         </div>
+        <div class="basic-btn">
+            <h5><%= link_to "about me", about_path %></h5>
+        </div>
     <% else %>
-        <div class="sub-title">
+        <div class="page-title">
             <h5>LATEST PROJECTS</h5>
         </div>
 
@@ -46,6 +48,9 @@
                         <h5>In Progress...</h5>
                     </div>
                 </div>
+        </div>
+        <div class="basic-btn">
+            <h5><%= link_to "about me", about_path %></h5>
         </div>
             <% else %>
                 <div class="basic-btn">

@@ -23,8 +23,10 @@
   <div class="programmes-container">
       <div class="sub-title">
           <h5>Skills</h5>
-      </div>
-
+      <% if @programmes.empty? %>
+        <p>have not been added yet</p>
+      <% end %>
+    </div>
       <div class="mySkills-btn" id="about-skills">
           <% @programmes.each do |programme| %>
               <%= link_to programme.name, programme_path(programme) %>

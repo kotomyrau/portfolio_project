@@ -1,12 +1,9 @@
 class PagesController < ApplicationController
   def home
-    @projects = Project.all
-    @preview_projects = @projects.last(3)
-    @project = @projects[1]
+    @preview_projects = Project.last(3)
   end
 
   def about
-    # @programmes = Programme.all
     @programmes = Programme.order('name ASC')
   end
 end
