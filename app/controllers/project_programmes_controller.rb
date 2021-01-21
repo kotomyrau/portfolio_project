@@ -23,6 +23,8 @@ class ProjectProgrammesController < ApplicationController
   end
 
     def destroy
+      @project = Project.find(params[:id])
+
       # @user = current_user
       @project_programme = ProjectProgramme.find(params[:project_programme_id])
       if @project_programme.destroy
