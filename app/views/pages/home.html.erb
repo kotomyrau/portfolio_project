@@ -17,9 +17,6 @@
         <div class="page-title">
             <h5>Currently working on projects...</h5>
         </div>
-        <div class="basic-btn">
-            <h5><%= link_to "about me", about_path %></h5>
-        </div>
     <% else %>
         <div class="page-title">
             <h5>LATEST PROJECTS</h5>
@@ -32,31 +29,32 @@
                     <% if preview.project_image.attached? %>
                         <%= link_to (cl_image_tag  preview.project_image.key, overflow: :hidden), project_path(preview) %>
                     <% end %>
-                <div class="project-card-text">
-                    <h5><%= link_to preview.title, project_path(preview)%></h5>
-
-                <div class="mySkills-btn">
-                    <% preview.programmes.each do |programme| %>
-                        <%= link_to programme.name, programme_path(programme) %>
-                    <% end %>
-                </div>
-              </div>
-            </div>
-            <% if preview[index + 1].nil? %>
-                <div class="project-card" id="pro<%= index + 1 %>">
                     <div class="project-card-text">
-                        <h5>In Progress...</h5>
+                        <h5><%= link_to preview.title, project_path(preview)%></h5>
+                        <div class="mySkills-btn">
+                            <% preview.programmes.each do |programme| %>
+                                <%= link_to programme.name, programme_path(programme) %>
+                            <% end %>
+                        </div>
                     </div>
                 </div>
-        </div>
-        <div class="basic-btn">
-            <h5><%= link_to "about me", about_path %></h5>
-        </div>
-            <% else %>
-                <div class="basic-btn">
-                    <h5><%= link_to "VIEW MORE PROJECTS", projects_path %></h5>
-                </div>
+                <% if (@preview_projects[index + 1].nil?) && (index <= 2) %>
+                    <div class="project-card" id="pro<%= index + 1 %>">
+                        <div class="project-card-text">
+                            <h5>In Progress...</h5>
+                        </div>
+                    </div>
+                <% end %>
             <% end %>
+        </div>
+        <% if Project.count > 3 %>
+            <div class="basic-btn">
+                <h5><%= link_to "view portfolio", projects_path %></h5>
+            </div>
+        <% else %>
+            <div class="basic-btn">
+                <h5><%= link_to "about me", about_path %></h5>
+            </div>
         <% end %>
     <% end %>
 </div>
