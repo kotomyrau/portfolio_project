@@ -22,56 +22,37 @@
         <div class="sub-title">
             <h5>LATEST PROJECTS</h5>
         </div>
-        <div class="grid-container">
-            <div class="preview-project-one">
-                <% if @preview_projects.image.attached? %>
-                    <%= link_to (cl_image_tag  @preview_projects[0].project_image.key, overflow: :hidden), project_path(@preview_projects[0]) %>
-                <% end %>
-                <div class="preview-cover">
-                    <div class="preview-text">
-                        <%= link_to @preview_projects[0].title, project_path(@preview_projects[0]) %>
-                    </div>
-                    <div class="mySkills-btn">
-                        <% @preview_projects[0].programmes.each do |programme| %>
-                            <%= link_to programme.name, programme_path(programme) %>
-                        <% end %>
+
+
+        <div class="grid-container-index">
+            <% @preview_projects.each_with_index do |preview, index| %>
+                <div class="project-card" id="pro<%= index %>">
+                    <% if preview.project_image.attached? %>
+                        <%= link_to (cl_image_tag  preview.project_image.key, overflow: :hidden), project_path(preview) %>
+                    <% end %>
+                <div class="project-card-text">
+                    <h5><%= link_to preview.title, project_path(preview)%></h5>
+
+                <div class="mySkills-btn">
+                    <% preview.programmes.each do |programme| %>
+                        <%= link_to programme.name, programme_path(programme) %>
+                    <% end %>
+                </div>
+              </div>
+            </div>
+            <% if preview[index + 1].nil? %>
+                <div class="project-card" id="pro<%= index + 1 %>">
+                    <div class="project-card-text">
+                        <h5>In Progress...</h5>
                     </div>
                 </div>
-            </div>
-            <div class="preview-project-two">
-                <% if @preview_projects.image.attached? %>
-                    <%= link_to (cl_image_tag  @preview_projects[1].project_image.key, overflow: :hidden), project_path(@preview_projects[1]) %>
-                <% end %>
-                <div class="preview-cover">
-                    <div class="preview-text">
-                        <%= link_to @preview_projects[1].title, project_path(@preview_projects[1]) %>
-                    </div>
-                    <div class="preview-programmes">
-                        <% @preview_projects[1].programmes.each do |programme| %>
-                            <%= link_to programme.name, programme_path(programme) %>
-                        <% end %>
-                    </div>
-                </div>
-            </div>
-            <div class="preview-project-three">
-                <% if @preview_projects.image.attached? %>
-                    <%= link_to (cl_image_tag  @preview_projects[2].project_image.key, overflow: :hidden), project_path(@preview_projects[2]) %>
-                <% end %>
-                <div class="preview-cover">
-                    <div class="preview-text">
-                        <%= link_to @preview_projects[2].title, project_path(@preview_projects[2]) %>
-                    </div>
-                    <div class="preview-programmes">
-                        <% @preview_projects[2].programmes.each do |programme| %>
-                            <%= link_to programme.name, programme_path(programme) %>
-                        <% end %>
-                    </div>
-                </div>
-            </div>
         </div>
-    <div class="basic-btn">
-        <h5><%= link_to "VIEW MORE PROJECTS", projects_path %></h5>
-    </div>
+            <% else %>
+                <div class="basic-btn">
+                    <h5><%= link_to "VIEW MORE PROJECTS", projects_path %></h5>
+                </div>
+            <% end %>
+        <% end %>
     <% end %>
 </div>
 
@@ -91,4 +72,3 @@
       setTimeout(showSlides, 4000);
     }
 </script>
-
