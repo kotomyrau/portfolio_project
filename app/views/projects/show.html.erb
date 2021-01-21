@@ -27,7 +27,7 @@
         </div>
         <% if user_signed_in? %>
             <div id="removeProgramme">
-                <%= link_to "×", user_project_project_programme_path(@user, @project, programme.id), method: :delete, data: { confirm: "#{programme.name} will be removed from #{@project.title}" }%>
+                <%= link_to "×", user_project_project_programme_path(@user, @project, programme.project_programmes[0]), method: :delete, data: { confirm: "#{programme.name} will be removed from #{@project.title}" }%>
             </div>
         <% end %>
     <% end %>
