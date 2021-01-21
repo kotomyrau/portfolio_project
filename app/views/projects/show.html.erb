@@ -1,66 +1,58 @@
 <div class="show-container">
-<% if @project.project_image.attached? %>
-    <div class="main-image">
-        <%= cl_image_tag @project_image.key, overflow: :hidden %>
-    </div>
- <% end %>
-
-
-
-<div class="project-info">
-    <div class="page-title">
-        <h5><strong><%= @project.title %></strong></h5>
-    </div>
-    <div class="project-left">
-        <!-- <h5>DESCRIPTION</h5> -->
-        <p><%= @project.description %></p>
-    </div>
-    <div class="project-right">
-        <h5>Date</h5>
-            <p><%= @project_date %></p>
-        <h5>Link</h5>
-            <a href=<%= @project.link %>>Github</a>
-    </div>
-    <% @project.programmes.each do |programme| %>
-        <div id= "projectShow" class="mySkills-btn">
-            <%= link_to programme.name, programme_path(programme) %>
+    <% if @project.project_image.attached? %>
+        <div class="main-image">
+            <%= cl_image_tag @project_image.key, overflow: :hidden %>
         </div>
+    <% end %>
+    <div class="project-info">
+        <div class="page-title">
+            <h5><strong><%= @project.title %></strong></h5>
+        </div>
+        <div class="project-left">
+            <p><%= @project.description %></p>
+        </div>
+        <div class="project-right">
+            <h5>Date</h5>
+            <p><%= @project_date %></p>
+            <% if @project_link.present? %>
+                <h5>Link</h5>
+                <p><a href=<%= @project.link %>>Github</a></p>
+            <% end %>
+            <% if @project_client.present? %>
+                <h5>Client</h5>
+                <p><%= @project_client %></p>
+            <% end %>
+        </div>
+        <% @project.programmes.each do |programme| %>
+            <div id= "projectShow" class="mySkills-btn">
+                <%= link_to programme.name, programme_path(programme) %>
+            </div>
+            <% if user_signed_in? %>
+                <div id="removeProgramme">
+                    <%= link_to "×", user_project_project_programme_path(@user, @project, programme.project_programmes[0]), method: :delete, data: { confirm: "#{programme.name} will be removed from #{@project.title}" }%>
+                </div>
+            <% end %>
+        <% end %>
         <% if user_signed_in? %>
-            <div id="removeProgramme">
-                <%= link_to "×", user_project_project_programme_path(@user, @project, programme.id), method: :delete, data: { confirm: "#{programme.name} will be removed from #{@project.title}" }%>
+            <div class="user-settings">
+                <%= link_to "ADD SKILL ﹢", new_user_project_project_programme_path(@user, @project)  %>
+                <%= link_to "EDIT PROJECT ﹢", edit_user_project_path(@user, @project)  %>
             </div>
         <% end %>
-    <% end %>
-    <% if user_signed_in? %>
-        <div class="user-settings">
-            <%= link_to "ADD SKILL ﹢", new_user_project_project_programme_path(@user, @project)  %>
-            <%= link_to "EDIT PROJECT ﹢", edit_user_project_path(@user, @project)  %>
-        </div>
-    <% end %>
-
-</div>
-
-<!-- Slideshow container -->
-<div class="slideshow-container">
- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <!-- Full-width images with number and caption text -->
-    <% (0...@project_images.count).each do |image| %>
-
-      <div class="project-images" style="width:100%">
-          <%= cl_image_tag (@project_images[image]).key, overflow: :hidden%>
-      </div>
-      <% end %>
-
-  <!-- Next and previous buttons -->
-
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-
+    </div>
+    <div class="slideshow-container">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <% (0...@project_images.count).each do |image| %>
+                <div class="project-images" style="width:100%">
+                    <%= cl_image_tag (@project_images[image]).key, overflow: :hidden%>
+                </div>
+            <% end %>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
     <div class="basic-btn">
       <h5><%= link_to "VIEW MORE PROJECTS", projects_path %></h5>
     </div>
 </div>
-
 <script>
     var slideIndex = 1;
   showSlides(slideIndex);
