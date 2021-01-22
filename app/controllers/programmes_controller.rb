@@ -8,7 +8,7 @@ class ProgrammesController < ApplicationController
     @programme = Programme.new(programme_params)
     @user = current_user
     if @programme.save
-      redirect_to programme_path(@programme)
+      redirect_to users_path
     else
       render :new
     end
@@ -20,20 +20,7 @@ class ProgrammesController < ApplicationController
 
     end
 
-    def edit
-      @user = current_user
-      @programme = Programme.find(params[:id])
-    end
 
-    def update
-      @user = current_user
-      @programme = Programme.find(params[:id])
-      if @programme.update(programme_params)
-        redirect_to programme_path(@programme), notice: 'Your programme was successfully modified'
-      else
-        render :edit
-      end
-    end
 
     def destroy
       @programme = Programme.find(params[:id])
