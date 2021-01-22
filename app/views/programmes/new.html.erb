@@ -1,3 +1,6 @@
-<h1>Page to create a new programme </h1>
-
-<%= render partial: 'programmes/form', locals: {model: @programme, url: user_programmes_url(@user), verb: :post} %>
+<div class="form-card">
+    <div class="page-title">
+        <h5>Add new skill</h5>
+    </div>
+    <%= render partial: 'programmes/form', locals: {model: @programme, url: user_programmes_url(@user), verb: :post} %>
+</div>

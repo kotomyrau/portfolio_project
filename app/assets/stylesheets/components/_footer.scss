@@ -7,7 +7,11 @@ footer {
     min-height: 16vh;
 
 }
-
+@media screen and (max-width: 425px) {
+  .footer-container {
+    // height: 50vh;
+  }
+}
 .footer-container {
     margin: auto;
     a {

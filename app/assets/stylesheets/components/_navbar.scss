@@ -68,7 +68,7 @@ nav {
 .burger div {
     width: 25px;
     height: 3px;
-    background-color: #CB997E;
+    background-color: #F6BD60;
     margin: 5px;
     transition: all 0.3s ease;
 }
@@ -87,17 +87,17 @@ nav {
     }
 
     .nav-title h3{
-        font-family: "Poppins", sans-serif;
         font-size: 20px;
         font-weight: 300;
     }
 
     .nav-links {
         align-items: center;
-        background-color: #EDDCD2;
+        background-color: #FDFDFD;
         display: flex;
         flex-direction: column;
-        height: 92vh;
+        height: 100%;
+        justify-content: space-around;
         padding: 0 0 80px 0;
         position: fixed;
         right: 0px;
@@ -105,13 +105,6 @@ nav {
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
         width: 100%;
-    }
-
-    .nav-links {
-        a {
-            font-size: 16px;
-            font-weight: 300;
-        }
         li {
             opacity: 0;
         }
@@ -123,7 +116,7 @@ nav {
 }
 
 // PHONE
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 425px) {
     body {
         overflow-x: hidden;
     }
@@ -133,15 +126,12 @@ nav {
         justify-content: space-between;
     }
 
-    .nav-title h3 {
-        font-family: "Poppins", sans-serif;
-        font-size: 17px;
-        font-weight: 300;
+    .nav-title a {
+        font-size: 16px;
+        font-weight: 200;
         letter-spacing: 8px;
         margin: 0;
-        padding: 0px 80px 0px 0px;
         position: relative;
-        word-wrap: break-word;
     }
 
     .burger {

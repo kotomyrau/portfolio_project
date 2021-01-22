@@ -1,9 +1,11 @@
-<%= simple_form_for model, method: verb, url: url do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-        <p>Your skill, <%= f.collection_select :programme_id, @programmes, :id, :name %>  </p>
-        <p> will be added to your project, <%= f.collection_select :project_id, @projects, :id, :title, selected: @project.id%></p><hr>
-    <div class="form-button">
-        <%= f.button :submit,"add skill"%>
-    </div>
-<% end %>
+<div class="form-inputs" id="programmeNew">
+    <%= simple_form_for model, method: verb, url: url do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+            <p>Your skill, <%= f.collection_select :programme_id, @programmes, :id, :name %>  </p>
+            <p> will be added to your project, <%= f.collection_select :project_id, @projects, :id, :title, selected: @project.id%></p><hr>
+        <div class="form-button">
+            <%= f.button :submit,"add skill"%>
+        </div>
+    <% end %>
+</div>
