@@ -1,0 +1,134 @@
+*:focus {
+    outline: none;
+}
+
+form {
+  width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+ // LOG IN / FORGOT PASS FORMS
+ .form-card-devise {
+    background-color: #FFF;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 32px;
+    width: 48vw;
+    margin: 4vh auto;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+ }
+ // NEW/EDIT FORMS
+ .form-card {
+    background-color: #FFF;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 32px;
+    width: 48%;
+    margin: 4vh auto;
+    height: auto;
+ }
+
+.form-inputs {
+    height: auto;
+    margin: 4vh 4vw;
+    min-height: auto;
+    position: relative;
+    text-align: left;
+    label {
+        text-transform: uppercase;
+        font-size: 12px;
+        text-align: left;
+    }
+}
+.form-actions {
+    color: #212121;
+    font-size: 12px;
+    margin-bottom: 8vh;
+    text-align: center;
+    white-space: normal;
+    p {
+        font-size: 12px;
+    }
+    a {
+        color: #212121;
+        text-decoration: none;
+    }
+    a:hover {
+        font-weight: bold;
+        transition: 0.2s;
+    }
+}
+.form-button {
+    margin: 4vh 0 8vh;
+    input {
+        border: 2px solid #000;
+        color: #000;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.1vw;
+        text-transform: uppercase;
+    }
+    input:hover {
+        color: #FDFDFD;
+        background-color: #f28482;
+        border: 2px solid #f28482;
+        transition: 0.4s;
+    }
+}
+.form-otherActions {
+    text-align: center;
+    text-transform: uppercase;
+    a {
+        border-top: 0.5px solid #212121;
+        color: #f28482;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 16px 32px 0;
+        text-decoration: none;
+    }
+}
+
+select {
+    background-color: #84A59D;
+    border: none;
+    border-radius: 50px;
+    color: #FDFDFD;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0 0.4vw;
+    padding: 4px 8px;
+    text-transform: lowercase;
+  }
+.form-control {
+    color: #212121;
+    padding: 0 24px;
+    /* border-radius: 50px; */
+    font-size: 16px;
+    /* width: 24vw; */
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #E8E8E8;
+    background-color: transparent !important;
+    /* text-align: center; */
+    /* margin-left: 0; */
+    margin: auto;
+
+}
+
+@media screen and (max-width: 768px) {
+ .form-card-devise {
+    width: 72vw;
+ }
+}
+
+@media screen and (max-width: 425px) {
+ .form-card-devise {
+        width: 100%;
+    margin: 0;
+    height: 100%;
+  }
+}
