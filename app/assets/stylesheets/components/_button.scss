@@ -48,3 +48,15 @@
 #projectShow.mySkills-btn {
   display: inline-block;
 }
+
+@media screen and (max-width: 425px) {
+    .basic-btn a{
+        border: 1px solid #2F2F2F;
+        padding: 4px 8px;
+        font-size: 10px;
+        font-weight: bold;
+      }
+  .mySkills-btn {
+    display: none;
+  }
+}

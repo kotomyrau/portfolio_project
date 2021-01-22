@@ -29,8 +29,8 @@
 
 
 .project-card {
-    background-color: #84A59D;
-    // background-color: #F6BD60;
+
+    background-color: #F6BD60;
     box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
     border-radius: 2px;
     height: 240px;
@@ -45,7 +45,7 @@
     }
 }
 #pro2, #pro6 {
-    background-color: #F28482;
+    background-color: #84A59D;
     height:320px;
         img {
             height: 320px;
@@ -126,4 +126,52 @@
   p {
     font-size: 12px;
   }
+}
+
+
+@media screen and (max-width: 768px) {
+  .grid-container-index {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 16px;
+      margin: 2vh 2vw;
+      grid-template-areas:
+            "project0"
+            "project1"
+            "project2";
+}
+
+    #pro2{
+      height:100px;
+        img {
+            height: 100px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+
+
+    .project-card {
+        height: 100px;
+        background: transparent;
+                img {
+            height: 100px;
+            opacity: 1;
+            z-index: 1;
+
+        }
+    }
+    .project-card-text {
+        background: #84A59D;
+        opacity: 1;
+        h5 {
+            font-size: 12px;
+            font-weight: 500;
+            margin: auto;
+            padding: 4px 8px;
+        }
+    }
 }
