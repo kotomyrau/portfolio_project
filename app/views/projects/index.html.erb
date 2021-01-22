@@ -8,12 +8,14 @@
             <h5>ALL PROJECTS</h5>
         </div>
         <div class="mySkills-btn" id="viewBy-skills">
-            <% if @programmes.present? %>
-                <p>View by Skill: </p>
-                <% @programmes.each do |programme| %>
-                    <%= link_to programme.name, programme_path(programme) %>
-                <% end %>
-            <% end %>
+          <% if @programmes.present? %>
+              <p>View by Skill:</p>
+              <% @programmes.each do |programme| %>
+                  <% if programme.project_programme_ids.empty? == false %>
+                      <%= link_to programme.name, programme_path(programme) %>
+                  <% end %>
+              <% end %>
+          <% end %>
         </div>
         <div class="grid-container-index" id="projectAll">
             <% @projects.each_with_index do |project, index| %>
@@ -21,7 +23,7 @@
                     <%= link_to (cl_image_tag  project.project_image.key, overflow: :hidden), project_path(project) %>
                         <div class="project-card-text">
                             <h5><%= link_to project.title, project_path(project) %></h5>
-                                <div class="mySkills-btn">
+                                <div class="mySkills-btn" id="homeSkills">
                                     <% project.programmes.each do |programme| %>
                                         <%= link_to programme.name, programme_path(programme) %>
                                     <% end %>
