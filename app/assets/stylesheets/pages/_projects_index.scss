@@ -7,6 +7,8 @@
     grid-template-areas:
           "project0 project0 project1 project1"
           "project2 project2 project2 project2";
+
+}
     #projectAll.grid-container-index {
         grid-template-areas:
           "project0 project0 project1 project1"
@@ -16,15 +18,6 @@
           "project6 project6 project6 project6"
           "project7 project7 project8 project8";
     }
-}
-.grid-container-show {
-    display: grid;
-    grid-gap: 32px;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    width: 640px;
-    margin: auto;
-}
 
 #pro0 { grid-area: project0; }
 #pro1  { grid-area: project1; }
