@@ -1,18 +1,18 @@
-<div class="home-container">
+<div class="main-container">
     <div class="page-title">
       <h5><%= @programme.name %></h5>
     </div>
 
-    <div class="grid-container-show">
+    <div class="grid-container-cards">
         <% @project_programme.each_with_index do |project, index| %>
         <div class="card-container">
             <div class="card-image">
                 <%= link_to (cl_image_tag  project.project.project_image.key, overflow: :hidden), project_path(project.project) %>
             </div>
             <div class="card-text">
-                <h5><%= link_to project.project.title, project_path(project.project) %></h5>
+                <h5><%= project.project.category %></h5>
+                <h3><%= link_to project.project.title, project_path(project.project) %></h3>
                 <p><%= project.project.project_date.strftime("%b %Y")%></p>
-
             </div>
         </div>
         <% end %>
@@ -21,8 +21,3 @@
         <%= link_to 'View all Projects', projects_path %>
     </div>
 </div>
-
-<%= link_to 'Edit this programme', edit_user_programme_path(@programme) %>
-
-
-

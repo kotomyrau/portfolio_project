@@ -30,6 +30,7 @@
                         <%= link_to (cl_image_tag  preview.project_image.key, overflow: :hidden), project_path(preview) %>
                     <% end %>
                     <div class="project-card-text">
+                        <h6><%= preview.category %></h6>
                         <h5><%= link_to preview.title, project_path(preview)%></h5>
                         <div class="mySkills-btn" id="homeSkills">
                             <% preview.programmes.each do |programme| %>
@@ -40,7 +41,7 @@
                 </div>
                 <% if (@preview_projects[index + 1].nil?) && (index + 1 <= 2) %>
                     <div class="project-card" id="pro<%= index + 1 %>">
-                        <div class="project-card-text">
+                        <div class="project-card-text" id="proNil">
                             <h5>In Progress...</h5>
                         </div>
                     </div>
