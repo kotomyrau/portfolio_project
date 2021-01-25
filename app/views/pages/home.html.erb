@@ -30,6 +30,7 @@
                         <%= link_to (cl_image_tag  preview.project_image.key, overflow: :hidden), project_path(preview) %>
                     <% end %>
                     <div class="project-card-text">
+                        <h6><%= preview.category %></h6>
                         <h5><%= link_to preview.title, project_path(preview)%></h5>
                         <div class="mySkills-btn" id="homeSkills">
                             <% preview.programmes.each do |programme| %>

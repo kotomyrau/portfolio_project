@@ -72,13 +72,19 @@
     transform: translate(-50%, -50%);
     margin: 0;
     width: fit-content;
+    h6 {
+    color: #FDFDFD;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-transform: uppercase;}
     h5 {
       text-transform: uppercase;
       letter-spacing: 0.2vw;
       font-weight: bold;
       font-size: 20px;
       text-align: center;
-
 
     }
     h5, a{
@@ -153,7 +159,7 @@
       }
     .project-card-text {
         background-color: #FDFDFD;
-        height: auto;
+        height: 88px;
         left: 0;
         margin: 0;
         opacity: 1;
@@ -162,21 +168,16 @@
         text-align: left;
         top: 0;
         transform: none;
-        transition: .5s ease;
         width: 100%;
         h6 {
             color: #84A59D;
             font-size: 10px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            text-transform: uppercase;
         }
         h5, a {
             color: #212121;
             font-size: 16px;
             font-weight: 600;
-            margin-bottom: 24px;
+            margin-bottom: 8px;
             text-align: left;
             text-decoration: none;
             text-transform: capitalize;
