@@ -28,7 +28,8 @@ class ProjectsController < ApplicationController
     @project_programme = ProjectProgramme.where(project_id: params[:id], programme_id: params[:id])
     @project_date = @project.project_date.strftime("%b %Y")
     @project_link = @project.link
-    @project_client = @project.contributors
+    @project_client = @project.client
+    @project_category = @project.category
     @project_image = @project.project_image
       @project_images = @project.project_images
   end
