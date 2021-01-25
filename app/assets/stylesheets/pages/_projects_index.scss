@@ -17,6 +17,15 @@
           "project7 project7 project8 project8";
     }
 }
+.grid-container-show {
+    display: grid;
+    grid-gap: 32px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    width: 640px;
+    margin: auto;
+}
+
 #pro0 { grid-area: project0; }
 #pro1  { grid-area: project1; }
 #pro2 { grid-area: project2; }
@@ -147,7 +156,11 @@
         }
     }
 
-}
+
+
+.grid-container-show {
+    width: 80%;
+}}
 
 @media screen and (max-width: 425px) {
 
@@ -164,6 +177,11 @@
     }
     .project-card-text {
         background: #84A59D;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+        border-radius: 2px;
+        transform: none;
+        top: 0 ;
+        left: 0;
         opacity: 1;
         h5 {
             font-size: 12px;

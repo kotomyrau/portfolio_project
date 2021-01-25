@@ -30,7 +30,7 @@
                                 </div>
                         </div>
                 </div>
-              <% if project[index + 1].nil? %>
+              <% if (project[index + 1].nil?)  && (index + 1 <= 2)%>
                 <div class="project-card" id="pro<%= index + 1 %>">
                     <div class="project-card-text">
                         <h5>In Progress...</h5>

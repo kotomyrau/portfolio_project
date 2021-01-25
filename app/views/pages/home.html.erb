@@ -38,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                <% if (@preview_projects[index + 1].nil?) && (index <= 2) %>
+                <% if (@preview_projects[index + 1].nil?) && (index + 1 <= 2) %>
                     <div class="project-card" id="pro<%= index + 1 %>">
                         <div class="project-card-text">
                             <h5>In Progress...</h5>
@@ -61,17 +61,17 @@
 
 <script>
     var slideIndex = 0;
-    showSlides();
+    carousel();
 
-    function showSlides() {
+    function carousel() {
       var i;
-      var slides = document.getElementsByClassName("text-slide");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+      var x = document.getElementsByClassName("text-slide");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
       }
       slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}
-      slides[slideIndex-1].style.display = "block";
-      setTimeout(showSlides, 4000);
+      if (slideIndex > x.length) {slideIndex = 1}
+      x[slideIndex-1].style.display = "block";
+      setTimeout(carousel, 2000); // Change image every 2 seconds
     }
 </script>

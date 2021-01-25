@@ -3,18 +3,17 @@
       <h5><%= @programme.name %></h5>
     </div>
 
-    <div class="grid-container-index">
+    <div class="grid-container-show">
         <% @project_programme.each_with_index do |project, index| %>
-        <div class="project-card" id="pro<%= index %>">
-            <%= link_to (cl_image_tag  project.project.project_image.key, overflow: :hidden), project_path(project.project) %>
-                <div class="project-card-text">
-                    <h5><%= link_to project.project.title, project_path(project.project) %></h5>
-                        <div class="mySkills-btn">
-                            <% project.project.programmes.each do |programme| %>
-                                <%= link_to programme.name, programme_path(programme) %>
-                            <% end %>
-                        </div>
-                </div>
+        <div class="card-container">
+            <div class="card-image">
+                <%= link_to (cl_image_tag  project.project.project_image.key, overflow: :hidden), project_path(project.project) %>
+            </div>
+            <div class="card-text">
+                <h5><%= link_to project.project.title, project_path(project.project) %></h5>
+                <p><%= project.project.project_date.strftime("%b %Y")%></p>
+
+            </div>
         </div>
         <% end %>
     </div>
