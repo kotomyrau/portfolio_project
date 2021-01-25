@@ -38,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                <% if (@preview_projects[index + 1].nil?) && (index <= 2) %>
+                <% if (@preview_projects[index + 1].nil?) && (index + 1 <= 2) %>
                     <div class="project-card" id="pro<%= index + 1 %>">
                         <div class="project-card-text">
                             <h5>In Progress...</h5>
