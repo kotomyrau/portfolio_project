@@ -17,7 +17,11 @@
 
         <nav>
             <div class="nav-title">
-                <%= link_to 'KOTOMAIRA UCHIDA', root_path %>
+                <% if user_signed_in? %>
+                    <%= link_to 'KOTOMAIRA UCHIDA', users_path %>
+                <% else %>
+                    <%= link_to 'KOTOMAIRA UCHIDA', root_path %>
+                <% end %>
             </div>
             <ul class="nav-links">
                 <li><%= link_to "HOME", root_path %></li>
