@@ -1,18 +1,8 @@
-.mystyle {
-  width: 100%;
-  padding: 25px;
-  background-color: coral;
-  color: white;
-  font-size: 25px;
-}
-
-
-
 .about-container {
-  margin: 0px 16vw;
+    margin: 0px 16vw;
 }
 
-.hoverMe {
+#hoverMe {
     display: flex;
 
   h5 {
@@ -39,8 +29,12 @@
             display: none;
         }
 }
+.greetingBio1 {
+  background-color: #F28482;
+  display: grid;
+}
 
-#greetingEng, #greetingJpn {
+#greetingEng, #greetingJpn, #bioclear {
     color: #F7EDE2;
     font-size: 72px;
     font-weight: bold;
@@ -54,6 +48,7 @@
 }
 
 #greetingEng:hover + #bioEng, #greetingJpn:hover + #bioJpn  {
+    background-color: #F28482;
     color: #212121;
     cursor: pointer;
     font-size: 16px;

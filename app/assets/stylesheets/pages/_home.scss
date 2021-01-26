@@ -9,3 +9,62 @@
     }
 }
 
+
+
+.greeting-container {
+    background-color: #F28482;
+    display: grid;
+    grid-gap: 0px;
+    grid-template-areas:
+        "english"
+        "myBio"
+        "japanese";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+}
+
+#english.greeting { grid-area: english; }
+.myBio { grid-area: myBio; }
+#japanese.greeting { grid-area: japanese; }
+
+.greeting {
+    color:  #F7EDE2;
+    font-size: 72px;
+    font-weight: bold;
+}
+#japanese {
+    text-align: right;
+}
+
+.myBio {
+    color: #212121;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 8vh 4vw;
+    text-align: center;
+}
+    #blank {
+      font-size: 20px;
+    //   // color:  #F7EDE2;
+    //   opacity: 0.5;
+      visibility: visible;
+    }
+    #eng, #japan {
+      visibility: hidden;
+    }
+
+
+    #english:hover ~ #blank, #japanese:hover ~ #blank{
+     visibility: hidden;}
+
+
+    #english:hover + #eng, #japanese:hover ~ #japan{
+     visibility: visible;}
+
+
+
+
+
+
+
