@@ -11,10 +11,8 @@
   }
 
   .user-settings {
-    // display: inline-block;
-    // float: right;
-    text-align: right;
-        color: #FFF;
+      color: #FFF;
+      text-align: right;
       a {
         color: #FFF;
       text-decoration: none;
@@ -23,8 +21,8 @@
 
 
 .preview-programmes {
-  margin: 4px 2px 4px;
       display: inline-block;
+      margin: 4px 2px 4px;
   a {
     color: #FDFDFD;
     font-size: 12px;
