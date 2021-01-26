@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :projects, only: [:index, :show]
   resources :programmes, only: [:show]
 
-  resources :users, only: :index do
+  resources :users, :path => 'account', only: :index do
     resources :projects, except: [:index, :show] do
       resources :project_programmes
     end
