@@ -1,69 +1,5 @@
-.mystyle {
-  width: 100%;
-  padding: 25px;
-  background-color: coral;
-  color: white;
-  font-size: 25px;
-}
-
-
-
 .about-container {
-  margin: 0px 16vw;
-}
-
-.hoverMe {
-    display: flex;
-
-  h5 {
-    font-family: 'Amatic SC', cursive;
-    font-size: 32px;
-    letter-spacing: 0.2vw;
-  }
-  p {
-    font-size: 24px;
-    transform: translateY(8px);
-  }
-}
-.greetingBio{
-    background-color: #F28482;
-    width: 100%;
-    position: relative;
-    min-height: 300px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 0 0 0;
-      #bioEng, #bioJpn  {
-            display: none;
-        }
-}
-
-#greetingEng, #greetingJpn {
-    color: #F7EDE2;
-    font-size: 72px;
-    font-weight: bold;
-    margin: 0 2vw;
-    display: inline-block;
-    // width: max-content;
-}
-
-#greetingJpn {
-    text-align: right;
-}
-
-#greetingEng:hover + #bioEng, #greetingJpn:hover + #bioJpn  {
-    color: #212121;
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    margin: 0 8vw;
-    text-align: center;
-    transform: translateY(-50%);
-    position: absolute;
-    top: 50%;
-    letter-spacing: 0.2vw;
+    margin: 0px 16vw;
 }
 
 .programmes-container {
@@ -113,15 +49,6 @@
         margin: 0;
       }
 
-      #greetingEng, #greetingJpn {
-    font-size: 48px;
-    font-weight: bold;
-    margin: 0 2vw;
-    text-align: center;
-}
-#greetingEng:hover + #bioEng, #greetingJpn:hover + #bioJpn  {
-    font-size: 12px;
-  }
 
   .programmes-container {
     margin: 4vh;
