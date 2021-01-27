@@ -1,7 +1,7 @@
 // main routing button
 .basic-btn {
   display:inline-block;
-  margin: auto;
+  margin: 4vh auto;
 
   a{
     border: 2px solid #2f2f2f;
@@ -46,17 +46,26 @@
 }
 
 #projectShow.mySkills-btn {
-  display: inline-block;
+    display: inline-block;
+    margin-bottom: 4vh;
+    a {
+        border: 2px solid #212121;
+        color: #212121;
+    }
 }
 
 @media screen and (max-width: 425px) {
     .basic-btn a{
         border: 1px solid #2F2F2F;
-        padding: 4px 8px;
         font-size: 10px;
         font-weight: bold;
+        padding: 4px 8px;
       }
-  // #homeSkills.mySkills-btn{
-  //   display: none;
-  // }
+    #projectShow.mySkills-btn {
+        margin-bottom: 1vh;
+        a {
+            border: 1px solid #212121;
+            font-size: 10px;
+        }
+    }
 }

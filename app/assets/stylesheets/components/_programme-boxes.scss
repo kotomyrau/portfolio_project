@@ -6,35 +6,28 @@
     font-size: 16px;
     a {
       text-decoration: none;
-      color: #FFF;
+      color: #212121;
     }
   }
 
   .user-settings {
-      color: #FFF;
+      color: #212121;
+      margin: 4vh 0;
       text-align: right;
       a {
-        color: #FFF;
+        color: #212121;
+        font-size: 12px;
       text-decoration: none;
       margin-left: 2vw;
     } }
 
-
-.preview-programmes {
-      display: inline-block;
-      margin: 4px 2px 4px;
-  a {
-    color: #FDFDFD;
-    font-size: 12px;
-    border: 2px solid #FDFDFD;
-    padding: 4px 2px;
-    text-align: center;
-    margin: 0;
-    font-weight: 300;
-  }
-  a:hover {
-    text-decoration: none;
-    cursor: pointer;
-  }
-
+@media screen and (max-width: 768px) {
+    #removeProgramme {
+        font-size: 12px;
+    }
+    .user-settings {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+    }
 }
