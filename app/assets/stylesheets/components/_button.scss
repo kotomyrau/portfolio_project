@@ -51,6 +51,11 @@
     a {
         border: 2px solid #212121;
         color: #212121;
+        transition: 0.8s;
+    }
+    a:hover {
+        color: #FDFDFD;
+        background-color: #212121;
     }
 }
 

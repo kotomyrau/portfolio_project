@@ -28,16 +28,10 @@
                                     <% project.programmes.each do |programme| %>
                                         <%= link_to programme.name, programme_path(programme) %>
                                     <% end %>
+
                                 </div>
                         </div>
                 </div>
-              <% if (project[index + 1].nil?) %>
-                <div class="project-card" id="pro<%= index + 1 %>">
-                    <div class="project-card-text" id="proNil">
-                        <h5>Project In Progress...</h5>
-                    </div>
-                </div>
-                <% end %>
             <% end %>
         </div>
     <% end %>
