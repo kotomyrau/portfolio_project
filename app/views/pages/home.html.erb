@@ -1,21 +1,30 @@
 <div class="text-container">
     <div class="text-slide">
         <h5>Aspiring software engineer looking for a job in Tokyo, Japan</h5>
-        <p class="slide-link"><%= link_to "Read more", about_path %></p>
+        <p> <%= link_to "Read more", about_path %></p>
     </div>
     <div class="text-slide">
         <h5>Currently working on a Portfolio Project</h5>
-        <p class="slide-link"><%= link_to "View Projects", projects_path %></p>
+        <p><%= link_to "View Projects", projects_path %></p>
     </div>
     <div class="text-slide">
-        <h5>My favorite project has been </h5>
-        <p class="slide-link"><%= link_to "Project-name", "#" %></p>
+        <h5>My favorite project has been <%= link_to "Project-name", "#" %></h5>
     </div>
 </div>
 <div class="main-container">
     <% if @preview_projects.empty? %>
         <div class="page-title">
-            <h5>Currently working on projects...</h5>
+            <h5>I am currently working on projects...</h5>
+            <div class="about-links">
+                <div class="basic-btn">
+                    <%= link_to "DOWNLOAD RESUME", "/kmu_resume.pdf", target: :blank  %>
+                </div><br>
+                <div class="social-links">
+                    <a href="http://www.github.com/kotomyrau" class="fa fa-github" target='blank'></a>
+                    <a href="https://www.linkedin.com/in/kotomyra-uchida/" class="fab fa-linkedin" target='blank'></a>
+                    <a href="mailto:kotomairau@gmail.com" class="fas fa-envelope-square"></a>
+                </div>
+            </div>
         </div>
     <% else %>
         <div class="page-title">
@@ -73,6 +82,6 @@
       slideIndex++;
       if (slideIndex > x.length) {slideIndex = 1}
       x[slideIndex-1].style.display = "block";
-      setTimeout(carousel, 2000); // Change image every 2 seconds
+      setTimeout(carousel, 4000); // Change image every 2 seconds
     }
 </script>
