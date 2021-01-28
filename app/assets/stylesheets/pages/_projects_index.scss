@@ -17,6 +17,7 @@
       "project6 project6 project6 project6"
       "project7 project7 project8 project8";
 }
+
 #pro0 { grid-area: project0; }
 #pro1  { grid-area: project1; }
 #pro2 { grid-area: project2; }
@@ -28,6 +29,7 @@
 #pro8 { grid-area: project8; }
 
 .project-card {
+    background-color: #84A59D;
     box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
     border-radius: 2px;
     position: relative;
@@ -56,7 +58,7 @@
         }
 }
 #pro3, #pro7, #pro8 {
-    // background-color: #F28482;
+    background-color: #F28482;
     height: 496px;
         img {
             height: 100%;
@@ -218,6 +220,14 @@
     #proNil.project-card-text {
         display: none;
     }
+
+
+    #viewBy-skills.mySkills-btn {
+    a {
+        color: #212121;
+        border: 1px solid #212121;
+        font-size: 10px;
+    }}
 }
 
 @media screen and (max-width: 425px) {
