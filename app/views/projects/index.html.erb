@@ -1,7 +1,17 @@
 <div class="main-container">
     <% if @projects.empty? %>
         <div class="page-title">
-            <h5>Currently working on projects</h5>
+            <h5>I am currently working on projects...</h5>
+            <div class="about-links">
+                <div class="basic-btn">
+                    <%= link_to "DOWNLOAD RESUME", "/kmu_resume.pdf", target: :blank  %>
+                </div><br>
+                <div class="social-links">
+                    <a href="http://www.github.com/kotomyrau" class="fa fa-github" target='blank'></a>
+                    <a href="https://www.linkedin.com/in/kotomyra-uchida/" class="fab fa-linkedin" target='blank'></a>
+                    <a href="mailto:kotomairau@gmail.com" class="fas fa-envelope-square"></a>
+                </div>
+            </div>
         </div>
     <% else %>
         <div class="page-title">

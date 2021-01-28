@@ -1,15 +1,4 @@
-#removeProgramme {
-    display: inline-block;
-    margin: auto 2vw auto 0;
-    vertical-align: top;
-    padding: auto;
-    font-size: 16px;
-    a {
-      text-decoration: none;
-      color: #212121;
-    }
-  }
-
+  // skill show
   .user-settings {
       color: #212121;
       margin: 4vh 0;
@@ -21,6 +10,28 @@
       margin-left: 2vw;
     } }
 
+    #removeProgramme {
+    display: inline-block;
+    margin: auto 2vw auto 0;
+    vertical-align: top;
+    padding: auto;
+    font-size: 16px;
+    a {
+      text-decoration: none;
+      color: #212121;
+    }
+  }
+
+// about page
+    .programmes-container {
+        display: block;
+        margin: 4vh auto;
+        text-align: center;
+    }
+
+
+
+
 @media screen and (max-width: 768px) {
     #removeProgramme {
         font-size: 12px;
@@ -30,4 +41,10 @@
         justify-content: space-around;
         text-align: center;
     }
+
+    // aboutpage
+        .programmes-container {
+        margin: 4vh;
+    }
+
 }
