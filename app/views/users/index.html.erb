@@ -2,13 +2,12 @@
     <div class="page-title">
         <h5> MY ACCOUNT </h5>
     </div>
-
     <div class="account-settings">
-            <%= link_to "View My Projects", projects_path  %>
-            <%= link_to "Add a new Project", new_user_project_path(@user)%>
-            <%= link_to "Add a new Skill", new_user_programme_path(@user)%>
-            </div>
+        <%= link_to "View My Projects", projects_path  %>
+        <%= link_to "Add a new Project", new_user_project_path(@user)%>
+        <%= link_to "Add a new Skill", new_user_programme_path(@user)%>
+    </div>
     <div class="basic-btn">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
     </div>
 </div>
