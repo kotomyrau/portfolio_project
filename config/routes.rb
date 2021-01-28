@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :users, :path => 'account', only: :index do
     resources :projects, :path => 'portfolio', except: [:index, :show] do
-      resources :project_programmes, :path => 'project_skills', only: [:new, :create]
+      resources :project_programmes, :path => 'project_skills', only: [:new, :create, :destroy]
     end
     resources :programmes, :path => 'skills', except: [:index, :show]
   end

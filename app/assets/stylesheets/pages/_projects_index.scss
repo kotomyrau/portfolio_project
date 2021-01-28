@@ -7,17 +7,17 @@
     grid-template-areas:
           "project0 project0 project1 project1"
           "project2 project2 project2 project2";
-
 }
 #projectAll.grid-container-index {
-        grid-template-areas:
-          "project0 project0 project1 project1"
-          "project2 project2 project2 project2"
-          "project3 project3 project4 project4"
-          "project3 project3 project5 project5"
-          "project6 project6 project6 project6"
-          "project7 project7 project8 project8";
-    }
+    grid-template-areas:
+      "project0 project0 project1 project1"
+      "project2 project2 project2 project2"
+      "project3 project3 project4 project4"
+      "project3 project3 project5 project5"
+      "project6 project6 project6 project6"
+      "project7 project7 project8 project8";
+}
+
 #pro0 { grid-area: project0; }
 #pro1  { grid-area: project1; }
 #pro2 { grid-area: project2; }
@@ -28,40 +28,44 @@
 #pro7  { grid-area: project7; }
 #pro8 { grid-area: project8; }
 
-
 .project-card {
-    background-color: #F6BD60;
+    background-color: #84A59D;
     box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
     border-radius: 2px;
-    height: 240px;
     position: relative;
     img {
         display: block;
         opacity: 1;
-        height: 240px;
         width: 100%;
         object-fit: cover;
         transition: .5s ease;
     }
 }
 
-#pro4 {
-  background-color: #F6BD60;
+#pro0, #pro1, #pro4, #pro5{
+    background-color: #F6BD60;
+    height: 240px;
+    img {
+      height: 100%;
+    }
 }
+
 #pro2, #pro6 {
     background-color: #84A59D;
     height:320px;
         img {
-            height: 320px;
+            height: 100%;
         }
 }
-#pro3{
-    background-color: #84A59D;
+#pro3, #pro7, #pro8 {
+    background-color: #F28482;
     height: 496px;
         img {
             height: 100%;
         }
 }
+
+
 
 .project-card-text {
     transition: .5s ease;
@@ -119,44 +123,67 @@
 }
 
 #viewBy-skills.mySkills-btn {
-  display: inline-block;
+    p {
+        display: block;
+        margin: auto;
+        width: 100%;
+    }
     a {
-      color: #212121;
-      border: 2px solid #212121;
-      font-size: 12px;
-  }
-  a:hover {
-      border: 2px solid #84A59D;
-      background-color: #84A59D;
-      color: #FDFDFD;
-  }
-  p {
-    font-size: 12px;
-  }
+        color: #212121;
+        border: 2px solid #212121;
+        font-size: 12px;
+    }
+    a:hover {
+        border: 2px solid #84A59D;
+        background-color: #84A59D;
+        color: #FDFDFD;
+    }
+    p {
+        font-size: 12px;
+    }
 }
 
 
 @media screen and (max-width: 768px) {
+    #projectAll.grid-container-index {
+      grid-gap: 0;
+      grid-template-columns: 1fr;
+      margin: 2vh 0;
+      grid-template-areas:
+            "project0"
+            "project1"
+            "project2"
+            "project3"
+            "project4"
+            "project5"
+            "project6"
+            "project7"
+            "project8";
+  }
     .grid-container-index {
         margin: 4vh 1vw;
     }
 
-    #pro2{
-        height: 100%;
-            img {
-                height: 240px;
-            }
-    }
-
-    #pro3{
-        height: 100%;
-            img {
-                height: 480px;
-            }
-    }
-    .project-card {
+#pro0, #pro1, #pro4, #pro5{
+    background-color: #F6BD60;
     height: auto;
-      }
+    img {
+      height: 240px;
+    }
+}
+
+#pro2, #pro6, #pro3, #pro7, #pro8{
+    background-color: #84A59D;
+    height:auto;
+        img {
+            height: 240px;
+        }
+}
+
+    .project-card {
+        height: auto;
+        margin-bottom: 4vh;
+    }
     .project-card-text {
         background-color: #FDFDFD;
         height: 64px;
@@ -170,7 +197,7 @@
         transform: none;
         width: 100%;
         h6 {
-            color: #84A59D;
+            color: #212121;
             font-size: 10px;
         }
         h5, a {
@@ -182,37 +209,34 @@
             text-decoration: none;
             text-transform: capitalize;
         }
-        a:hover, h5:hover {
-          display: none;
-        }
+        // a:hover, h5:hover {
+        //   display: none;
+        // }
     }
     #homeSkills.mySkills-btn {
     display: none;
     }
 
     #proNil.project-card-text {
-      background-color: transparent;
-
-        display: flex;
-        flex-direction: column;
-        height: 160px;
-        h5 {
-            color: #FDFDFD;
-            margin: 0;
-            text-align: right;
-        }
+        display: none;
     }
+
+
+    #viewBy-skills.mySkills-btn {
+    a {
+        color: #212121;
+        border: 1px solid #212121;
+        font-size: 10px;
+    }}
 }
 
 @media screen and (max-width: 425px) {
-  .grid-container-index {
-    grid-template-columns: 1fr;
-    margin: 2vh 0;
-    grid-template-areas:
-          "project0"
-          "project1"
-          "project2"; }
-
-
-
+    .grid-container-index {
+        grid-template-columns: 1fr;
+        margin: 2vh 0;
+        grid-template-areas:
+              "project0"
+              "project1"
+              "project2";
+    }
 }

@@ -6,14 +6,10 @@
     text-align: center;
     letter-spacing: 0.2vw;
     text-transform: uppercase;
-    a {
-      // color: #DDBEA9;
-      // text-decoration: none;
-
-    }
-    a:hover {
-       // color: #CB997E;
-       //  font-weight: bold;
+    p {
+        font-size: 12px;
+        font-weight: 400;
+        opacity: 0.5;
     }
 }
 
@@ -41,3 +37,9 @@ p {
      font-size: 16px;
       letter-spacing: 0.08vw;
     }
+
+@media screen and (max-width: 768px) {
+
+  .page-title {
+    margin: 4vh 0 4vh;
+}}
