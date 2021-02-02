@@ -17,7 +17,7 @@
             <p><%= @project_date %></p>
             <% if @project_link.present? %>
                 <h5>Link</h5>
-                <p><a href=<%= @project.link %>>Github</a></p>
+                <p><a href="http://<%= @project_link%>" target= "_blank">GitHub</a></p>
             <% end %>
             <% if @project_client.present? %>
                 <h5>Client</h5>
