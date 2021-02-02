@@ -16,6 +16,11 @@
     <% else %>
         <div class="page-title">
             <h5>ALL PROJECTS</h5>
+            <% if @projects.count < 2 %>
+                <p><%= @projects.count %> project</p>
+            <% else %>
+                <p><%= @projects.count %> projects</p>
+            <% end %>
         </div>
         <div class="mySkills-btn" id="viewBy-skills">
           <% if @programmes.present? %>
