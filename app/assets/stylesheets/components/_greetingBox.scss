@@ -22,7 +22,8 @@
 }
 
 #english {width: fit-content;}
-#japanese {text-align: right;}
+#japanese {text-align: right;
+    }
 
 .myBio {
     color: #212121;
@@ -30,7 +31,16 @@
     flex-direction: column;
     justify-content: center;
     margin: 4vh 8vw;
+    max-height: 300px;
     text-align: center;
+}
+
+#japan.myBio {
+  line-height: 32px;
+  -webkit-writing-mode: vertical-rl;
+  -moz-writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
+
 }
 #blank {
     color:  #F7EDE2;
