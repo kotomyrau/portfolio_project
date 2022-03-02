@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :auth_viewer
   def index
     if User.count == 0
       redirect_to new_user_registration_path

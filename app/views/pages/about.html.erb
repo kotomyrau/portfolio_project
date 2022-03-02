@@ -1,17 +1,33 @@
 <div class="about-container">
+  <div class="page-title">
+    <h5> ABOUT ME </h5>
+  </div>
+
+  <div class="greeting-container">
+    <div class="greeting" id="english">
+      hello!
+    </div>
+    <div class="myBio" id="eng">
+      <strong>First of all, thank you for taking the time to visit my portfolio.</strong> <br>I created this website in January 2021 to showcase any projects I have been working on. <br/>I am currently a Junior Software Developer who loves continuously learning, challenging and expanding my skillset. With a background in Interior Architecture, I am naturally creative and combining creativity with coding is what I have found to enjoy the most.
+    </div>
+    <div class="greeting" id="japanese">
+      こんにちわ!
+    </div>
+    <div class="myBio" id="japan">
+      はじめに、私のポートフォリオをご覧いただきありがとうございます。 私は小都と申します。クリエイティブになれることは好みますが、私は常に問題解決の課題に取り組んでいます。 この1年間、私はパイトンやジャバなどのさまざまなプログラムを学び、時には独学で勉強しました。 コンピュータープログラミングに対する興味が高まり、私はルワゴンい。の9週間のコーディングブートキャンプに参加しました。 このコースを終えた今もプログラミングを勉強を続けており、このエキサイティングな道を私のキャリアとして続けていきたいと考えています。 以下のリンクからお気軽にお問い合わせください。
+    </div>
+    <div class="myBio" id="blank">
+      Select "hello!" for english <br> 日本語をきぼうの人は、「こんにちは！」　をクリックして下さい。
+    </div>
+  </div>
     <div class="page-title">
-        <h5> ABOUT ME </h5>
+      <h5>Kotomaira Uchida</h5>
     </div>
-
-    <div class="greeting-container">
-        <div class="greeting" id="english">hello!</div>
-            <div class="myBio" id="eng"><strong>First of all, thank you for taking the time to visit my portfolio.</strong> <br>I'm Koto, I enjoy anything that lets me be creative but I am always striving for a problem-solving challenge. For the past year, I have studied and continuing to learn different programming languages such as Javascript and Python. As my interest continued to grow, I made the decision to further my knowledge by attending a 9 week coding bootcamp with Le Wagon. Now that I have graduated, I have continued studying and am keen to continue this exciting path as a career.<br>Please feel free to get in contact via the links below. </div>
-        <div class="greeting" id="japanese">こんにちわ!</div>
-            <div class="myBio" id="japan">
-はじめに、私のポートフォリオをご覧いただきありがとうございます。 私は小都と申します。クリエイティブになれることは好みますが、私は常に問題解決の課題に取り組んでいます。 この1年間、私はパイトンやジャバなどのさまざまなプログラムを学び、時には独学で勉強しました。 コンピュータープログラミングに対する興味が高まり、私はルワゴンい。の9週間のコーディングブートキャンプに参加しました。 このコースを終えた今もプログラミングを勉強を続けており、このエキサイティングな道を私のキャリアとして続けていきたいと考えています。 以下のリンクからお気軽にお問い合わせください。</div>
-        <div class="myBio" id="blank">Select "hello!" for english <br> 日本語をきぼうの人は、「こんにちは！」　をクリックして下さい。</div>
+  <% if @user.avatar.attached? %> 
+    <div class="avatar-wrapper">
+      <%= cl_image_tag @user.avatar %>
     </div>
-
+  <% end %>
   <div class="programmes-container">
       <div class="page-title">
           <h5>Skills</h5>
@@ -31,9 +47,6 @@
   </div>
 
   <div class="about-links">
-      <div class="basic-btn">
-          <%= link_to "DOWNLOAD RESUME", "/kmu_resume.pdf", target: :blank  %>
-      </div><br>
       <div class="social-links">
           <a href="http://www.github.com/kotomyrau" class="fa fa-github" target='blank'></a>
           <a href="https://www.linkedin.com/in/kotomyra-uchida/" class="fab fa-linkedin" target='blank'></a>

@@ -1,54 +1,66 @@
-
-
 .about-links {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: 4vh 16vw 8vh;
-    padding: 2vh 0 0;
-    border-top: 0.5px solid #212121;
-    .social-links a {
-        margin: 2vh 1vw;
-        font-size: 40px;
-        color: #84A59D;
-        opacity: 0.8;
-    }
-    .social-links a:hover {
-        text-decoration: none;
-        opacity: 1;
-        transition: 0.4s;
-    }
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin: 4vh 16vw 8vh;
+	padding: 2vh 0 0;
+	border-top: 0.5px solid #212121;
+	.social-links a {
+		margin: 2vh 1vw;
+		font-size: 40px;
+		color: #84a59d;
+		opacity: 0.8;
+	}
+	.social-links a:hover {
+		text-decoration: none;
+		opacity: 1;
+		transition: 0.4s;
+	}
 }
 
 #about-skills.mySkills-btn {
-  p, a {
-      color: #212121;
-      border: 2px solid #212121;
-      font-size: 14px;
-  }
-  a:hover {
-      border: 2px solid #84A59D;
-      background-color: #84A59D;
-      color: #FDFDFD;
-  }
+	p,
+	a {
+		color: #212121;
+		border: 2px solid #212121;
+		font-size: 14px;
+	}
+	a:hover {
+		border: 2px solid #84a59d;
+		background-color: #84a59d;
+		color: #fdfdfd;
+	}
 }
 
+.avatar-wrapper {
+	margin: 0 auto;
+	width: fit-content;
+	height: auto;
+	img {
+		border-radius: 50%;
+		width: 80px;
+		height: 80px;
+		object-fit: cover;
+	}
+}
 @media screen and (max-width: 768px) {
+	#about-skills.mySkills-btn {
+		margin: 0 10vw;
+		p,
+		a {
+			margin: 0.5vh 4px;
+			color: #212121;
+			border: 1px solid #212121;
+			font-size: 12px;
+		}
+	}
 
-
- #about-skills.mySkills-btn {
-  margin: 0 10vw;
-  p, a {
-      margin: .5vh 4px;
-      color: #212121;
-      border: 1px solid #212121;
-      font-size: 12px;}}
-
-  .about-links {
-    padding: 4vh 0 0;
-      .social-links a {
-        font-size: 20px;
-         margin: 2vh 8px;
-        }
-}}
+	.about-links {
+		padding: 4vh 0 0;
+		.social-links a {
+			font-size: 20px;
+			margin: 2vh 8px;
+		}
+	}
+}
