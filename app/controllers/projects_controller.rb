@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :require_login, except: [:index, :show]
+
   def index
     @projects = Project.order('project_date DESC')
     @programmes = Programme.order('name ASC')
@@ -71,6 +72,15 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :description, :project_date, :client, :category, :link, :demoLink, :project_image, project_images: [])
+    params.require(:project).permit(:title,
+                                    :description,
+                                    :project_date,
+                                    :client,
+                                    :category,
+                                    :link,
+                                    :demoLink,
+                                    :private,
+                                    :project_image,
+                                    project_images: [])
   end
 end

@@ -8,6 +8,9 @@
         <%= link_to "Add a new Skill", new_user_programme_path(@user)%>
     </div>
     <div class="basic-btn">
+        <%= link_to "Edit Account", edit_user_registration_path %>
+    </div>
+        <div class="basic-btn">
         <%= link_to "Log out", destroy_user_session_path, method: :delete %>
     </div>
 </div>

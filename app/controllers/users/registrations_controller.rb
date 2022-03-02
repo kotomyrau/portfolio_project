@@ -2,6 +2,7 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
    before_action :one_user_registered?, only: [:new, :create]
+   skip_before_action :auth_viewer
 
   protected
 

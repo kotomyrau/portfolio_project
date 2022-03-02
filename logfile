@@ -1,0 +1,8 @@
+2022-03-02 10:18:39.400 GMT [9740] LOG:  starting PostgreSQL 13.2 on x86_64-apple-darwin19.6.0, compiled by Apple clang version 12.0.0 (clang-1200.0.32.29), 64-bit
+2022-03-02 10:18:39.403 GMT [9740] LOG:  listening on IPv6 address "::1", port 5432
+2022-03-02 10:18:39.403 GMT [9740] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-03-02 10:18:39.404 GMT [9740] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-03-02 10:18:39.408 GMT [9741] LOG:  database system was shut down at 2022-03-02 10:18:32 GMT
+2022-03-02 10:18:39.412 GMT [9740] LOG:  database system is ready to accept connections
+2022-03-02 10:18:52.664 GMT [9796] FATAL:  database "kmu_project_development" does not exist
+2022-03-02 10:18:55.177 GMT [9799] FATAL:  database "kmu_project_development" does not exist
