@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :auth_viewer
+  # skip_before_action :auth_viewer
 
   def home
     @preview_projects = Project.where(private: false).last(3)

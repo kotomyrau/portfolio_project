@@ -1,0 +1,88 @@
+// app/assets/stylesheets/base/_typography.scss
+
+// Primary Typography
+p, .t-text {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+figcaption, .t-caption, .t-label {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1rem;
+}
+
+.t-small {
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1rem;
+}
+
+.t-gray {
+  color: $gray-darkest
+}
+
+.t-weight--medium {
+  font-weight: 500;
+}
+
+.t-align--center {
+  text-align: center;
+}
+
+.t-info {
+  color: $info-darkest;
+}
+
+.t-success {
+  color: $success-darkest;
+}
+
+.t-warning {
+  color: $warning-darkest;
+}
+
+.t-danger {
+  color: $danger-darker;
+}
+
+// Secondary Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-secondary;
+  font-weight: 600;
+
+  & * {
+    font-family: $font-secondary;
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+h4 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+h5 {
+  font-size: 0.875rem;
+  line-height: 1rem;
+}
+
+h6 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}

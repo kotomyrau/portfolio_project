@@ -13,4 +13,9 @@ Rails.application.routes.draw do
     end
     resources :programmes, :path => 'skills', except: [:index, :show]
   end
+
+  namespace :admin do
+    get "/", to: "dashboards#dashboard", as: :dashboard
+    resources :projects
+  end
 end

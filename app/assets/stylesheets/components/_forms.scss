@@ -66,30 +66,30 @@ form {
         transition: 0.2s;
     }
 }
+//
+//input {
+//    color: #212121 !important;
+//    font-size: 12px;
+//    text-transform: uppercase;
+//  }
 
-input {
-    color: #212121 !important;
-    font-size: 12px;
-    text-transform: uppercase;
-  }
-
-.form-button {
-    margin: 4vh 0 8vh;
-    input {
-        border: 2px solid #000;
-        color: #000;
-        font-size: 16px;
-        font-weight: 600;
-        letter-spacing: 0.1vw;
-        text-transform: uppercase;
-    }
-    input:hover {
-        color: #FDFDFD;
-        background-color: #f28482;
-        border: 2px solid #f28482;
-        transition: 0.4s;
-    }
-}
+//.form-button {
+//    margin: 4vh 0 8vh;
+//    input {
+//        border: 2px solid #000;
+//        color: #000;
+//        font-size: 16px;
+//        font-weight: 600;
+//        letter-spacing: 0.1vw;
+//        text-transform: uppercase;
+//    }
+//    input:hover {
+//        color: #FDFDFD;
+//        background-color: #f28482;
+//        border: 2px solid #f28482;
+//        transition: 0.4s;
+//    }
+//}
 .form-otherActions {
     text-align: center;
     text-transform: uppercase;
