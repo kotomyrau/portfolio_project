@@ -3,11 +3,11 @@ class PagesController < ApplicationController
 
   def home
     @preview_projects = Project.where(private: false).last(3)
-    @user = User.find_by(email: "koto@admin.com")
+    @user = User.find_by(email: "kotomairau@gmail.com")
   end
 
   def about
-    @user = User.find_by(email: "koto@admin.com")
+    @user = User.find_by(email: "kotomairau@gmail.com")
     @programmes = Programme.order('name ASC')
   end
 end
