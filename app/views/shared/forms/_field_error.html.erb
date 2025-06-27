@@ -1,0 +1,6 @@
+<% if errors.present? %>
+  <div class="field__error">
+    <%= inline_svg_tag "icons/error.svg", class: "icon" %>
+    <span class="t-small"><%= errors.to_sentence.humanize %></span>
+  </div>
+<% end %>

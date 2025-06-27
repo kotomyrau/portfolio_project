@@ -1,5 +1,41 @@
 <%= form_with model: [:admin, project], data: { controller: "" , turbo: false } do |f| %>
 
+
+  <div class="field">
+    <%= f.label :title, class: "field__label t-label" %>
+    <%= render partial: "shared/forms/field_error", locals: { errors: project.errors[:title] } %>
+    <%= f.text_field :title, autofocus: true, required: true, min: 2, max: 100, class: "field__input" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, class: "field__label t-label" %>
+    <%= render partial: "shared/forms/field_error", locals: { errors: project.errors[:description] } %>
+    <%= f.textarea :description, required: false, min: 2, max: 1000, placeholder: "Explain a bit about your project", class: "field__input" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :company, class: "field__label t-label" %>
+    <%= render partial: "shared/forms/field_error", locals: { errors: project.errors[:company] } %>
+    <%= f.text_field :company, autofocus: true, required: false, min: 2, max: 100, class: "field__input" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_date, class: "field__label t-label" %>
+    <%= render partial: "shared/forms/field_error", locals: { errors: project.errors[:start_date] } %>
+    <%= f.month_field :start_date, required: false, class: "field__input" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_date, class: "field__label t-label" %>
+    <%= render partial: "shared/forms/field_error", locals: { errors: project.errors[:end_date] } %>
+    <%= f.month_field :end_date, required: false, class: "field__input" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :link, class: "field__label t-label" %>
+    <%= f.url_field :link, required: false, class: "field__input" %>
+  </div>
+
   <div class="form__actions">
     <%= f.submit "Create Project", class: "btn btn--primary" %>
   </div>

@@ -8,12 +8,11 @@ class Admin::ProjectsController < Admin::BaseController
   def project_params
     params.require(:project).permit(:title,
                                     :description,
-                                    :project_date,
-                                    :client,
-                                    :category,
-                                    :link,
-                                    :demoLink,
                                     :private,
+                                    :company,
+                                    :start_date,
+                                    :end_date,
+                                    :link,
                                     :project_image,
                                     project_images: [])
   end

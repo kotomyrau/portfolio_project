@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2022_03_02_112203) do
+ActiveRecord::Schema[8.0].define(version: 2021_01_19_162155) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -53,14 +53,13 @@ ActiveRecord::Schema[8.0].define(version: 2022_03_02_112203) do
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.date "project_date"
-    t.text "client"
+    t.string "company"
+    t.boolean "private", default: true
     t.string "link"
+    t.date "start_date"
+    t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "category"
-    t.string "demoLink"
-    t.boolean "private", default: false
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
