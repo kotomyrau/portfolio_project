@@ -5,7 +5,7 @@ class UsersSeed
       User.create!(
         email: "kotomairau@gmail.com",
         password: 'test1234',
-        about: "My name is Kotomaira, I am a software engineer and I love coding."
+        role: :admin
       )
       print "\nuser: #{email}\n"
     end

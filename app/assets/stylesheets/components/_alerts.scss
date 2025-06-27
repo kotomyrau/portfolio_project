@@ -1,0 +1,62 @@
+// app/assets/stylesheets/base/_alerts.scss
+
+.alert {
+  align-items: center;
+  background-color: $white;
+  border: 1px solid $gray-lightest;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  gap: 0.5rem;
+  left: 50%;
+  opacity: 0;
+  padding: 1rem;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transform: translate(-50%, calc(#{$navbar-height} + 1rem)) scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: calc(#{$navbar-index} + 1);
+
+  &--active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, calc(#{$navbar-height} + 1rem)) scale(1);
+  }
+
+  &--info {
+    background-color: $info-lightest;
+    border-color: $info-darker;
+
+    .icon {
+      color: $info-darker;
+    }
+  }
+
+  &--success {
+    background-color: $success-lightest;
+    border-color: $success-darker;
+
+    .icon {
+      color: $success-darker;
+    }
+  }
+
+  &--warning {
+    background-color: $warning-lightest;
+    border-color: $warning-darker;
+
+    .icon {
+      color: $warning-darker;
+    }
+  }
+
+  &--danger {
+    background-color: $danger-lightest;
+    border-color: $danger-darker;
+
+    .icon {
+      color: $danger-darker;
+    }
+  }
+}

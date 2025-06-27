@@ -1,0 +1,33 @@
+<main>
+  <header class="page-header">
+    <div class="page-header__top">
+      <h5>
+        Admin Dashboard
+      </h5>
+      <div class="page-header__actions">
+        <%= link_to "Add a new Project", new_admin_project_path, class: "btn btn--primary" %>
+        <div class="account-settings">
+          <%#= link_to "View My Projects", projects_path  %>
+          <%#= link_to "Add a new Skill", new_user_programme_path(@user)%>
+        </div>
+        <div class="basic-btn">
+          <%#= link_to "Edit Account", edit_user_registration_path %>
+        </div>
+
+      </div>
+    </div>
+    <div class="page-header__main">
+      <h1 class="page-header__title">Manage your Portfolio</h1>
+      <p class="page-header__subtitle">Manage your projects and skills here.</p>
+    </div>
+  </header>
+
+  <div class="page-content">
+    <div class="form" id="project-form">
+      <div class="form__header">
+        <h2 class="form__title">New Project</h2>
+      </div>
+      <%= render partial: "admin/projects/form", locals: { project: @project } %>
+    </div>
+  </div>
+</main>

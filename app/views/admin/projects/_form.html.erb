@@ -1,0 +1,6 @@
+<%= form_with model: [:admin, project], data: { controller: "" , turbo: false } do |f| %>
+
+  <div class="form__actions">
+    <%= f.submit "Create Project", class: "btn btn--primary" %>
+  </div>
+<% end %>
