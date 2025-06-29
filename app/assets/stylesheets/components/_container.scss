@@ -1,7 +1,7 @@
     .main-container {
-      margin: 0 20vw 8vh;
-      min-height: 60vh;
-      text-align: center;
+      //margin: 0 20vw 8vh;
+      //min-height: 60vh;
+      //text-align: center;
     }
 
     .about-container {
@@ -15,18 +15,18 @@
     }
 
 @media screen and (max-width: 1440px) {
-    .main-container {
-      margin: 0 12vw 8vh;
-    }
+    //.main-container {
+    //  margin: 0 12vw 8vh;
+    //}
 
     .about-container {
         margin: 0px 16vw;
     }
 }
 @media screen and (max-width: 768px) {
-    .main-container {
-      margin: 0 4vw 4vh;
-    }
+    //.main-container {
+    //  margin: 0 4vw 4vh;
+    //}
     .about-container {
         margin: 0;
     }

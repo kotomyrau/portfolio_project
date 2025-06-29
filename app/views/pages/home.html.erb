@@ -1,14 +1,6 @@
 <main>
-  <%= turbo_frame_tag "session_modal", class: "modal", data: { modal_id: "session_modal" } %>
-  <%= link_to new_user_session_path, class: "", data: { turbo_frame: "session_modal", modal_target_id: "session_modal", action: "modal#openModalViaButton" } do %>
-    asdfghjkl;
-  <% end %>
-
-  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-
-  <%= turbo_frame_tag "about_me", src: about_path, loading: :lazy do %>
-  loading...
-  <% end %>
+  <h1>Hi</h1>
+<%= Programme.all.map { |programme| programme.name } %>
 
   <%= turbo_frame_tag "portfolio", src: projects_path, loading: :lazy do %>
     loading...

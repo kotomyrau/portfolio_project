@@ -1,5 +1,10 @@
-<div class="main-container">
+<main class="main-container" id="portfolio">
   <%= turbo_frame_tag "portfolio" do %>
+    <header class="page-header">
+      <div class="page-header__main">
+        <h1 class="page-header__title">My Work</h1>
+      </div>
+    </header>
     <% if @projects.empty? %>
         <div class="page-title">
             <h5>I am currently working on projects...</h5>
@@ -15,14 +20,7 @@
             </div>
         </div>
     <% else %>
-        <div class="page-title">
-            <h5>ALL PROJECTS</h5>
-            <% if @projects.count < 2 %>
-                <p><%= @projects.count %> project</p>
-            <% else %>
-                <p><%= @projects.count %> projects</p>
-            <% end %>
-        </div>
+
         <div class="mySkills-btn" id="viewBy-skills">
           <% if @programmes.present? %>
               <p>View by Skill:</p>
@@ -33,24 +31,25 @@
               <% end %>
           <% end %>
         </div>
-        <div class="grid-container-index" id="projectAll">
-            <% @projects.each_with_index do |project, index| %>
-                <div class="project-card" id="pro<%= index %>">
-                    <%= link_to (cl_image_tag  project.project_image.key, overflow: :hidden), project_path(project) %>
-                        <div class="project-card-text">
-                            <h6> <%= project.category %> </h6>
-                            <h5><%= link_to project.title, project_path(project) %></h5>
-                                <div class="mySkills-btn" id="homeSkills">
-                                    <% project.programmes.each do |programme| %>
-                                        <%= link_to programme.name, programme_path(programme) %>
-                                    <% end %>
+      <div class="grid-container-index" id="projectAll">
+        <% @projects.each_with_index do |project, index| %>
 
-                                </div>
-                        </div>
-                </div>
-            <% end %>
-        </div>
+          <div class="project-card" id="pro<%= index %>">
+            <%= link_to (cl_image_tag project.project_image.key, overflow: :hidden), project_path(project) %>
+            <div class="project-card-text">
+              <!--                            <h6> <%#= project.category %> </h6>-->
+              <h5><%= link_to project.title, project_path(project) %></h5>
+              <div class="mySkills-btn" id="homeSkills">
+                <%# project.programmes.each do |programme| %>
+                <%#= link_to programme.name, programme_path(programme) %>
+                <%# end %>
+
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   <% end %>
-</div>
-
+</main>
+Ï
