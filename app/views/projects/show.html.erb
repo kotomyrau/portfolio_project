@@ -16,6 +16,16 @@
       </div>
       <div class="project-content__attributes attributes-list">
         <article class="attribute">
+          <div class="attribute__content attribute__content--horizontal">
+            <span class="t-text">
+              <% @project.programmes.each do |programme| %>
+                <%= programme.name %>
+              <% end %>
+            </span>
+          </div>
+        </article>
+
+        <article class="attribute">
           <header class="attribute__header">
             <%= inline_svg_tag "icons/calendar_month.svg", class: "icon attribute__icon" %>
           </header>

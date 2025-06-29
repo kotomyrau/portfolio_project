@@ -78,3 +78,12 @@
     }
   }
 }
+
+main#portfolio {
+  turbo-frame {
+    display: inherit;
+    flex-direction: inherit;
+    gap: inherit;
+    width: 100%;
+  }
+}

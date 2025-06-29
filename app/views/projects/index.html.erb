@@ -1,5 +1,10 @@
-<div class="main-container">
+<main class="main-container" id="portfolio">
   <%= turbo_frame_tag "portfolio" do %>
+    <header class="page-header">
+      <div class="page-header__main">
+        <h1 class="page-header__title">My Work</h1>
+      </div>
+    </header>
     <% if @projects.empty? %>
         <div class="page-title">
             <h5>I am currently working on projects...</h5>
@@ -15,14 +20,7 @@
             </div>
         </div>
     <% else %>
-        <div class="page-title">
-            <h5>ALL PROJECTS</h5>
-            <% if @projects.count < 2 %>
-                <p><%= @projects.count %> project</p>
-            <% else %>
-                <p><%= @projects.count %> projects</p>
-            <% end %>
-        </div>
+
         <div class="mySkills-btn" id="viewBy-skills">
           <% if @programmes.present? %>
               <p>View by Skill:</p>
@@ -53,5 +51,5 @@
       </div>
     <% end %>
   <% end %>
-</div>
+</main>
 Ï

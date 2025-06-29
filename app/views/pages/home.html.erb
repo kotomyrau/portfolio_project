@@ -1,11 +1,6 @@
 <main>
   <h1>Hi</h1>
-
-  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-
-  <%= turbo_frame_tag "about_me", src: about_path, loading: :lazy do %>
-  loading...
-  <% end %>
+<%= Programme.all.map { |programme| programme.name } %>
 
   <%= turbo_frame_tag "portfolio", src: projects_path, loading: :lazy do %>
     loading...
