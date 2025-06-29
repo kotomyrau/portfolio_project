@@ -52,7 +52,6 @@ gem "faker"
 # Inline SVG tag
 gem "inline_svg"
 
-# gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
