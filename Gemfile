@@ -6,9 +6,6 @@ ruby '3.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', "~> 8.0"
 
-# The modern asset pipeline for Rails [https://github.com/rails/propshaft]
-gem "propshaft"
-
 # Use postgresql as the database for Active Record
 gem 'pg'
 
