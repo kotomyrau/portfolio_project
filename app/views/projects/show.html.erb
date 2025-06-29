@@ -1,59 +1,116 @@
-<div class="show-container">
+<main class="project">
+  <header class="project-header">
     <% if @project.project_image.attached? %>
-        <div class="main-image">
-            <%= cl_image_tag @project_image.key, overflow: :hidden %>
-        </div>
+      <div class="project-header__image">
+        <%= cl_image_tag @project_image.key, overflow: :hidden %>
+      </div>
     <% end %>
-    <div class="project-info">
-        <div class="page-title">
+    <div class="project-header__main">
+      <h3 class="project-header__title"><%= @project.title %></h3>
+    </div>
+  </header>
+  <div class="project-content">
+    <div class="project-content__details">
+      <div class="project-content__description">
+        <p><%= @project.description %></p>
+      </div>
+      <div class="project-content__attributes attributes-list">
+        <article class="attribute">
+          <header class="attribute__header">
+            <%= inline_svg_tag "icons/calendar_month.svg", class: "icon attribute__icon" %>
+          </header>
+          <div class="attribute__content attribute__content--horizontal">
+            <span class="t-text"><%= @project.start_date %> - <%= @project.end_date %></span>
+          </div>
+        </article>
 
-            <h5><strong><%= @project.title %></strong></h5>
-        <p><%=  @project.category %> </p></div>
-        <div class="project-left">
-            <p><%= @project.description %></p>
-        </div>
-        <div class="project-right">
-            <h5>Date</h5>
-            <p><%= @project_date %></p>
-            <% if @project_link.present? %>
-                <h5>Link</h5>
-                <p><a href="https://<%= @project_link%>" target= "_blank">GitHub</a></p>
-            <% end %>
-            <% if @project_demo.present? %>
-                <p><a href="http://<%= @project_demo%>" target= "_blank">Demo</a></p>
-            <% end %>
-            <% if @project_client.present? %>
-                <h5>Client</h5>
-                <p><%= @project_client %></p>
-            <% end %>
-        </div>
-        <% @project.programmes.each do |programme| %>
-            <div id= "projectShow" class="mySkills-btn">
-                <%= link_to programme.name, programme_path(programme) %>
-            </div>
-            <% if user_signed_in? %>
-                <div id="removeProgramme">
-                    <%= link_to "×", user_project_project_programme_path(@user, @project, programme.project_programmes[0]), method: :delete, data: { confirm: "#{programme.name} will be removed from #{@project.title}" }%>
-                </div>
-            <% end %>
-        <% end %>
-        <% if user_signed_in? %>
-            <div class="user-settings">
-                <%= link_to "ADD SKILL ﹢", new_user_project_project_programme_path(@user, @project)  %>
-                <%= link_to "EDIT PROJECT ﹢", edit_user_project_path(@user, @project)  %>
-            </div>
-        <% end %>
+        <article class="attribute">
+          <header class="attribute__header">
+            <%= inline_svg_tag "icons/attachment.svg", class: "icon attribute__icon" %>
+          </header>
+          <div class="attribute__content attribute__content--horizontal">
+            <span class="t-text"><%= website_name(@project.link) %></span>
+          </div>
+        </article>
+
+        <article class="attribute">
+          <header class="attribute__header">
+            <%= inline_svg_tag "icons/work.svg", class: "icon attribute__icon" %>
+          </header>
+          <div class="attribute__content attribute__content--horizontal">
+            <span class="t-text"><%= @project.company %></span>
+          </div>
+        </article>
+      </div>
     </div>
-    <div class="slideshow-container">
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <% (0...@project_images.count).each do |image| %>
-                <div class="project-images" style="width:100%">
-                    <%= cl_image_tag (@project_images[image]).key, overflow: :hidden%>
-                </div>
-            <% end %>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="project__images">
+      <% if @project_images.any? %>
+        <% @project_images.each do |image| %>
+          <div class="project__image" style="width:100%">
+            <%= cl_image_tag image.key, overflow: :hidden %>
+          </div>
+        <% end %>
+      <% else %>
+        <p>No images available for this project.</p>
+      <% end %>
     </div>
-</div>
+  </div>
+</main>
+
+<!--  set project color-->
+<%# set project image type %>
+
+<!--  <div class="show-container">-->
+      <%# if @project.project_image.attached? %>
+<!--          <div class="main-image">-->
+<!--          </div>-->
+      <%# end %>
+<!--      <div class="project-info">-->
+<!--          <div class="page-title">-->
+
+  <!--        <p><%#=  @project.category %> </p></div>-->
+
+<!--              <h5>Date</h5>-->
+  <!--            <p><%#= @project_date %></p>-->
+              <%# if @project_link.present? %>
+  <!--                <h5>Link</h5>-->
+  <!--                <p><a href="https://<%#= @project_link%>" target= "_blank">GitHub</a></p>-->
+              <%# end %>
+              <%# if @project_demo.present? %>
+  <!--                <p><a href="http://<%#= @project_demo%>" target= "_blank">Demo</a></p>-->
+              <%# end %>
+              <%# if @project_client.present? %>
+  <!--                <h5>Client</h5>-->
+  <!--                <p><%#= @project_client %></p>-->
+              <%# end %>
+          <%# @project.programmes.each do |programme| %>
+<!--              <div id= "projectShow" class="mySkills-btn">-->
+                  <%#= link_to programme.name, programme_path(programme) %>
+<!--              </div>-->
+              <%# if user_signed_in? %>
+  <!--                <div id="removeProgramme">-->
+                      <%#= link_to "×", user_project_project_programme_path(@user, @project, programme.project_programmes[0]), method: :delete, data: { confirm: "#{programme.name} will be removed from #{@project.title}" }%>
+  <!--                </div>-->
+              <%# end %>
+          <%# end %>
+          <%# if user_signed_in? %>
+  <!--            <div class="user-settings">-->
+                  <%#= link_to "ADD SKILL ﹢", new_user_project_project_programme_path(@user, @project)  %>
+                  <%#= link_to "EDIT PROJECT ﹢", edit_user_project_path(@user, @project)  %>
+  <!--            </div>-->
+          <%# end %>
+<!--      </div>-->
+<!--      <div class="slideshow-container">-->
+<!--          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>-->
+              <%# (0...@project_images.count).each do |image| %>
+<!--                  <div class="project-images" style="width:100%">-->
+                      <%#= cl_image_tag (@project_images[image]).key, overflow: :hidden%>
+<!--                  </div>-->
+              <%# end %>
+<!--          <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
+<!--      </div>-->
+<!--  </div>-->
+
 <script>
     var slideIndex = 1;
   showSlides(slideIndex);

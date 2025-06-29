@@ -33,24 +33,25 @@
               <% end %>
           <% end %>
         </div>
-        <div class="grid-container-index" id="projectAll">
-            <% @projects.each_with_index do |project, index| %>
-                <div class="project-card" id="pro<%= index %>">
-                    <%= link_to (cl_image_tag  project.project_image.key, overflow: :hidden), project_path(project) %>
-                        <div class="project-card-text">
-                            <h6> <%= project.category %> </h6>
-                            <h5><%= link_to project.title, project_path(project) %></h5>
-                                <div class="mySkills-btn" id="homeSkills">
-                                    <% project.programmes.each do |programme| %>
-                                        <%= link_to programme.name, programme_path(programme) %>
-                                    <% end %>
+      <div class="grid-container-index" id="projectAll">
+        <% @projects.each_with_index do |project, index| %>
 
-                                </div>
-                        </div>
-                </div>
-            <% end %>
-        </div>
+          <div class="project-card" id="pro<%= index %>">
+            <%= link_to (cl_image_tag project.project_image.key, overflow: :hidden), project_path(project) %>
+            <div class="project-card-text">
+              <!--                            <h6> <%#= project.category %> </h6>-->
+              <h5><%= link_to project.title, project_path(project) %></h5>
+              <div class="mySkills-btn" id="homeSkills">
+                <%# project.programmes.each do |programme| %>
+                <%#= link_to programme.name, programme_path(programme) %>
+                <%# end %>
+
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   <% end %>
 </div>
-
+Ï

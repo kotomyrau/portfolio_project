@@ -2,8 +2,8 @@ class ProjectsController < ApplicationController
   # before_action :require_login, except: [:index, :show]
   # skip_before_action :authenticate_user!, only: [:index]
   def index
-    @projects = Project.order('project_date DESC')
-    @programmes = Programme.order('name ASC')
+    @projects = Project.order('start_date DESC')
+    # @programmes = Programme.order('name ASC')
   end
 
   def new
@@ -26,12 +26,12 @@ class ProjectsController < ApplicationController
   def show
     @user = current_user
     @project = Project.find(params[:id])
-    @project_programme = ProjectProgramme.where(project_id: params[:id], programme_id: params[:id])
-    @project_date = @project.project_date.strftime("%b %Y")
+    # @project_programme = ProjectProgramme.where(project_id: params[:id], programme_id: params[:id])
+    # @project_date = @project.project_date.strftime("%b %Y")
     @project_link = @project.link
-    @project_demo = @project.demoLink
-    @project_client = @project.client
-    @project_category = @project.category
+    # @project_demo = @project.demoLink
+    # @project_client = @project.client
+    # @project_category = @project.category
     @project_image = @project.project_image
     @project_images = @project.project_images
   end
