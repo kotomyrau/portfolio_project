@@ -1,63 +1,44 @@
-<div class="about-container">
-  <div class="page-title">
-    <h5> ABOUT ME </h5>
-  </div>
+<%= turbo_frame_tag "about_me" do %>
+  about me
 
-  <div class="greeting-container">
-    <div class="greeting" id="english">
-      hello!
-    </div>
-    <div class="myBio" id="eng">
-      <strong>First of all, thank you for taking the time to visit my portfolio.</strong> <br>I created this website in January 2021 to showcase any projects I have been working on. <br/>I am currently a Junior Software Developer who loves continuously learning, challenging and expanding my skillset. With a background in Interior Architecture, I am naturally creative and combining creativity with coding is what I have found to enjoy the most.
-    </div>
-    <div class="greeting" id="japanese">
-      こんにちわ!
-    </div>
-    <div class="myBio" id="japan">
-      はじめに、私のポートフォリオをご覧いただきありがとうございます。 私は小都と申します。クリエイティブになれることは好みますが、私は常に問題解決の課題に取り組んでいます。 この1年間、私はパイトンやジャバなどのさまざまなプログラムを学び、時には独学で勉強しました。 コンピュータープログラミングに対する興味が高まり、私はルワゴンい。の9週間のコーディングブートキャンプに参加しました。 このコースを終えた今もプログラミングを勉強を続けており、このエキサイティングな道を私のキャリアとして続けていきたいと考えています。 以下のリンクからお気軽にお問い合わせください。
-    </div>
-    <div class="myBio" id="blank">
-      Select "hello!" for english <br> 日本語をきぼうの人は、「こんにちは！」　をクリックして下さい。
-    </div>
-  </div>
-    <div class="page-title">
-      <h5>Kotomaira Uchida</h5>
-    </div>
-  <% if @user.avatar.attached? %> 
-    <div class="avatar-wrapper">
-      <%= cl_image_tag @user.avatar %>
-    </div>
-  <% end %>
-  <div class="programmes-container">
-      <div class="page-title">
-          <h5>Skills</h5>
-      <% if @programmes.empty? %>
-        <p>have not been added yet</p>
-      <% end %>
-    </div>
-      <div class="mySkills-btn" id="about-skills">
-          <% @programmes.each do |programme| %>
-              <% if programme.projects.empty? %>
-                  <p> <%= programme.name %> </p>
-              <% else %>
-                  <%= link_to programme.name, programme_path(programme) %>
-              <% end %>
-          <% end %>
-      </div>
-  </div>
+  <%= link_to "DOWNLOAD RESUME", "/koto_uchida_cv_2025.pdf", target: :blank %>
+<% end %>
 
-  <div class="about-links">
-      <div class="social-links">
-          <a href="http://www.github.com/kotomyrau" class="fa fa-github" target='blank'></a>
-          <a href="https://www.linkedin.com/in/kotomyra-uchida/" class="fab fa-linkedin" target='blank'></a>
-          <a href="mailto:kotomairau@gmail.com" class="fas fa-envelope-square"></a>
-      </div>
-      <br><div class="basic-btn">
-          <%= link_to "VIEW PORTFOLIO", projects_path  %>
-      </div>
-  </div>
+  <%# if @user.avatar.attached? %>
+<!--    <div class="avatar-wrapper">-->
+      <%#= cl_image_tag @user.avatar %>
+<!--    </div>-->
+  <%# end %>
+<!--  <div class="programmes-container">-->
+<!--      <div class="page-title">-->
+<!--          <h5>Skills</h5>-->
+      <%# if @programmes.empty? %>
+<!--        <p>have not been added yet</p>-->
+      <%# end %>
+<!--    </div>-->
+<!--      <div class="mySkills-btn" id="about-skills">-->
+          <%# @programmes.each do |programme| %>
+              <%# if programme.projects.empty? %>
+<!--                  <p> <%#= programme.name %> </p>-->
+              <%# else %>
+                  <%#= link_to programme.name, programme_path(programme) %>
+              <%# end %>
+          <%# end %>
+<!--      </div>-->
+<!--  </div>-->
+
+<!--  <div class="about-links">-->
+<!--      <div class="social-links">-->
+<!--          <a href="http://www.github.com/kotomyrau" class="fa fa-github" target='blank'></a>-->
+<!--          <a href="https://www.linkedin.com/in/kotomyra-uchida/" class="fab fa-linkedin" target='blank'></a>-->
+<!--          <a href="mailto:kotomairau@gmail.com" class="fas fa-envelope-square"></a>-->
+<!--      </div>-->
+<!--      <br><div class="basic-btn">-->
+          <%#= link_to "VIEW PORTFOLIO", projects_path  %>
+<!--      </div>-->
+<!--  </div>-->
 
 
 
 
-</div>
+<!--</div>-->

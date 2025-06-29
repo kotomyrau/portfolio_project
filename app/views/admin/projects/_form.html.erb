@@ -1,5 +1,24 @@
 <%= form_with model: [:admin, project], data: { controller: "" , turbo: false } do |f| %>
+  <div class="field field--check-box">
+    <header class="field__header">
+      <%= f.label :private, "Is this a private project?", class: "field__label t-label" %>
+      <%= render partial: "shared/forms/field_error", locals: { errors: project.errors[:private] } %>
+    </header>
+    <div class="toggle-switch">
+      <span class="toggle-switch__label toggle-switch__label--off field__label t-label">No</span>
+      <%= f.check_box :private, checked: project.private, class: "toggle-switch__input" %>
+      <%= f.label :private, class: "toggle-switch__container toggle" do %>
+        <span class="toggle-switch__slider toggle__slider"></span>
+      <% end %>
+      <span class="toggle-switch__label toggle-switch__label--on field__label t-label">Yes</span>
+    </div>
+  </div>
 
+  <div class="field">
+    <%= f.label :project_image, class: "field__label t-label" %>
+    <%= render partial: "shared/forms/field_error", locals: { errors: project.errors[:project_image] } %>
+    <%= f.file_field :project_image, label: "Project Cover Image", as: :file, class: "field__input" %>
+  </div>
 
   <div class="field">
     <%= f.label :title, class: "field__label t-label" %>
@@ -14,22 +33,32 @@
   </div>
 
   <div class="field">
+    <%= f.label :project_images, class: "field__label t-label" %>
+    <%= render partial: "shared/forms/field_error", locals: { errors: project.errors[:project_images] } %>
+    <%= f.file_field :project_images, as: :file, multiple: true, class: "field__input" %>
+  </div>
+
+
+
+  <div class="field">
     <%= f.label :company, class: "field__label t-label" %>
     <%= render partial: "shared/forms/field_error", locals: { errors: project.errors[:company] } %>
     <%= f.text_field :company, autofocus: true, required: false, min: 2, max: 100, class: "field__input" %>
   </div>
 
-  <div class="field">
-    <%= f.label :start_date, class: "field__label t-label" %>
+  <section class="field-section field-section--datetime">
+    <span class="field-section__label t-label">Date</span>
     <%= render partial: "shared/forms/field_error", locals: { errors: project.errors[:start_date] } %>
-    <%= f.month_field :start_date, required: false, class: "field__input" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :end_date, class: "field__label t-label" %>
     <%= render partial: "shared/forms/field_error", locals: { errors: project.errors[:end_date] } %>
-    <%= f.month_field :end_date, required: false, class: "field__input" %>
-  </div>
+    <div class="field-group field-group--range field-group--2-col">
+      <div class="field">
+        <%= f.month_field :start_date, required: true, value: project.start_date&.strftime("%Y-%m-%d"), class: "field__input" %>
+      </div>
+      <div class="field">
+        <%= f.month_field :end_date, required: false, value: project.end_date&.strftime("%Y-%m-%d"), class: "field__input" %>
+      </div>
+    </div>
+  </section>
 
   <div class="field">
     <%= f.label :link, class: "field__label t-label" %>

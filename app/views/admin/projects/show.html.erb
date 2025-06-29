@@ -17,18 +17,15 @@
       </div>
     </div>
     <div class="page-header__main">
-      <h1 class="page-header__title">Manage your Portfolio</h1>
-      <p class="page-header__subtitle">Manage your projects and skills here.</p>
+      <h1 class="page-header__title"><%= @project.title %></h1>
     </div>
   </header>
   <div class="page-content">
-    <% @projects.each do |project| %>
-      <%= link_to admin_project_path(project), class: "card" do %>
-        <%= project.title %>
-      <% end %>
-    <% end %>
-<!--    <div class="basic-btn">-->
-      <%#= link_to "Log out", destroy_user_session_path, method: :delete %>
-<!--    </div>-->
+
+    <!--    <div class="basic-btn">-->
+    <%#= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <!--    </div>-->
   </div>
 </main>
+
+

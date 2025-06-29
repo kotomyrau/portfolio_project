@@ -1,26 +1,28 @@
 <main>
-  <div class="form" id="devise-form">
-    <div class="form__header">
-      <h2 class="form__title">Welcome back!</h2>
-    </div>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form__fields">
-        <div class="field">
-          <%= f.label :email, class: "field__label t-label" %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "field__input" %>
-        </div>
-        <div class="field">
-          <%= f.label :password, class: "field__label t-label" %>
-          <%= f.password_field :password, autocomplete: "current-password", class: "field__input" %>
-          <%= link_to "Forgot Password?", new_password_path(resource_name), class: "field__link link link--primary" if devise_mapping.recoverable? %>
-        </div>
+  <div class="page-content">
+    <div class="form" id="devise-form">
+      <div class="form__header">
+        <h2 class="form__title">pls sign in first</h2>
       </div>
-      <div class="form__actions">
-        <%= f.submit "Log in", class: "btn btn--primary btn--full" %><br>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form__fields">
+          <div class="field">
+            <%= f.label :email, class: "field__label t-label" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "field__input" %>
+          </div>
+          <div class="field">
+            <%= f.label :password, class: "field__label t-label" %>
+            <%= f.password_field :password, autocomplete: "current-password", class: "field__input" %>
+            <%= link_to "Forgot Password?", new_password_path(resource_name), class: "field__link link link--primary" if devise_mapping.recoverable? %>
+          </div>
+        </div>
+        <div class="form__actions">
+          <%= f.submit "Log in", class: "btn btn--primary btn--full" %><br>
+        </div>
+      <% end %>
+      <div class="form__footer">
+        <%= render "devise/shared/links" %>
       </div>
-    <% end %>
-    <div class="form__footer">
-      <%= render "devise/shared/links" %>
     </div>
   </div>
 </main>
