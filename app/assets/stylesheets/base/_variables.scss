@@ -1,0 +1,51 @@
+// app/assets/stylesheets/base/_variables.scss
+
+// Fonts
+$font-primary: "Work Sans", sans-serif;
+$font-secondary: "Playfair Display", serif;
+
+// Colors
+$white: #ffffff;
+$gray-lightest: #F6F6F6;
+$gray-lighter: #E6E6E6;
+$gray-light: #CCCCCC;
+$gray-dark: #B3B3B3;
+$gray-darker: #999999;
+$gray-darkest: #666666;
+$ink: #1a1a1a;
+
+$primary-base: #A8052D;
+$primary-darker: #93082F;
+$primary-darkest: #520013;
+$secondary-base: #9AB6A7;
+$secondary-darker: #557766;
+$secondary-darkest: #384D44;
+$tertiary-base: #F9F7E0;
+
+$info-lightest: #E3F2FB;
+$info-lighter: #88D2F1;
+$info-base: #22A3D5;
+$info-darker: #116893;
+$info-darkest: #154A65;
+
+$success-lightest: #E3F6E2;
+$success-lighter: #9CDB9A;
+$success-base: #42A641;
+$success-darker: #296C29;
+$success-darkest: #204720;
+
+$warning-lightest: #FEF3C6;
+$warning-lighter: #FEE685;
+$warning-base: #FFB900;
+$warning-darker: #E17100;
+$warning-darkest: #973C00;
+
+$danger-lightest: #FCE4E4;
+$danger-lighter: #F5ACAC;
+$danger-base: #E15252;
+$danger-darker: #AC2929;
+$danger-darkest: #772525;
+
+// Components
+$navbar-height: 80px;
+$navbar-index: 5;

@@ -1,0 +1,17 @@
+<% flash.each do |type, message| %>
+  <% next if message.blank? %>
+
+  <div class="alert alert--<%= semantic_class_for(type) %>"
+       role="alert"
+       data-controller="alert"
+       data-alert-delay-value="5000">
+    <div class="alert__icon">
+      <%= inline_svg_tag semantic_icon_for(type), class: "icon" %>
+    </div>
+    <span class="t-text alert__message"><%= message %></span>
+    <%= button_tag type: "button", class: "btn btn--icon btn--tertiary btn--#{semantic_class_for(type)}",
+                   data: { action: "click->alert#dismissAlert" }, aria: { label: "Dismiss" } do %>
+      <%= inline_svg_tag "icons/close.svg", class: "icon" %>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,72 @@
+// app/assets/stylesheets/components/forms/_toggle_switch.scss
+.toggle-switch {
+  $toggle-width: 3rem;
+  $toggle-height: calc(#{$toggle-width} / 2);
+  $toggle-offset: calc(#{$toggle-width} / 16);
+  $toggle-size: calc(#{$toggle-height} - (#{$toggle-offset}) * 2);
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+
+  &__label {
+    transition: opacity 0.4s ease-in-out;
+
+    &--off {
+      color: $gray-darkest;
+      opacity: 1;
+    }
+
+    &--on {
+      color: $success-darker;
+      opacity: 0;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__container {
+    background-color: $gray-light;
+    border-radius: $toggle-height;
+    cursor: pointer;
+    display: inline-block;
+    height: $toggle-height;
+    position: relative;
+    transition: background 0.2s;
+    width: $toggle-width;
+  }
+
+  &__slider {
+    background: $white;
+    border-radius: 50%;
+    height: $toggle-size;
+    left: $toggle-offset;
+    position: absolute;
+    top: $toggle-offset;
+    transition: transform 0.4s;
+    width: $toggle-size;
+  }
+
+  &:has(.toggle-switch__input:checked) .toggle-switch {
+    &__container {
+      background-color: $success-darker;
+    }
+
+    &__label {
+      &--off {
+        opacity: 0;
+      }
+
+      &--on {
+        opacity: 1;
+      }
+    }
+
+    &__slider {
+      transform: translateX($toggle-height);
+    }
+  }
+}

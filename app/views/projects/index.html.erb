@@ -1,10 +1,11 @@
 <div class="main-container">
+  <%= turbo_frame_tag "portfolio" do %>
     <% if @projects.empty? %>
         <div class="page-title">
             <h5>I am currently working on projects...</h5>
             <div class="about-links">
                 <div class="basic-btn">
-                    <%= link_to "DOWNLOAD RESUME", "/kmu_resume.pdf", target: :blank  %>
+                    <%#= link_to "DOWNLOAD RESUME", "/koto_uchida_cv_2025.pdf", target: :blank  %>
                 </div><br>
                 <div class="social-links">
                     <a href="http://www.github.com/kotomyrau" class="fa fa-github" target='blank'></a>
@@ -50,5 +51,6 @@
             <% end %>
         </div>
     <% end %>
+  <% end %>
 </div>
 

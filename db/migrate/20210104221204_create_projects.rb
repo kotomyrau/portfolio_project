@@ -1,11 +1,13 @@
 class CreateProjects < ActiveRecord::Migration[6.0]
   def change
-    create_table :projects do |t|
+    create_table :projects, id: :uuid do |t|
       t.string :title
       t.text :description
-      t.date :project_date
-      t.text :contributors
+      t.string :company
+      t.boolean :private, default: true
       t.string :link
+      t.date :start_date
+      t.date :end_date
 
       t.timestamps
     end

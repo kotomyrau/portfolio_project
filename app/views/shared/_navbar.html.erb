@@ -1,0 +1,22 @@
+<nav>
+  <div class="nav-title">
+    <% if user_signed_in? %>
+      <%= link_to 'KOTOMAIRA UCHIDA', users_path %>
+    <% else %>
+      <%= link_to 'KOTOMAIRA UCHIDA', root_path %>
+    <% end %>
+  </div>
+  <ul class="nav-links">
+    <% if user_signed_in? && current_user.role_admin? %>
+      <li><%= link_to "Manage", admin_dashboard_path %></li>
+    <% end %>
+<!--    <li><%#= link_to "HOME", root_path %></li>-->
+<!--    <li><%#= link_to "ABOUT", about_path %></li>-->
+<!--    <li><%#= link_to "PORTFOLIO", projects_path %></li>-->
+  </ul>
+  <div class="burger">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+</nav>

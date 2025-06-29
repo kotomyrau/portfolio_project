@@ -1,0 +1,32 @@
+// app/assets/stylesheets/components/_links.scss
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+.link {
+  color: $ink;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  text-decoration: none;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  font-weight: 500;
+  width: fit-content;
+  transition: ease-in-out 0.4s;
+
+  &.link--primary {
+    color: $primary-base;
+  }
+
+  &.link--secondary {
+    color: $ink;
+  }
+
+  &:hover {
+    color: color-mix(in srgb, $primary-base, black 20%);
+  }
+}

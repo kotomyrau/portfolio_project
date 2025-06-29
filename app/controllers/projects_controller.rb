@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
-  before_action :require_login, except: [:index, :show]
-
+  # before_action :require_login, except: [:index, :show]
+  # skip_before_action :authenticate_user!, only: [:index]
   def index
     @projects = Project.order('project_date DESC')
     @programmes = Programme.order('name ASC')

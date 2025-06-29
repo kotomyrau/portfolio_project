@@ -5,9 +5,11 @@ nav {
     box-shadow: 0 0 4px rgba(0,0,0,0.2);
 
     display: flex;
-    height: 80px;
-    justify-content: space-around;
-    position: sticky;
+    height: $navbar-height;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1;

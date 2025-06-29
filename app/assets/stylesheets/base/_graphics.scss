@@ -1,0 +1,10 @@
+// app/assets/stylesheets/base/_graphics.scss
+
+svg, img {
+  height: 100%;
+  width: 100%;
+}
+
+svg.icon {
+  max-width: 1rem;
+}

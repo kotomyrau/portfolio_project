@@ -1,13 +1,26 @@
 // Graphical variables
-@import "config/fonts";
-@import "config/colors";
-@import "config/bootstrap_variables";
+//@import "config/fonts";
+//@import "config/colors";
+//@import "config/bootstrap_variables";
 
 // External libraries
-@import "bootstrap/scss/bootstrap";
-@import "font-awesome-sprockets";
+//@import "bootstrap/scss/bootstrap";
+//@import "font-awesome-sprockets";
 @import "font-awesome";
 
 // Your CSS partials
-@import "components/index";
-@import "pages/index";
+//@import "components/index";
+//@import "pages/index";
+
+// Base
+@import "base/variables";
+@import "base/base";
+@import "base/graphics";
+@import "base/typography";
+@import "base/helpers";
+
+// Components
+@import "components/*";
+@import "layouts/index";
+
+
