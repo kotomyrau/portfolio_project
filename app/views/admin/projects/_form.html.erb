@@ -52,10 +52,10 @@
     <%= render partial: "shared/forms/field_error", locals: { errors: project.errors[:end_date] } %>
     <div class="field-group field-group--range field-group--2-col">
       <div class="field">
-        <%= f.month_field :start_date, required: true, value: project.start_date&.strftime("%Y-%m-%d"), class: "field__input" %>
+        <%= f.date_field :start_date, required: true, value: project.start_date&.strftime("%Y-%m-%d"), class: "field__input" %>
       </div>
       <div class="field">
-        <%= f.month_field :end_date, required: false, value: project.end_date&.strftime("%Y-%m-%d"), class: "field__input" %>
+        <%= f.date_field :end_date, required: false, value: project.end_date&.strftime("%Y-%m-%d"), class: "field__input" %>
       </div>
     </div>
   </section>
