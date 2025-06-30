@@ -16,12 +16,10 @@
       </div>
       <div class="project-content__attributes attributes-list">
         <%= content_tag(:article, class: "attribute") do %>
-          <div class="attribute__content attribute__content--horizontal">
-            <span class="t-text">
-              <% @project.programmes.each do |programme| %>
-                <div class="badge"><span><%= programme.name %></span></div>
-              <% end %>
-            </span>
+          <div class="attribute__content attribute__content--horizontal badges badges--sm">
+            <% @project.programmes.each do |programme| %>
+              <div class="badge"><span><%= programme.name %></span></div>
+            <% end %>
           </div>
         <% end if @project.programmes.present? %>
         <%= content_tag(:article, class: "attribute") do %>

@@ -206,6 +206,10 @@ main#portfolio {
   gap: 1rem;
   margin: 0 auto;
   width: 100%;
+
+  &--sm {
+    gap: 0.5rem;
+  }
 }
 .programme-badge {
   background-color: $white;
