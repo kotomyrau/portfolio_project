@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Kotomaira Uchida – Portfolio</title>
-        <%= csrf_meta_tags %>
-        <%= csp_meta_tag %>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-        <%= javascript_importmap_tags %>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <title>Kotomaira Uchida – Portfolio</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <%= javascript_importmap_tags %>
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    <%= javascript_importmap_tags %>
+  </head>
   <body data-controller="modal">
     <%= turbo_frame_tag "flash" do %>
       <%= render "shared/flash" %>
