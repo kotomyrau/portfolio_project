@@ -208,7 +208,6 @@ main#portfolio {
 
 .skills {
   background-color: #84A59D;
-  //padding: 2rem;
   width: 100%;
   z-index: 2;
 
@@ -242,10 +241,10 @@ main#portfolio {
 
   span {
     display: inline-flex;
-    font-family: $font-secondary;
-    font-size: 1.5rem;
-    line-height: 0.5rem;
-    transform: rotate(-8deg);
+    //font-family: $font-secondary;
+    //font-size: 1.5rem;
+    //line-height: 0.5rem;
+    //transform: rotate(-8deg);
     //font-weight: 600;
   transition: 0.2s ease-in-out;
   }
