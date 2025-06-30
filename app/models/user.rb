@@ -16,4 +16,8 @@ class User < ApplicationRecord
       ["lower(username) = :value OR lower(email) = :value", { value: login }]
     ).first
   end
+
+  def tablecheck?
+    username == "tablecheck"
+  end
 end

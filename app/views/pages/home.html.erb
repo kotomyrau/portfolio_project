@@ -27,7 +27,7 @@
   <section class="skills">
     <div class="skills__container">
       <header class="skills__header">
-        <h3>My Skills</h3>
+        <h3><%= current_user.tablecheck? ? "Skills, served hot 🌶️" : "My Skills" %></h3>
       </header>
       <div class="badges">
         <% @programmes.each do |programme| %>

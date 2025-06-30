@@ -44,15 +44,15 @@
       object-fit: cover;
     }
   }
+
   &__content {
     display: flex;
     flex: 1;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
     padding: 1rem;
-    min-height: 120px;
-    max-height: 120px;
-    
+    min-height: 128px;
+    max-height: 128px;
   }
 
   &__header {
