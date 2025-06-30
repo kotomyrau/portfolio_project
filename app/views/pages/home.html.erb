@@ -19,8 +19,8 @@
         <%= cl_image_tag ENV["HERO_IMAGE_ID"], overflow: :hidden, class: "hero__image" %>
       </div>
       <%= link_to "/koto_uchida_cv_2025.pdf", target: :blank, class: "btn btn--primary", id: "download-resume" do %>
-        <%= inline_svg_tag "icons/download.svg", class: "icon attribute__icon" %>
-        <span>Download Resume</span>
+        <%= inline_svg_tag "icons/download.svg", class: "icon" %>
+        <span>Download CV</span>
       <% end %>
     </div>
   </div>
@@ -40,7 +40,6 @@
       </div>
     </div>
   </section>
-
   <section class="projects">
     <%= turbo_frame_tag "portfolio", src: projects_path, loading: :lazy do %>
       loading...
