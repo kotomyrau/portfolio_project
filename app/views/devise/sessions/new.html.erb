@@ -1,11 +1,13 @@
 <main>
   <div class="page-content">
     <div class="form" id="devise-form">
-      <div class="form__header">
-        <h2 class="form__title">Sign In</h2>
-        <p class="form__subtitle">Welcome back! Please sign in using the details given to you.</p>
+      <div class="form__header t-align--center">
+        <h2 class="form__title">Welcome my portfolio!</h2>
+        <p class="form__subtitle">
+          My portfolio is currently private, but if you have a login from me, just enter your info below.
+          If you want access, feel free to reach out.
+        </p>
       </div>
-
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form__fields">
           <div class="field">
@@ -15,16 +17,12 @@
           <div class="field">
             <%= f.label :password, class: "field__label t-label" %>
             <%= f.password_field :password, autocomplete: "current-password", class: "field__input" %>
-            <%= link_to "Forgot Password?", new_password_path(resource_name), class: "field__link link link--primary" if devise_mapping.recoverable? %>
           </div>
         </div>
         <div class="form__actions">
-          <%= f.submit "Log in", class: "btn btn--primary btn--full" %><br>
+          <%= f.submit "Log in", class: "btn btn--primary btn--full" %>
         </div>
       <% end %>
-      <div class="form__footer">
-        <%= render "devise/shared/links" %>
-      </div>
     </div>
   </div>
 </main>
