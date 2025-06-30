@@ -1,17 +1,17 @@
-<nav class="nav">
+<nav class="nav"  data-nav-target="nav">
   <%= link_to 'Kotomaira Uchida', root_path, class: "nav__title" %>
 
-  <ul class="nav__links">
-    <li><%= link_to "Download CV", "/koto_uchida_cv_2025.pdf", target: '_blank', class: "link" %></li>
+  <ul class="nav__links" data-nav-target="navLinks">
+    <li data-nav-target="link"><%= link_to "Download CV", "/koto_uchida_cv_2025.pdf", target: '_blank', class: "link" %></li>
     <% if user_signed_in? && current_user.role_admin? %>
       <% if current_user.role_admin? %>
-        <li><%= link_to "Manage", admin_dashboard_path, class: "link" %></li>
+        <li data-nav-target="link"><%= link_to "Manage", admin_dashboard_path, class: "link" %></li>
       <% end %>
-      <li><%= button_to "Log out", destroy_user_session_path, method: :delete, class: "link" %></li>
+      <li data-nav-target="link"><%= button_to "Log out", destroy_user_session_path, method: :delete, class: "link" %></li>
     <% end %>
   </ul>
   <% if user_signed_in? %>
-    <div class="nav__burger">
+    <div class="nav__burger" data-action="click->nav#toggle">
       <div class="burger-line burger-line--1 line1"></div>
       <div class="burger-line burger-line--2 line2"></div>
       <div class="burger-line burger-line--3 line3"></div>
