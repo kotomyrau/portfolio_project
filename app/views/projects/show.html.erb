@@ -1,5 +1,8 @@
 <main class="project">
   <header class="project-header">
+    <div class="project-header__top">
+      <%= link_to "Back to all projects", root_path(anchor: "projects"), data: { turbo: false }, class: "link link--secondary" %>
+    </div>
     <% if @project.project_image.attached? %>
       <div class="project-header__image">
         <%= cl_image_tag @project_image.key, overflow: :hidden %>
@@ -16,12 +19,10 @@
       </div>
       <div class="project-content__attributes attributes-list">
         <%= content_tag(:article, class: "attribute") do %>
-          <div class="attribute__content attribute__content--horizontal">
-            <span class="t-text">
-              <% @project.programmes.each do |programme| %>
-                <div class="badge"><span><%= programme.name %></span></div>
-              <% end %>
-            </span>
+          <div class="attribute__content attribute__content--horizontal badges badges--sm">
+            <% @project.programmes.each do |programme| %>
+              <div class="badge"><span><%= programme.name %></span></div>
+            <% end %>
           </div>
         <% end if @project.programmes.present? %>
         <%= content_tag(:article, class: "attribute") do %>
@@ -34,10 +35,10 @@
         <% end if @project.start_date.present? %>
         <%= content_tag(:article, class: "attribute") do %>
           <header class="attribute__header">
-            <%= inline_svg_tag "icons/attachment.svg", class: "icon attribute__icon" %>
+            <%= inline_svg_tag "icons/link.svg", class: "icon attribute__icon" %>
           </header>
           <div class="attribute__content attribute__content--horizontal">
-            <span class="t-text"><%= website_name(@project.link) %></span>
+            <span class="t-text"><%= link_to website_name(@project.link), @project.link, target: "_blank" %></span>
           </div>
         <% end if @project.link.present? %>
         <%= content_tag(:article, class: "attribute") do %>
@@ -56,18 +57,7 @@
       <%= link_to "Add Skill", new_admin_project_project_programme_path(@project), class: "btn btn--primary" %>
     <% end if current_user.role_admin? %>
 
-    <% if @project.image_carousel? %>
-      <div class="slideshow-container">
-        <!--          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>-->
-        <%# (0...@project_images.count).each do |image| %>
-        <!--                  <div class="project-images" style="width:100%">-->
-        <%#= cl_image_tag (@project_images[image]).key, overflow: :hidden%>
-        <!--                  </div>-->
-        <%# end %>
-        <!--          <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
-        <!--      </div>-->
-    </div>
-    <% else %>
+    <% unless @project.image_carousel? %>
       <div class="project__images">
         <% if @project_images.any? %>
           <% @project_images.each do |image| %>
@@ -81,85 +71,6 @@
       </div>
     <% end %>
   </div>
+  <%= link_to "Back to all projects", root_path(anchor: "projects"), data: { turbo: false }, class: "link link--secondary" %>
 </main>
 
-<!--  set project color-->
-
-
-<!--  <div class="show-container">-->
-      <%# if @project.project_image.attached? %>
-<!--          <div class="main-image">-->
-<!--          </div>-->
-      <%# end %>
-<!--      <div class="project-info">-->
-<!--          <div class="page-title">-->
-
-  <!--        <p><%#=  @project.category %> </p></div>-->
-
-<!--              <h5>Date</h5>-->
-  <!--            <p><%#= @project_date %></p>-->
-              <%# if @project_link.present? %>
-  <!--                <h5>Link</h5>-->
-  <!--                <p><a href="https://<%#= @project_link%>" target= "_blank">GitHub</a></p>-->
-              <%# end %>
-              <%# if @project_demo.present? %>
-  <!--                <p><a href="http://<%#= @project_demo%>" target= "_blank">Demo</a></p>-->
-              <%# end %>
-              <%# if @project_client.present? %>
-  <!--                <h5>Client</h5>-->
-  <!--                <p><%#= @project_client %></p>-->
-              <%# end %>
-          <%# @project.programmes.each do |programme| %>
-<!--              <div id= "projectShow" class="mySkills-btn">-->
-                  <%#= link_to programme.name, programme_path(programme) %>
-<!--              </div>-->
-              <%# if user_signed_in? %>
-  <!--                <div id="removeProgramme">-->
-                      <%#= link_to "×", user_project_project_programme_path(@user, @project, programme.project_programmes[0]), method: :delete, data: { confirm: "#{programme.name} will be removed from #{@project.title}" }%>
-  <!--                </div>-->
-              <%# end %>
-          <%# end %>
-          <%# if user_signed_in? %>
-  <!--            <div class="user-settings">-->
-                  <%#= link_to "ADD SKILL ﹢", new_user_project_project_programme_path(@user, @project)  %>
-                  <%#= link_to "EDIT PROJECT ﹢", edit_user_project_path(@user, @project)  %>
-  <!--            </div>-->
-          <%# end %>
-<!--      </div>-->
-<!--      <div class="slideshow-container">-->
-<!--          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>-->
-              <%# (0...@project_images.count).each do |image| %>
-<!--                  <div class="project-images" style="width:100%">-->
-                      <%#= cl_image_tag (@project_images[image]).key, overflow: :hidden%>
-<!--                  </div>-->
-              <%# end %>
-<!--          <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
-<!--      </div>-->
-<!--  </div>-->
-
-<script>
-    var slideIndex = 1;
-  showSlides(slideIndex);
-
-  // Next + Prev
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  // Thumbnail image controls
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("project-images");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-
-    slides[slideIndex-1].style.display = "block";
-  }
-</script>

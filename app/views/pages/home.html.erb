@@ -18,7 +18,7 @@
       <div class="hero__image-wrapper">
         <%= cl_image_tag ENV["HERO_IMAGE_ID"], overflow: :hidden, class: "hero__image" %>
       </div>
-      <%= link_to "/koto_uchida_cv_2025.pdf", target: :blank, class: "btn btn--primary", id: "download-resume" do %>
+      <%= link_to "/koto_uchida_cv_2025.pdf", target: :blank, class: "btn btn--primary", id: "download-btn" do %>
         <%= inline_svg_tag "icons/download.svg", class: "icon" %>
         <span>Download CV</span>
       <% end %>
@@ -27,7 +27,7 @@
   <section class="skills">
     <div class="skills__container">
       <header class="skills__header">
-        <h3>My Skills</h3>
+        <h3><%= current_user.tablecheck? ? "Skills, served hot 🌶️" : "My Skills" %></h3>
       </header>
       <div class="badges">
         <% @programmes.each do |programme| %>
@@ -40,108 +40,9 @@
       </div>
     </div>
   </section>
-  <section class="projects">
+  <section class="projects" data-scroll-target="section" id="projects">
     <%= turbo_frame_tag "portfolio", src: projects_path, loading: :lazy do %>
       loading...
     <% end %>
   </section>
 </main>
-
-<%#= button_tag type: "button", data: { modal_target_id: "admin_#{dom_id(@event)}_soft_delete_modal", action: "modal#openModalViaButton" } do %>
-<!--  'Delete' event-->
-<%# end %>
-<%#= render partial: "admin/events/sessions_modal", locals: { series: @series, event: @event } %>
-
-<!--<div class="text-container">-->
-<!--    <div class="text-slide">-->
-<!--        <h5>-->
-<!--          I’m a motivated and reliable full-stack developer with solid experience in both coding and-->
-<!--          design. Skilled in backend development with Ruby on Rails and other web technologies,-->
-<!--          with a strong focus on writing clean, maintainable code that delivers great user-->
-<!--          experiences. I’m excited to keep growing in a fast-paced, innovative environment and love-->
-<!--          taking on new challenges and learning new things along the way.-->
-<!--        </h5>-->
-<!--        <p> <%#= link_to "Read about me", about_path %></p>-->
-<!--    </div>-->
-<!--     <div class="text-slide">
-        <h5>Currently working on a Portfolio Project</h5>
-        <p><%= link_to "View Projects", projects_path %></p>
-    </div>
-    <div class="text-slide">
-        <h5>My favorite project has been <%= link_to "Project-name", "#" %></h5>
-    </div> -->
-<!--</div>-->
-<!--<div class="main-container">-->
-    <%# if @preview_projects.empty? %>
-<!--        <div class="page-title">-->
-<!--            <h5>I am currently working on projects...</h5>-->
-<!--            <div class="about-links">-->
-<!--                <div class="basic-btn">-->
-                    <%#= link_to "DOWNLOAD RESUME", "/koto_uchida_cv_2025.pdf", target: :blank  %>
-<!--                </div><br>-->
-<!--                <div class="social-links">-->
-<!--                    <a href="http://www.github.com/kotomyrau" class="fa fa-github" target='blank'></a>-->
-<!--                    <a href="https://www.linkedin.com/in/kotomyra-uchida/" class="fab fa-linkedin" target='blank'></a>-->
-<!--                    <a href="mailto:kotomairau@gmail.com" class="fas fa-envelope-square"></a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-    <%# else %>
-<!--        <div class="page-title">-->
-<!--            <h5>LATEST PROJECTS</h5>-->
-<!--        </div>-->
-
-
-<!--        <div class="grid-container-index">-->
-            <%# @preview_projects.each_with_index do |preview, index| %>
-<!--                <div class="project-card" id="pro<%#= index %>">-->
-                    <%# if preview.project_image.attached? %>
-                        <%#= link_to (cl_image_tag  preview.project_image.key, overflow: :hidden), project_path(preview) %>
-                    <%# end %>
-<!--                    <div class="project-card-text">-->
-<!--                        <h6><%#= preview.category %></p>-->
-<!--                        <h5><%#= link_to preview.title, project_path(preview)%></h6>-->
-<!--                        <div class="mySkills-btn" id="homeSkills">-->
-                            <%# preview.programmes.each do |programme| %>
-                                <%#= link_to programme.name, programme_path(programme) %>
-                            <%# end %>
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-                <%# if (@preview_projects[index + 1].nil?) && (index + 1 <= 2) %>
-<!--                    <div class="project-card" id="pro<%#= index + 1 %>">-->
-<!--                        <div class="project-card-text" id="proNil">-->
-<!--                            <h5>In Progress...</h5>-->
-<!--                        </div>-->
-<!--                    </div>-->
-                <%# end %>
-            <%# end %>
-<!--        </div>-->
-        <%# if Project.count > 3 %>
-<!--            <div class="basic-btn">-->
-<!--                <h5><%#= link_to "view portfolio", projects_path %></h5>-->
-<!--            </div>-->
-        <%# else %>
-<!--            <div class="basic-btn">-->
-<!--                <h5><%#= link_to "about me", about_path %></h5>-->
-<!--            </div>-->
-        <%# end %>
-    <%# end %>
-<!--</div>-->
-
-<!--<script>-->
-<!--    var slideIndex = 0;-->
-<!--    carousel();-->
-
-<!--    function carousel() {-->
-<!--      var i;-->
-<!--      var x = document.getElementsByClassName("text-slide");-->
-<!--      for (i = 0; i < x.length; i++) {-->
-<!--        x[i].style.display = "none";-->
-<!--      }-->
-<!--      slideIndex++;-->
-<!--      if (slideIndex > x.length) {slideIndex = 1}-->
-<!--      x[slideIndex-1].style.display = "block";-->
-<!--      setTimeout(carousel, 4000); // Change image every 2 seconds-->
-<!--    }-->
-<!--</script>-->

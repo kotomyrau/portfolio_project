@@ -114,6 +114,8 @@ main#portfolio {
   width: calc(100% - 4rem);
 
   .hero__greeting {
+    z-index: 2;
+
     #name-highlight {
       color: $primary-base;
       display: inline-block;
@@ -133,7 +135,7 @@ main#portfolio {
     max-width: 75%;
     width: 100%;
 
-    p {
+    p, .btn#download-btn {
       z-index: 2;
     }
 
@@ -164,7 +166,7 @@ main#portfolio {
         font-size: 1rem;
       }
 
-      .btn#download-resume {
+      .btn#download-btn {
         width: 100%;
       }
       .hero__image-wrapper {
@@ -206,33 +208,15 @@ main#portfolio {
   gap: 1rem;
   margin: 0 auto;
   width: 100%;
+
+  &--sm {
+    gap: 0.5rem;
+  }
 }
 .programme-badge {
   background-color: $white;
   border-radius: 4px;
   padding: 0.5rem 1rem;
-
-  span {
-    display: inline-flex;
-    //font-family: $font-secondary;
-    //font-size: 1.5rem;
-    //line-height: 0.5rem;
-    //transform: rotate(-8deg);
-    //font-weight: 600;
-  transition: 0.2s ease-in-out;
-  }
-
-  &:hover {
-
-    span {
-      font-family: $font-primary;
-      font-size: 1rem;
-      line-height: 0.5rem;
-      transform: rotate(0deg);
-
-    }
-
-  }
 }
 
 section.projects {
@@ -240,6 +224,7 @@ section.projects {
   flex-direction: column;
   gap: 1rem;
   max-width: 800px;
+  min-height: 75vh;
   padding: 0 2rem;
   width: 100%;
 
@@ -255,5 +240,4 @@ section.projects {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-
 }

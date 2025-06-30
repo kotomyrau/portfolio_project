@@ -9,7 +9,7 @@
     <% else %>
       <header class="page-header">
         <div class="page-header__main">
-          <h3 class="page-header__title">Some of my projects</h3>
+          <h3 class="page-header__title"><%= current_user.tablecheck? ? "What's on the Menu 🍽️" : "Featured projects" %></h3>
         </div>
       </header>
       <div class="cards-grid" id="projects">
