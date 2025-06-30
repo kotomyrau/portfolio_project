@@ -95,7 +95,9 @@ main#portfolio {
 
 .project__images {
   display: flex;
-
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
 }
 .hero-about {
   container: heroAbout / inline-size;

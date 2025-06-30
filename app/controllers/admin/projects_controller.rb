@@ -20,6 +20,7 @@ class Admin::ProjectsController < Admin::BaseController
 
   def update
     @project = Project.find(params[:id])
+
     if @project.update(project_params)
       redirect_to project_path(@project), notice: 'Your project was successfully modified'
     else
