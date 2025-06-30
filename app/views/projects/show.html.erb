@@ -32,7 +32,7 @@
         <% end if @project.start_date.present? %>
         <%= content_tag(:article, class: "attribute") do %>
           <header class="attribute__header">
-            <%= inline_svg_tag "icons/attachment.svg", class: "icon attribute__icon" %>
+            <%= inline_svg_tag "icons/link.svg", class: "icon attribute__icon" %>
           </header>
           <div class="attribute__content attribute__content--horizontal">
             <span class="t-text"><%= website_name(@project.link) %></span>
