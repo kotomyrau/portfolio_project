@@ -1,6 +1,17 @@
-<div class="form-card">
-  <div class="page-title">
-    <h5>add skill to project</h5>
+<main>
+  <header class="page-header">
+    <div class="page-header__top">
+      <h5>
+        Project Administration
+      </h5>
+    </div>
+    <div class="page-header__main">
+      <h1 class="page-header__title">Add Skill to Project</h1>
+    </div>
+  </header>
+  <div class="page-content">
+    <div class="form" id="project-programme-form">
+      <%= render partial: 'admin/project_programmes/form', locals: { project: @project, project_programme: @project_programme } %>
+    </div>
   </div>
-  <%= render partial: 'admin/project_programmes/form', locals: { project: @project, project_programme: @project_programme } %>
-</div>
+</main>

@@ -15,9 +15,9 @@
   </div>
 
   <div class="field">
-    <%= f.label :project_image, class: "field__label t-label" %>
+    <%= f.label :project_image, "Project Cover Image", class: "field__label t-label" %>
     <%= render partial: "shared/forms/field_error", locals: { errors: project.errors[:project_image] } %>
-    <%= f.file_field :project_image, label: "Project Cover Image", as: :file, class: "field__input" %>
+    <%= f.file_field :project_image, as: :file, class: "field__input" %>
   </div>
 
   <div class="field">

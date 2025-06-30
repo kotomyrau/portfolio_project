@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users, path: 'account', controllers: { registrations: "users/registrations"}
+  devise_for :users, skip: [:registrations, :passwords, :confirmations, :unlocks]
   root to: 'pages#home'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :projects, path: 'portfolio', only: %i[index show]
-  resources :programmes, path: 'skills', only: :show
+  # resources :programmes, path: 'skills', only: :index
 
   namespace :admin do
     get "/", to: "dashboards#dashboard", as: :dashboard

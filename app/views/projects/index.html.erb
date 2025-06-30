@@ -1,54 +1,37 @@
 <main class="main-container" id="portfolio">
   <%= turbo_frame_tag "portfolio" do %>
-    <header class="page-header">
-      <div class="page-header__main">
-        <h1 class="page-header__title">My Work</h1>
-      </div>
-    </header>
     <% if @projects.empty? %>
-        <div class="page-title">
-            <h5>I am currently working on projects...</h5>
-            <div class="about-links">
-                <div class="basic-btn">
-                    <%#= link_to "DOWNLOAD RESUME", "/koto_uchida_cv_2025.pdf", target: :blank  %>
-                </div><br>
-                <div class="social-links">
-                    <a href="http://www.github.com/kotomyrau" class="fa fa-github" target='blank'></a>
-                    <a href="https://www.linkedin.com/in/kotomyra-uchida/" class="fab fa-linkedin" target='blank'></a>
-                    <a href="mailto:kotomairau@gmail.com" class="fas fa-envelope-square"></a>
-                </div>
-            </div>
+      <header class="page-header">
+        <div class="page-header__main">
+          <h3 class="page-header__title">I am currently working on projects...</h3>
         </div>
+      </header>
     <% else %>
-
-        <div class="mySkills-btn" id="viewBy-skills">
-          <% if @programmes.present? %>
-              <p>View by Skill:</p>
-              <% @programmes.each do |programme| %>
-                  <% if programme.project_programme_ids.empty? == false %>
-                      <%= link_to programme.name, programme_path(programme) %>
-                  <% end %>
-              <% end %>
-          <% end %>
+      <header class="page-header">
+        <div class="page-header__main">
+          <h3 class="page-header__title">Some of my projects</h3>
         </div>
-      <div class="grid-container-index" id="projectAll">
-        <% @projects.each_with_index do |project, index| %>
-
-          <div class="project-card" id="pro<%= index %>">
-            <% if project.project_image.attached? %>
-              <%= link_to (cl_image_tag project.project_image.key, overflow: :hidden), project_path(project), target: "_top", data: { turbo: false } %>
-            <% end %>
-            <div class="project-card-text">
-              <!--                            <h6> <%#= project.category %> </h6>-->
-              <h5><%= link_to project.title, project_path(project), target: "_top", data: { turbo: false } %></h5>
-              <div class="mySkills-btn" id="homeSkills">
-                <%# project.programmes.each do |programme| %>
-                <%#= link_to programme.name, programme_path(programme) %>
-                <%# end %>
-
+      </header>
+      <div class="cards-grid" id="projects">
+        <% @projects.each do |project| %>
+          <%= link_to project_path(project), target: "_top", class: "card" do %>
+            <div class="card__thumbnail">
+              <% if project.project_image.attached? %>
+                <%= cl_image_tag project.project_image.key, overflow: :hidden %>
+              <% end %>
+            </div>
+            <div class="card__content">
+              <header class="card__header">
+                <h4 class="card__title truncate"><%= project.title %></h4>
+                <%= content_tag(:p, truncate(project.description, length: 100), class: "t-caption truncate truncate--two") if project.description.present? %>
+              </header>
+              <div class="card__skills">
+                <% project.programmes.each do |programme| %>
+                  <div class="badge"><span><%= programme.name %></span></div>
+                <% end if project.programmes.present? %>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
     <% end %>

@@ -1,5 +1,4 @@
 class Admin::ProjectProgrammesController < ApplicationController
-
   def new
     @project = Project.find(params[:project_id])
     @project_programme = @project.project_programmes.new
@@ -10,10 +9,10 @@ class Admin::ProjectProgrammesController < ApplicationController
   def create
     @user = current_user
     @projects = Project.all
-    # @project = ProjectProgramme.find(params[:project_id])
+    @project = Project.find(params[:project_id])
     @project_programme = ProjectProgramme.new(project_programme_params)
     if @project_programme.save
-      redirect_to project_path(params[:project_id])
+      redirect_to project_path(@project), notice: "Programme has been added to the project"
     else
       render :new
     end
