@@ -8,6 +8,7 @@ class CreateProjects < ActiveRecord::Migration[6.0]
       t.string :link
       t.date :start_date
       t.date :end_date
+      t.boolean :image_carousel, default: false
 
       t.timestamps
     end

@@ -15,7 +15,7 @@
         <p><%= @project.description %></p>
       </div>
       <div class="project-content__attributes attributes-list">
-        <article class="attribute">
+        <%= content_tag(:article, class: "attribute") do %>
           <div class="attribute__content attribute__content--horizontal">
             <span class="t-text">
               <% @project.programmes.each do |programme| %>
@@ -23,52 +23,67 @@
               <% end %>
             </span>
           </div>
-        </article>
-
-        <article class="attribute">
+        <% end if @project.programmes.present? %>
+        <% content_tag(:article, class: "attribute") do %>
           <header class="attribute__header">
             <%= inline_svg_tag "icons/calendar_month.svg", class: "icon attribute__icon" %>
           </header>
           <div class="attribute__content attribute__content--horizontal">
-            <span class="t-text"><%= @project.start_date %> - <%= @project.end_date %></span>
+            <span class="t-text"><%= @project.start_date.strftime("%b %Y") %> - <%= @project.end_date.present? ? @project.end_date.strftime("%b %Y") : 'Ongoing' %></span>
           </div>
-        </article>
-
-        <article class="attribute">
+        <% end if @project.start_date.present? %>
+        <%= content_tag(:article, class: "attribute") do %>
           <header class="attribute__header">
             <%= inline_svg_tag "icons/attachment.svg", class: "icon attribute__icon" %>
           </header>
           <div class="attribute__content attribute__content--horizontal">
             <span class="t-text"><%= website_name(@project.link) %></span>
           </div>
-        </article>
-
-        <article class="attribute">
+        <% end if @project.link.present? %>
+        <%= content_tag(:article, class: "attribute") do %>
           <header class="attribute__header">
             <%= inline_svg_tag "icons/work.svg", class: "icon attribute__icon" %>
           </header>
           <div class="attribute__content attribute__content--horizontal">
             <span class="t-text"><%= @project.company %></span>
           </div>
-        </article>
+        <% end if @project.company.present? %>
       </div>
     </div>
-    <div class="project__images">
-      <% if @project_images.any? %>
-        <% @project_images.each do |image| %>
-          <div class="project__image" style="width:100%">
-            <%= cl_image_tag image.key, overflow: :hidden %>
-          </div>
-        <% end %>
-      <% else %>
-        <p>No images available for this project.</p>
-      <% end %>
+
+    <%= content_tag(:div, class: "project-content__actions") do %>
+      <%= link_to "Edit Project", edit_admin_project_path(@project), class: "btn btn--primary" %>
+    <% end if current_user.role_admin? %>
+
+    <% if @project.image_carousel? %>
+      <div class="slideshow-container">
+        <!--          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>-->
+        <%# (0...@project_images.count).each do |image| %>
+        <!--                  <div class="project-images" style="width:100%">-->
+        <%#= cl_image_tag (@project_images[image]).key, overflow: :hidden%>
+        <!--                  </div>-->
+        <%# end %>
+        <!--          <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
+        <!--      </div>-->
     </div>
+    <% else %>
+      <div class="project__images">
+        <% if @project_images.any? %>
+          <% @project_images.each do |image| %>
+            <div class="project__image" style="width:100%">
+              <%= cl_image_tag image.key, overflow: :hidden %>
+            </div>
+          <% end %>
+        <% else %>
+          <p>No images available for this project.</p>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </main>
 
 <!--  set project color-->
-<%# set project image type %>
+
 
 <!--  <div class="show-container">-->
       <%# if @project.project_image.attached? %>

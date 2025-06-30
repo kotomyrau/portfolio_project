@@ -40,7 +40,7 @@
             <% end %>
             <div class="project-card-text">
               <!--                            <h6> <%#= project.category %> </h6>-->
-              <h5><%= link_to project.title, project_path(project) %></h5>
+              <h5><%= link_to project.title, project_path(project), target: "_top", data: { turbo: false } %></h5>
               <div class="mySkills-btn" id="homeSkills">
                 <%# project.programmes.each do |programme| %>
                 <%#= link_to programme.name, programme_path(programme) %>

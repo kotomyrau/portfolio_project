@@ -65,6 +65,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_27_062012) do
     t.string "link"
     t.date "start_date"
     t.date "end_date"
+    t.boolean "image_carousel", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
