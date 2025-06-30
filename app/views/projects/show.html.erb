@@ -35,7 +35,7 @@
             <%= inline_svg_tag "icons/link.svg", class: "icon attribute__icon" %>
           </header>
           <div class="attribute__content attribute__content--horizontal">
-            <span class="t-text"><%= website_name(@project.link) %></span>
+            <span class="t-text"><%= link_to website_name(@project.link), @project.link, target: "_blank" %></span>
           </div>
         <% end if @project.link.present? %>
         <%= content_tag(:article, class: "attribute") do %>
