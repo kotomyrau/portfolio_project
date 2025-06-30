@@ -1,15 +1,25 @@
 // app/assets/stylesheets/components/_cards.scss
 
-
 .cards-grid {
+  --template-columns: repeat(2, 1fr);
+  container: cardsGrid / inline-size;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: var(--template-columns);
   grid-auto-rows: auto;
   gap: 1rem;
 
   > :first-child.card {
     --thumbnail-height: 224px;
     grid-column: span 2;
+  }
+
+  @media screen and (max-width: 768px) {
+    --template-columns: repeat(1, 1fr);
+
+    > :first-child.card {
+      --thumbnail-height: 176px;
+      grid-column: span 1;
+    }
   }
 }
 
