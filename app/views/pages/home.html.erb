@@ -1,7 +1,7 @@
-<main>
+<main id="home">
   <div class="hero hero-about">
     <div class="hero__greeting">
-      <h3>Hi 👋🏼 I'm Kotomaira, but everyone calls me <span class="t-secondary" id="name-highlight">Koto</span></h3>
+      <h2>Hi 👋🏼 I'm Kotomaira, but everyone calls me <span class="t-secondary" id="name-highlight">Koto</span></h2>
     </div>
     <div class="hero__content">
       <p>
@@ -17,13 +17,35 @@
       <div class="hero__image-wrapper">
         <%= cl_image_tag ENV["HERO_IMAGE_ID"], overflow: :hidden, class: "hero__image" %>
       </div>
+      <%= link_to "/koto_uchida_cv_2025.pdf", target: :blank, class: "btn btn--primary", id: "download-resume" do %>
+        <%= inline_svg_tag "icons/download.svg", class: "icon attribute__icon" %>
+        <span>Download Resume</span>
+      <% end %>
     </div>
   </div>
-<%= Programme.all.map { |programme| programme.name } %>
 
-  <%= turbo_frame_tag "portfolio", src: projects_path, loading: :lazy do %>
-    loading...
-  <% end %>
+  <section class="skills">
+    <div class="skills__container">
+      <header class="skills__header">
+        <h3>My Skills</h3>
+      </header>
+      <div class="badges">
+        <% @programmes.each do |programme| %>
+          <div class="badge programme-badge">
+            <span class="badge__text">
+              <%= programme.name %>
+            </span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects">
+    <%= turbo_frame_tag "portfolio", src: projects_path, loading: :lazy do %>
+      loading...
+    <% end %>
+  </section>
 </main>
 
 <%#= button_tag type: "button", data: { modal_target_id: "admin_#{dom_id(@event)}_soft_delete_modal", action: "modal#openModalViaButton" } do %>
