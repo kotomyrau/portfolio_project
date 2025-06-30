@@ -19,12 +19,12 @@
           <div class="attribute__content attribute__content--horizontal">
             <span class="t-text">
               <% @project.programmes.each do |programme| %>
-                <%= programme.name %>
+                <div class="badge"><span><%= programme.name %></span></div>
               <% end %>
             </span>
           </div>
         <% end if @project.programmes.present? %>
-        <% content_tag(:article, class: "attribute") do %>
+        <%= content_tag(:article, class: "attribute") do %>
           <header class="attribute__header">
             <%= inline_svg_tag "icons/calendar_month.svg", class: "icon attribute__icon" %>
           </header>
@@ -53,6 +53,7 @@
 
     <%= content_tag(:div, class: "project-content__actions") do %>
       <%= link_to "Edit Project", edit_admin_project_path(@project), class: "btn btn--primary" %>
+      <%= link_to "Add Skill", new_admin_project_project_programme_path(@project), class: "btn btn--primary" %>
     <% end if current_user.role_admin? %>
 
     <% if @project.image_carousel? %>

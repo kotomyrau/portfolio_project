@@ -98,3 +98,24 @@ body {
     max-width: 600px;
   }
 }
+
+.truncate {
+  line-break: anywhere;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  max-height: fit-content;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+
+  &.truncate--two {
+    line-break: normal;
+    -webkit-line-clamp: 2;
+  }
+
+  &.truncate--three {
+    line-break: normal;
+    -webkit-line-clamp: 3;
+  }
+
+}
