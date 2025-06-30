@@ -36,7 +36,7 @@
 
           <div class="project-card" id="pro<%= index %>">
             <% if project.project_image.attached? %>
-              <%= link_to (cl_image_tag project.project_image.key, overflow: :hidden), project_path(project) %>
+              <%= link_to (cl_image_tag project.project_image.key, overflow: :hidden), project_path(project), target: "_top", data: { turbo: false } %>
             <% end %>
             <div class="project-card-text">
               <!--                            <h6> <%#= project.category %> </h6>-->

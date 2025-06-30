@@ -1,23 +1,20 @@
-<nav>
-  <div class="nav-title">
-    <%= link_to 'KOTOMAIRA UCHIDA', root_path %>
-  </div>
-  <ul class="nav-links">
+<nav class="nav">
+  <%= link_to 'Kotomaira Uchida', root_path, class: "nav__title" %>
+
+  <ul class="nav__links">
+    <li><%= link_to "Download CV", "/koto_uchida_cv_2025.pdf", target: '_blank', class: "link" %></li>
     <% if user_signed_in? && current_user.role_admin? %>
       <% if current_user.role_admin? %>
-        <li><%= link_to "Manage", admin_dashboard_path %></li>
+        <li><%= link_to "Manage", admin_dashboard_path, class: "link" %></li>
       <% end %>
-      <li><%= button_to "Log out", destroy_user_session_path, method: :delete %></li>
+      <li><%= button_to "Log out", destroy_user_session_path, method: :delete, class: "link" %></li>
     <% end %>
-<!--    <li><%#= link_to "HOME", root_path %></li>-->
-<!--    <li><%#= link_to "ABOUT", about_path %></li>-->
-<!--    <li><%#= link_to "PORTFOLIO", projects_path %></li>-->
   </ul>
   <% if user_signed_in? %>
-    <div class="burger">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
+    <div class="nav__burger">
+      <div class="burger-line burger-line--1 line1"></div>
+      <div class="burger-line burger-line--2 line2"></div>
+      <div class="burger-line burger-line--3 line3"></div>
     </div>
   <% end %>
 </nav>
