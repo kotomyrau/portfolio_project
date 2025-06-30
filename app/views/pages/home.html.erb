@@ -18,7 +18,7 @@
       <div class="hero__image-wrapper">
         <%= cl_image_tag ENV["HERO_IMAGE_ID"], overflow: :hidden, class: "hero__image" %>
       </div>
-      <%= link_to "/koto_uchida_cv_2025.pdf", target: :blank, class: "btn btn--primary", id: "download-resume" do %>
+      <%= link_to "/koto_uchida_cv_2025.pdf", target: :blank, class: "btn btn--primary", id: "download-btn" do %>
         <%= inline_svg_tag "icons/download.svg", class: "icon" %>
         <span>Download CV</span>
       <% end %>

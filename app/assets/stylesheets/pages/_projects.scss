@@ -114,6 +114,8 @@ main#portfolio {
   width: calc(100% - 4rem);
 
   .hero__greeting {
+    z-index: 2;
+
     #name-highlight {
       color: $primary-base;
       display: inline-block;
@@ -133,7 +135,7 @@ main#portfolio {
     max-width: 75%;
     width: 100%;
 
-    p {
+    p, .btn#download-btn {
       z-index: 2;
     }
 
@@ -164,7 +166,7 @@ main#portfolio {
         font-size: 1rem;
       }
 
-      .btn#download-resume {
+      .btn#download-btn {
         width: 100%;
       }
       .hero__image-wrapper {
