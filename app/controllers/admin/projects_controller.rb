@@ -15,12 +15,10 @@ class Admin::ProjectsController < Admin::BaseController
 
   def edit
     @project = Project.find(params[:id])
-    @user = current_user
     @project_programme = ProjectProgramme.where(project_id: @project.id)
   end
 
   def update
-    @user = current_user
     @project = Project.find(params[:id])
     if @project.update(project_params)
       redirect_to project_path(@project), notice: 'Your project was successfully modified'
@@ -42,6 +40,6 @@ class Admin::ProjectsController < Admin::BaseController
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :private, :company, :start_date, :end_date, :link, :project_image, project_images: [])
+    params.require(:project).permit(:title, :description, :private, :company, :start_date, :end_date, :link, :image_carousel, :project_image, project_images: [])
   end
 end

@@ -36,11 +36,11 @@
 
           <div class="project-card" id="pro<%= index %>">
             <% if project.project_image.attached? %>
-              <%= link_to (cl_image_tag project.project_image.key, overflow: :hidden), project_path(project) %>
+              <%= link_to (cl_image_tag project.project_image.key, overflow: :hidden), project_path(project), target: "_top", data: { turbo: false } %>
             <% end %>
             <div class="project-card-text">
               <!--                            <h6> <%#= project.category %> </h6>-->
-              <h5><%= link_to project.title, project_path(project) %></h5>
+              <h5><%= link_to project.title, project_path(project), target: "_top", data: { turbo: false } %></h5>
               <div class="mySkills-btn" id="homeSkills">
                 <%# project.programmes.each do |programme| %>
                 <%#= link_to programme.name, programme_path(programme) %>
@@ -54,4 +54,3 @@
     <% end %>
   <% end %>
 </main>
-Ï

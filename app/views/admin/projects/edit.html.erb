@@ -1,0 +1,17 @@
+<main>
+  <header class="page-header">
+    <div class="page-header__top">
+      <h5>
+        Project Administration
+      </h5>
+    </div>
+    <div class="page-header__main">
+      <h1 class="page-header__title">Edit Project</h1>
+    </div>
+  </header>
+  <div class="page-content">
+    <div class="form" id="project-form">
+      <%= render partial: "admin/projects/form", locals: { project: @project } %>
+    </div>
+  </div>
+</main>

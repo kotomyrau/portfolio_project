@@ -38,7 +38,20 @@
     <%= f.file_field :project_images, as: :file, multiple: true, class: "field__input" %>
   </div>
 
-
+  <div class="field field--check-box">
+    <header class="field__header">
+      <%= f.label :image_carousel, "Do you want a carousel for project images?", class: "field__label t-label" %>
+      <%= render partial: "shared/forms/field_error", locals: { errors: project.errors[:image_carousel] } %>
+    </header>
+    <div class="toggle-switch">
+      <span class="toggle-switch__label toggle-switch__label--off field__label t-label">No</span>
+      <%= f.check_box :image_carousel, checked: project.image_carousel, class: "toggle-switch__input" %>
+      <%= f.label :image_carousel, class: "toggle-switch__container toggle" do %>
+        <span class="toggle-switch__slider toggle__slider"></span>
+      <% end %>
+      <span class="toggle-switch__label toggle-switch__label--on field__label t-label">Yes</span>
+    </div>
+  </div>
 
   <div class="field">
     <%= f.label :company, class: "field__label t-label" %>

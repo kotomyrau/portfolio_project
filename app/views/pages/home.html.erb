@@ -1,26 +1,51 @@
-<main>
-
+<main id="home">
   <div class="hero hero-about">
     <div class="hero__greeting">
-      <h1>Hi 👋🏼</h1>
+      <h2>Hi 👋🏼 I'm Kotomaira, but everyone calls me <span class="t-secondary" id="name-highlight">Koto</span></h2>
+    </div>
+
+    <div class="hero__content">
       <p>
-        I’m a motivated and reliable full-stack developer with solid experience in both coding and-->
+        I’m a motivated and reliable full-stack developer with solid experience in both coding and
         design. Skilled in backend development with Ruby on Rails and other web technologies,
         with a strong focus on writing clean, maintainable code that delivers great user
         experiences. I’m excited to keep growing in a fast-paced, innovative environment and love
         taking on new challenges and learning new things along the way.
+        <br><br>
+        I grew up in Bermuda, so English is my first language—and yes, I absolutely love being in the ocean.
+        When I’m not coding or designing, I’m probably eating something spicy, dancing, playing with my cats, or talking endlessly about my next travel destination.
       </p>
-    </div>
-    <div class="hero__image-wrapper">
-      <%= cl_image_tag ENV["HERO_IMAGE_ID"], overflow: :hidden, class: "hero__image" %>
+      <div class="hero__image-wrapper">
+        <%= cl_image_tag ENV["HERO_IMAGE_ID"], overflow: :hidden, class: "hero__image" %>
+      </div>
+      <%= link_to "/koto_uchida_cv_2025.pdf", target: :blank, class: "btn btn--primary", id: "download-resume" do %>
+        <%= inline_svg_tag "icons/download.svg", class: "icon attribute__icon" %>
+        <span>Download Resume</span>
+      <% end %>
     </div>
   </div>
-  <h1>Hi</h1>
-<%= Programme.all.map { |programme| programme.name } %>
+  <section class="skills">
+    <div class="skills__container">
+      <header class="skills__header">
+        <h3>My Skills</h3>
+      </header>
+      <div class="badges">
+        <% @programmes.each do |programme| %>
+          <div class="badge programme-badge">
+            <span class="badge__text">
+              <%= programme.name %>
+            </span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
 
-  <%= turbo_frame_tag "portfolio", src: projects_path, loading: :lazy do %>
-    loading...
-  <% end %>
+  <section class="projects">
+    <%= turbo_frame_tag "portfolio", src: projects_path, loading: :lazy do %>
+      loading...
+    <% end %>
+  </section>
 </main>
 
 <%#= button_tag type: "button", data: { modal_target_id: "admin_#{dom_id(@event)}_soft_delete_modal", action: "modal#openModalViaButton" } do %>

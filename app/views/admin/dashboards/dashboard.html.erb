@@ -25,7 +25,7 @@
   </header>
   <div class="page-content">
     <% @projects.each do |project| %>
-      <%= link_to admin_project_path(project), class: "card" do %>
+      <%= link_to project_path(project), class: "card" do %>
         <%= project.title %>
       <% end %>
     <% end %>

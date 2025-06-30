@@ -16,10 +16,17 @@ def seed_users(start_time)
   UsersSeed.create_users
 end
 
+def seed_programmes(start_time)
+  print "\nSeeding Programmes\t\tStart: #{Time.current - start_time}\n"
+  require_relative './seeds/programmes_seed'
+  ProgrammesSeed.create_programmes
+end
+
 def seed_for_development(start_time)
   puts('-' * 100).to_s
   puts "Running Seeds"
   seed_users(start_time)
+  seed_programmes(start_time)
 end
 
 seed_for_development(start_time)

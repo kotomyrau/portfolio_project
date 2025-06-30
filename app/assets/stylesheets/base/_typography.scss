@@ -47,9 +47,14 @@ figcaption, .t-caption, .t-label {
   color: $danger-darker;
 }
 
-// Secondary Typography
-h1, h2, h3, h4, h5, h6 {
+.t-secondary {
   font-family: $font-secondary;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-primary;
   font-weight: 600;
 
   & * {

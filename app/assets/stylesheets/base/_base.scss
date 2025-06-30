@@ -26,6 +26,11 @@ body {
     &:has(.form#devise-form) {
       justify-content: center;
     }
+    
+    &#home {
+      max-width: unset;
+      padding: 2rem 0;
+    }
   }
 }
 
