@@ -35,7 +35,9 @@
         <% @projects.each_with_index do |project, index| %>
 
           <div class="project-card" id="pro<%= index %>">
-            <%= link_to (cl_image_tag project.project_image.key, overflow: :hidden), project_path(project) %>
+            <% if project.project_image.attached? %>
+              <%= link_to (cl_image_tag project.project_image.key, overflow: :hidden), project_path(project) %>
+            <% end %>
             <div class="project-card-text">
               <!--                            <h6> <%#= project.category %> </h6>-->
               <h5><%= link_to project.title, project_path(project) %></h5>
