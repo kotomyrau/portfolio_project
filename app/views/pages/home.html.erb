@@ -1,4 +1,20 @@
 <main>
+
+  <div class="hero hero-about">
+    <div class="hero__greeting">
+      <h1>Hi 👋🏼</h1>
+      <p>
+        I’m a motivated and reliable full-stack developer with solid experience in both coding and-->
+        design. Skilled in backend development with Ruby on Rails and other web technologies,
+        with a strong focus on writing clean, maintainable code that delivers great user
+        experiences. I’m excited to keep growing in a fast-paced, innovative environment and love
+        taking on new challenges and learning new things along the way.
+      </p>
+    </div>
+    <div class="hero__image-wrapper">
+      <%= cl_image_tag ENV["HERO_IMAGE_ID"], overflow: :hidden, class: "hero__image" %>
+    </div>
+  </div>
   <h1>Hi</h1>
 <%= Programme.all.map { |programme| programme.name } %>
 

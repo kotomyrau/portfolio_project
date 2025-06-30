@@ -86,4 +86,30 @@ main#portfolio {
     gap: inherit;
     width: 100%;
   }
+
 }
+.hero {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  //&.hero-about {
+  //  background-image: image_url("countries-bg.jpg");
+  //  //background-size: cover;
+  //  background-position: right;
+  //  background-repeat: no-repeat;
+  //  background-size: 50% auto;
+  //  background-position-x: 100%;
+  //  height: 500px;
+  //}
+  
+  &__greeting {
+    max-width: 400px;
+  }
+
+  &__image {
+    width: auto;
+    height: 400px;
+  }
+}
+
